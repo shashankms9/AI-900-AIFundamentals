@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Analyze Text with the Language Service'
----
-
 ## Analyze Text with the Language Service
 
 In this lab, you will use the Language cognitive service to analyze text.​
