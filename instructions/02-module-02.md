@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore Machine Learning'
----
-
 ## Explore Machine Learning
 
 Machine learning models are the basis for AI applications. In this lab you will explore Azure Machine Learning and use its automated machine learning feature to train a predictive model.
