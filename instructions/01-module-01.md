@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore Cognitive Services'
----
-
 ## Explore Cognitive Services
 
 Azure Cognitive Services encapsulate common AI functionality that can be categorized into four main pillars: vision, speech, language, and decision services. In this exercise you will take a look at one of the decision services to get a general sense of how to provision and use a cognitive services resource in a software application.
