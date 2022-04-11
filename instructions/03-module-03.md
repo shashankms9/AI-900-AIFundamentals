@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Analyze Images with Computer Vision​'
----
-
 ## Analyze Images with Computer Vision​
 
 In this lab you will explore the Computer Vision cognitive service to analyze images.​
