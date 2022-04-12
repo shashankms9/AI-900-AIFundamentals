@@ -116,7 +116,7 @@ In Azure Machine Learning, operations that you run are called  _experiments_. Fo
     -   **Select task and settings**:
         -   **Task type**: Regression  _(the model predicts a numeric value)_
     
-    ![Select View additional configuration settings.](https://docs.microsoft.com/en-us/learn/wwl-data-ai/use-automated-machine-learning/media/new-automated-ml-run-4.png)
+    ![Select View additional configuration settings.](../media/new-automated-ml-run-4.png)
     
     Notice under task type there are settings  _View additional configuration settings_  and  _View Featurization settings_. Now configure these settings.
     
@@ -127,7 +127,7 @@ In Azure Machine Learning, operations that you run are called  _experiments_. Fo
         -   **Use all supported models**:  Unselected.  _You'll restrict the experiment to try only a few specific algorithms._
         -   **Allowed models**:  _Select only  **RandomForest**  and  **LightGBM**  — normally you'd want to try as many as possible, but each model added increases the time it takes to run the experiment._
         
-        ![Select the allowed models.](https://docs.microsoft.com/en-us/learn/wwl-data-ai/use-automated-machine-learning/media/allowed-models.png)
+        ![Select the allowed models.](../media/allowed-models.png)
         
         -   **Exit criterion**:
             -   **Training job time (hours)**: 0.5 —  _ends the experiment after a maximum of 30 minutes._
