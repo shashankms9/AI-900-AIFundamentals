@@ -55,7 +55,7 @@ In  [Azure Machine Learning studio](https://ml.azure.com/), view the  **Compute*
     -   **Virtual Machine size**:
         -   Choose  **Select from all options**
         -   Search for and select  **Standard_DS11_v2**
-    -   **Compute name**:  _Compute_[DeploymentID]_
+    -   **Compute name**:  Compute_[DeploymentID]
     -   **Minimum number of nodes**: 0
     -   **Maximum number of nodes**: 2
     -   **Idle seconds before scale down**: 120
