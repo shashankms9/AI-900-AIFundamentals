@@ -12,13 +12,16 @@ Azure Machine Learning is a cloud-based platform for building and operating mach
 1.  Sign into the  [Azure portal](https://portal.azure.com/)  using the Microsoft credentials associated with your Azure subscription.
 2.  Select  **＋Create a resource**, search for  _Machine Learning_, and create a new  **Machine Learning**  resource the following settings:
     -   **Subscription**:  _Your Azure subscription_
-    -   **Resource group**:  _Create or select a resource group_
-    -   **Workspace name**:  _Enter a unique name for your workspace_
+    -   **Resource group**:  _Select an existing resource group_.
+    -   **Workspace name**:  workspace_[DeploymentID]
     -   **Region**:  _Select the geographical region closest to you_
     -   **Storage account**:  _Note the default new storage account that will be created for your workspace_
     -   **Key vault**:  _Note the default new key vault that will be created for your workspace_
     -   **Application insights**:  _Note the default new application insights resource that will be created for your workspace_
     -   **Container registry**: None (_one will be created automatically the first time you deploy a model to a container_)
+
+      **Note**:  Replace [DeploymentID] with your DeploymentId and you can be obtained from the Lab Environment output page.
+
 3.  Wait for your workspace to be created (it can take a few minutes). Then go to it in the portal.
 
 4.  On the  **Overview**  page for your workspace, launch Azure Machine Learning studio (or open a new browser tab and navigate to  [https://ml.azure.com](https://ml.azure.com/)), and sign into Azure Machine Learning studio using your Microsoft account. If prompted, select your Azure directory and subscription, and your Azure Machine Learning workspace.
@@ -52,7 +55,7 @@ In  [Azure Machine Learning studio](https://ml.azure.com/), view the  **Compute*
     -   **Virtual Machine size**:
         -   Choose  **Select from all options**
         -   Search for and select  **Standard_DS11_v2**
-    -   **Compute name**:  _enter a unique name_
+    -   **Compute name**:  _Compute_[DeploymentID]_
     -   **Minimum number of nodes**: 0
     -   **Maximum number of nodes**: 2
     -   **Idle seconds before scale down**: 120
