@@ -50,7 +50,6 @@ To test the text analytics capabilities of the Language service, we'll use a sim
     
 3.  When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
 
-    
     ![Create storage by clicking confirm.](../media/Ai-900p1.png)
     
 4.  Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to  _PowerShell_. If it is  _Bash_, switch to  _PowerShell_  by using the drop-down menu.
@@ -68,8 +67,7 @@ Now that you have a custom model, you can run a simple client application that u
 
 1.  In the command shell, enter the following command to download the sample application and save it to a folder called ai-900.
     
-    Copy
-    
+
     ```
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     
@@ -77,8 +75,7 @@ Now that you have a custom model, you can run a simple client application that u
     
 2.  The files are downloaded to a folder named  **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
     
-    Copy
-    
+
     ```
     code .
     
@@ -116,8 +113,7 @@ Now that you have a custom model, you can run a simple client application that u
     
 6.  In the Cloud Shell, enter the following command to run the code:
     
-    Copy
-    
+
     ```
     cd ai-900
     ./analyze-text.ps1 review1.txt 
@@ -132,8 +128,6 @@ Now that you have a custom model, you can run a simple client application that u
     
 8.  In the PowerShell pane, enter the following command to run the code:
     
-    Copy
-    
     ```
     ./analyze-text.ps1 review2.txt 
     
@@ -146,9 +140,7 @@ Now that you have a custom model, you can run a simple client application that u
 9.  Review the output.
     
 10.  In the PowerShell pane, enter the following command to run the code:
-    
-    Copy
-    
+
     ```
     ./analyze-text.ps1 review3.txt 
     
@@ -162,8 +154,7 @@ Now that you have a custom model, you can run a simple client application that u
     
 12.  In the PowerShell pane, enter the following command to run the code:
     
-    Copy
-    
+
     ```
     ./analyze-text.ps1 review4.txt 
     
