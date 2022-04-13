@@ -19,7 +19,7 @@ Let's start by creating an  **Anomaly Detector**  resource in your Azure subscri
 2.  Click the  **＋Create a resource**  button, search for  _Anomaly Detector_, and create an  **Anomaly Detector**  resource with the following settings:
     
     -   **Subscription**:  _Your Azure subscription_.
-    -   **Resource group**:  _Select an existing resource group .
+    -   **Resource group**:  _Select an existing resource group_.
     -   **Name**:  _Enter a unique name_.
     -   **Pricing tier**: Free F0
 3.  Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
