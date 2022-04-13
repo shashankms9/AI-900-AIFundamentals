@@ -19,8 +19,7 @@ Let's start by creating an  **Anomaly Detector**  resource in your Azure subscri
 2.  Click the  **＋Create a resource**  button, search for  _Anomaly Detector_, and create an  **Anomaly Detector**  resource with the following settings:
     
     -   **Subscription**:  _Your Azure subscription_.
-    -   **Resource group**:  _Select an existing resource group or create a new one_.
-    -   **Region**:  _Choose any available region_
+    -   **Resource group**:  _Select an existing resource group .
     -   **Name**:  _Enter a unique name_.
     -   **Pricing tier**: Free F0
 3.  Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
@@ -37,9 +36,9 @@ To test the capabilities of the Anomaly Detector service, we'll use a simple com
 
 2. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (_Bash_  or  _PowerShell_). Select  **PowerShell**. If you do not see this option, skip the step.
 
-3. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select  **Create storage**. Then wait a minute or so for the storage to be created.
+3. When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
 
-![powershell-portal-guide](../media/powershell-portal-guide-2.png)
+![powershell-portal-guide](../media/Ai-900p1.png)
 
 4. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to  _PowerShell_. If it is  _Bash_, switch to  _PowerShell_  by using the drop-down menu.
 
