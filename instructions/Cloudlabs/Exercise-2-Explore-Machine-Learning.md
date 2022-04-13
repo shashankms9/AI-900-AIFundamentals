@@ -170,7 +170,7 @@ After the experiment has finished you can review the best performing model. In t
     
 4.  Select the  **Metrics**  tab and select the  **residuals**  and  **predicted_true**  charts if they are not already selected.
     
-    ![Select the residuals and predicted_true charts.](../media/media/review-run-3.png)
+    ![Select the residuals and predicted_true charts.](../media/review-run-3.png)
     
     Review the charts which show the performance of the model. The chart compares the predicted values against the true values, and shows the  _residuals_, the differences between predicted and actual values, as a histogram.
     
