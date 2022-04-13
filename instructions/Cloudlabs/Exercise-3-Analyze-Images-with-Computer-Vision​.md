@@ -42,9 +42,10 @@ To test the capabilities of the Computer Vision service, we'll use a simple comm
     
 2.  The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (_Bash_  or  _PowerShell_). Select  **PowerShell**. If you do not see this option, skip the step.
     
-3.  If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select  **Create storage**. Then wait a minute or so for the storage to be created.
+3. When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
+
     
-    ![Create storage by clicking confirm.](../media/powershell-portal-guide-2.png)
+    ![Create storage by clicking confirm.](../media/Ai-900p1.png)
     
 4.  Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to  _PowerShell_. If it is  _Bash_, switch to  _PowerShell_  by using the drop-down menu.
     
