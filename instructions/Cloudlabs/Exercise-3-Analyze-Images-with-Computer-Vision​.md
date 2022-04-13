@@ -22,11 +22,14 @@ If you haven't already done so, create a  **Cognitive Services**  resource in yo
 2.  Click the  **＋Create a resource**  button, search for  _Cognitive Services_, and create a  **Cognitive Services**  resource with the following settings:
     
     -   **Subscription**:  _Your Azure subscription_.
-    -   **Resource group**:  _Select or create a resource group with a unique name_.
+    -   **Resource group**:  Select  existing resource group .
     -   **Region**:  _Choose any available region_:
-    -   **Name**:  _Enter a unique name_.
+    -   **Name**:  Cognitive_[DeploymentID]
     -   **Pricing tier**: S0
     -   **I confirm I have read and understood the notices**: Selected.
+   
+    **Note**:  Replace [DeploymentID] with your DeploymentId and you can be obtained from the Lab Environment output page.
+    
 3.  Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
     
 4.  View the  **Keys and Endpoint**  page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
