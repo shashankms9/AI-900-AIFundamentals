@@ -24,7 +24,7 @@ If you haven't already done so, create a  **Cognitive Services**  resource in yo
     -   **Subscription**:  _Your Azure subscription_.
     -   **Resource group**:  Select  existing resource group .
     -   **Region**:  _Choose any available region_:
-    -   **Name**:  Cognitive_[DeploymentID]
+    -   **Name**:  Cognitive-[DeploymentID]
     -   **Pricing tier**: S0
     -   **I confirm I have read and understood the notices**: Selected.
    
