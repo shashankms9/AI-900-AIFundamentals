@@ -20,11 +20,13 @@ Let's start by creating an  **Anomaly Detector**  resource in your Azure subscri
     
     -   **Subscription**:  _Your Azure subscription_.
     -   **Resource group**:  _Select an existing resource group_.
-    -   **Name**:  _Enter a unique name_.
+    -   **Name**:  anomaly-[DeploymentID].
     -   **Pricing tier**: Free F0
 3.  Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
     
 4.  View the  **Keys and Endpoint**  page for your Anomaly Detector resource. You will need the endpoint and keys to connect from client applications.
+
+**Note**:  Replace [DeploymentID] with your DeploymentId, which can be obtained from the Lab Environment Details page.
   
 #### Task 2 : Run Cloud Shell
 
