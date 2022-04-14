@@ -137,6 +137,9 @@ Now that you have a custom model, you can run a simple client application that u
     
     ```
     
+    
+   
+    
     You will be reviewing this text:
     
     > Tired hotel with poor service The Royal Hotel, London, United Kingdom 5/6/2018 This is a old hotel (has been around since 1950's) and the room furnishings are average - becoming a bit old now and require changing. The internet didn't work and had to come to one of their office rooms to check in for my flight home. The website says it's close to the British Museum, but it's too far to walk.
@@ -144,13 +147,14 @@ Now that you have a custom model, you can run a simple client application that u
 9.  Review the output.
     
 10.  In the PowerShell pane, enter the following command to run the code:
-
+   
     ```
-    ./analyze-text.ps1 review3.txt 
+    ./analyze-text.ps1 review3.txt
     
     ```
     
-   You will be reviewing this text:
+ 
+    You will be reviewing this text:
     
     > Good location and helpful staff, but on a busy road. The Lombard Hotel, San Francisco, USA 8/16/2018 We stayed here in August after reading reviews. We were very pleased with location, just behind Chestnut Street, a cosmopolitan and trendy area with plenty of restaurants to choose from. The Marina district was lovely to wander through, very interesting houses. Make sure to walk to the San Francisco Museum of Fine Arts and the Marina to get a good view of Golden Gate bridge and the city. On a bus route and easy to get into centre. Rooms were clean with plenty of room and staff were friendly and helpful. The only down side was the noise from Lombard Street so ask to have a room furthest away from traffic noise.
     
@@ -158,13 +162,14 @@ Now that you have a custom model, you can run a simple client application that u
     
 12.  In the PowerShell pane, enter the following command to run the code:
     
-
+    
     ```
     ./analyze-text.ps1 review4.txt 
     
     ```
-    
-    You will be reviewing this text:
+   
+ 
+   You will be reviewing this text:
     
     > Very noisy and rooms are tiny The Lombard Hotel, San Francisco, USA 9/5/2018 Hotel is located on Lombard street which is a very busy SIX lane street directly off the Golden Gate Bridge. Traffic from early morning until late at night especially on weekends. Noise would not be so bad if rooms were better insulated but they are not. Had to put cotton balls in my ears to be able to sleep--was too tired to enjoy the city the next day. Rooms are TINY. I picked the room because it had two queen size beds--but the room barely had space to fit them. With family of four in the room it was tight. With all that said, rooms are clean and they've made an effort to update them. The hotel is in Marina district with lots of good places to eat, within walking distance to Presidio. May be good hotel for young stay-up-late adults on a budget
     
