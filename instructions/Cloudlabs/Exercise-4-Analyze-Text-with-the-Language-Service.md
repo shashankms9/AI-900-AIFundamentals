@@ -152,7 +152,7 @@ Now that you have a custom model, you can run a simple client application that u
 
 
       ```
-      ./analyze-text.ps1 review3.txt
+       ./analyze-text.ps1 review3.txt
     
      ```
     
