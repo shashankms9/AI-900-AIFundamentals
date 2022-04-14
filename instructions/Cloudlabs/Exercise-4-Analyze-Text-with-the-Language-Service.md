@@ -149,12 +149,12 @@ Now that you have a custom model, you can run a simple client application that u
     
 10.  In the PowerShell pane, enter the following command to run the code:
 
-
-
-      ```
-       ./analyze-text.ps1 review3.txt
+     ```
+     ./analyze-text.ps1 review3.txt 
     
      ```
+
+      
     
    
    
