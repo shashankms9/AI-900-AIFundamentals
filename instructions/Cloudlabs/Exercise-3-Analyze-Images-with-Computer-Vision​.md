@@ -28,7 +28,7 @@ If you haven't already done so, create a  **Cognitive Services**  resource in yo
     -   **Pricing tier**: S0
     -   **I confirm I have read and understood the notices**: Selected.
    
-    **Note**:  Replace [DeploymentID] with your DeploymentId and you can be obtained from the Lab Environment output page.
+    **Note**:  Replace [DeploymentID] with your DeploymentId, which can be obtained from the Lab Environment Details page.
     
 3.  Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
     
