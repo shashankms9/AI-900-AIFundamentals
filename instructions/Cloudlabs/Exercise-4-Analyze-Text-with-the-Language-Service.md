@@ -25,12 +25,12 @@ If you haven't already done so, create a  **Cognitive Services**  resource in yo
     -   **Subscription**:  _Your Azure subscription_.
     -   **Resource group**:  _Select existing resource group_.
     -   **Region**:  _Choose any available region_:
-    -   **Name**:  cognitive_[DeploymentID].
+    -   **Name**:  cognitive-[DeploymentID].
     -   **Pricing tier**: S0
     -   **I confirm I have read and understood the notices**: Selected.
 
- **Note**:  Replace [DeploymentID] with your DeploymentId and you can be obtained from the Lab Environment output page.
-
+  **Note**:  Replace [DeploymentID] with your DeploymentId, which can be obtained from the Lab Environment Details page.
+  
     
 3.  Review and create the resource.
     
