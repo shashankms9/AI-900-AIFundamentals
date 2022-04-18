@@ -13,7 +13,7 @@ Azure Machine Learning is a cloud-based platform for building and operating mach
 2.  Select  **＋Create a resource**, search for  _Machine Learning_, and create a new  **Machine Learning**  resource the following settings:
     -   **Subscription**:  _Your Azure subscription_
     -   **Resource group**:  _Select an existing resource group_.
-    -   **Workspace name**:  workspace_[DeploymentID]
+    -   **Workspace name**:  workspace-[DeploymentID]
     -   **Region**:  _Select the geographical region closest to you_
     -   **Storage account**:  _Note the default new storage account that will be created for your workspace_
     -   **Key vault**:  _Note the default new key vault that will be created for your workspace_
@@ -55,7 +55,7 @@ In  [Azure Machine Learning studio](https://ml.azure.com/), view the  **Compute*
     -   **Virtual Machine size**:
         -   Choose  **Select from all options**
         -   Search for and select  **Standard_DS11_v2**
-    -   **Compute name**:  compute_[DeploymentID]
+    -   **Compute name**:  compute-[DeploymentID]
     -   **Minimum number of nodes**: 0
     -   **Maximum number of nodes**: 2
     -   **Idle seconds before scale down**: 120
