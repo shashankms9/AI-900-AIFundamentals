@@ -6,11 +6,11 @@ The specific cognitive service you'll explore in this exercise is *Anomaly Detec
 
 This exercise is part of a module on Microsoft Learn, and requires an Azure subscription. You should use the Azure subscription provided as part of the class.
 
-> **Note**: The goal of this exercise is to get a general sense of how cognitive services are provisioned and used. Anomaly Detector is used as an example, but you are not expected to gain a comprehensive knowledge of anomaly detection in this exercise!
+   **Note**: The goal of this exercise is to get a general sense of how cognitive services are provisioned and used. Anomaly Detector is used as an example, but you are not expected to gain a comprehensive knowledge of anomaly detection in this exercise!
 
-### Exercise 1
+## Exercise 1
 
-#### Task 1 : Create an Anomaly Detector resource
+### Task 1 : Create an Anomaly Detector resource
 
 Let's start by creating an  **Anomaly Detector**  resource in your Azure subscription:
 
@@ -28,7 +28,7 @@ Let's start by creating an  **Anomaly Detector**  resource in your Azure subscri
 
 **Note**:  Replace [DeploymentID] with your DeploymentId, which can be obtained from the Lab Environment Details page.
   
-#### Task 2 : Run Cloud Shell
+### Task 2 : Run Cloud Shell
 
 To test the capabilities of the Anomaly Detector service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
 
@@ -50,7 +50,7 @@ To test the capabilities of the Anomaly Detector service, we'll use a simple com
 
 ![powershell-portal-guide](../media/powershell-prompt.png)
 
-#### Task 3 : Configure and run a client application
+### Task 3 : Configure and run a client application
 
 Now that you have a Cloud Shell environment, you can run a simple application that uses the Anomaly Detector service to analyze data.
 
@@ -99,5 +99,5 @@ cd ai-900
 
 7. Review the results, noting that the final column in the results is  **True**  or  **False**  to indicate if the value recorded at each date/time is considered an anomaly or not. Consider how we could use this information in a real-life situation. What action could the application trigger if the values were of fridge temperature or blood pressure and anomalies were detected?
 
-### Learn more
+## Learn more
 This simple app shows only some of the capabilities of the Anomaly Detector service. To learn more about what you can do with this service, see the  [Anomaly Detector page](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
