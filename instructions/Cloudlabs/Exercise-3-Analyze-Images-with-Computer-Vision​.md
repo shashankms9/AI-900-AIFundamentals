@@ -1,7 +1,6 @@
-# Analyze Images with Computer Vision​
+# Analyze Images with Computer Vision
 
-In this lab you will explore the Computer Vision cognitive service to analyze images.​
-
+In this lab you will explore the Computer Vision cognitive service to analyze images.
 
 ## Exercise 1 : Analyze images with the Computer Vision service
 
@@ -30,11 +29,10 @@ If you haven't already done so, create a  **Cognitive Services**  resource in yo
    
     **Note**:  Replace [DeploymentID] with your DeploymentId, which can be obtained from the Lab Environment Details page.
     
-3.  Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+3.  Click on **Review + create**, and wait for deployment to complete. Then go to the deployed resource.
     
 4.  View the  **Keys and Endpoint**  page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
     
-
 ### Task 2 : Run Cloud Shell
 
 To test the capabilities of the Computer Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
