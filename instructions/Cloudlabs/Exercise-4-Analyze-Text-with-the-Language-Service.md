@@ -30,11 +30,9 @@ If you haven't already done so, create a  **Cognitive Services**  resource in yo
     -   **I confirm I have read and understood the notices**: Selected.
 
   **Note**:  Replace [DeploymentID] with your DeploymentId, which can be obtained from the Lab Environment Details page.
-  
-    
+     
 3.  Review and create the resource.
     
-
 ### Task 2 : Get the Key and Location for your Cognitive Services resource
 
 1.  Wait for deployment to complete. Then go to your Cognitive Services resource, and on the  **Overview**  page, select the link to manage the keys for the service. You will need the endpoint and keys to connect to your Cognitive Services resource from client applications.
