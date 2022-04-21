@@ -189,7 +189,7 @@ After the experiment has finished you can review the best performing model. In t
     
     ![Feature importance](../media/feature-importance.png)
 
-## Exercise 4 : Deploy a model as a service
+## Exercise 5 : Deploy a model as a service
 
 After you've used automated machine learning to train some models, you can deploy the best performing model as a service for client applications to use.
 
