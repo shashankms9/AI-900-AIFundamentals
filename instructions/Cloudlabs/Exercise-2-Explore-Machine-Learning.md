@@ -10,7 +10,7 @@ Azure Machine Learning is a cloud-based platform for building and operating mach
 ### Task 1 : Create an Azure Machine Learning workspace
 
 1.  Sign into the  [Azure portal](https://portal.azure.com/)  using the Microsoft credentials associated with your Azure subscription.
-2.  Select  **＋Create a resource**, search for  _Machine Learning_, and create a new  **Machine Learning**  resource the following settings:
+2.  Select  **＋Create a resource**, search for  _Azure Machine Learning_, and create a new  **Azure Machine Learning**  resource the following settings:
     -   **Subscription**:  _Your Azure subscription_
     -   **Resource group**:  _Select an existing resource group_.
     -   **Workspace name**:  workspace-[DeploymentID]
@@ -38,7 +38,9 @@ You can manage your workspace using the Azure portal, but for data scientists an
 
 Compute targets are cloud-based resources on which you can run model training and data exploration processes.
 
-In  [Azure Machine Learning studio](https://ml.azure.com/), view the  **Compute**  page (under  **Manage**). This is where you manage the compute targets for your data science activities. There are four kinds of compute resource you can create:
+ click on three line at the top left side, scroll down and go to Compute page under manage.
+
+In  [Azure Machine Learning studio](https://ml.azure.com/), click on three line at the top left side, scroll down and  to view the  **Compute**  page (under  **Manage**). This is where you manage the compute targets for your data science activities. There are four kinds of compute resource you can create:
 
 -   **Compute Instances**: Development workstations that data scientists can use to work with data and models.
 -   **Compute Clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
@@ -74,9 +76,10 @@ In Azure Machine Learning, data for model training and other operations is usual
 
 1.  View the comma-separated data at  [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals)  in your web browser.
     
-2.  In  [Azure Machine Learning studio](https://ml.azure.com/), view the  **Datasets**  page. Datasets represent specific data files or tables that you plan to work with in Azure ML.
+2.  In  [Azure Machine Learning studio](https://ml.azure.com/), click on three line at the top left side and select **Data** under **Assets**. Datasets represent specific data files or tables that you plan to work with in Azure ML.
     
-3.  Create a new dataset  **from web files**, using the following settings:
+
+3. On the Registered Data assets create a new dataset  **from web files**, using the following settings:
     
     -   **Basic Info**:
         -   **Web URL**:  [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals)
@@ -155,9 +158,11 @@ In Azure Machine Learning, operations that you run are called  _experiments_. Fo
 
 After the experiment has finished you can review the best performing model. In this case, you used exit criteria to stop the experiment. Thus the "best" model the experiment generated might not be the best possible model, just the best one found within the time allowed for this exercise.
 
-1.  On the  **Details**  tab of the automated machine learning run, note the best model summary.
-    
-    ![Click on the algorithm name on the details pane.](../media/complete-run.png)
+1. Go to **automated ML** under **authors**, click on your experiment mslearn-bike, scroll down and click on your display name. 
+
+In the overview tab, scroll down and note the best model summary on right side.
+
+![Click on the algorithm name on the details pane.](../media/complete-run.png)
     
 2.  Select the  **Algorithm name**  for the best model to view its details.
     
@@ -211,8 +216,11 @@ In Azure Machine Learning, you can deploy a service as an Azure Container Instan
     -   **Enable authentication**: Selected
 4.  Wait for the deployment to start - this may take a few seconds. Then, in the  **Model summary**  section, observe the  **Deploy status**  for the  **predict-rentals**  service, which should be  **Running**. Wait for this status to change to  **Successful**, which may take some time. You may need to select  **↻ Refresh**  periodically.
     
-5.  In Azure Machine Learning studio, view the  **Endpoints**  page and select the  **predict-rentals**  real-time endpoint. Then select the  **Consume**  tab and note the following information there. If you do not see the  **Consume**  tab, the deployment is not completely finished - you will need to wait and refresh the page. You would need the information from the  **Consume**  tab to connect to your deployed service from a client application.
-    
+5.  In Azure Machine Learning studio, 
+click on three lines at top left and scroll down. Select **Endpoints** under **Assets** to view the  **Endpoints**  page and select the  **predict-rentals**  real-time endpoint. Then select the  **Consume**  tab and note the following information there. If you do not see the  **Consume**  tab, the deployment is not completely finished - you will need to wait and refresh the page. You would need the information from the  **Consume**  tab to connect to your deployed service from a client application.
+ In Azure Machine Learning studio, 
+
+
     -   The REST endpoint for your service
     -   The primary or secondary key for your service
     
