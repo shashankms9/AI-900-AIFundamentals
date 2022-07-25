@@ -102,7 +102,9 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     $endpoint="https..."
     
     ```
-    
+   
+    >**Note** : `In the next part of the exercise we will be analysing the features of the images. We will however not be seeing the images inside the users's lab environment. But you can view the images in the integrated lab guide.`
+   
 5.  At the top right of the editor pane, use the  **...**  button to open the menu and select  **Save**  to save your changes.
     
     The sample client application will use your Computer Vision service to analyze the following image, taken by a camera in the Northwind Traders store:
