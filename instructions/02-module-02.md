@@ -51,7 +51,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Clear
+    - **Enable SSH access**: keep it as default
     - Select **Create**
 
 > **Note**
@@ -69,11 +69,17 @@ The compute cluster will take some time to be created. You can move onto the nex
     * **Data type**:
         * **Name**: bike-rentals
         * **Description**: Bicycle rental data
-        * **Dataset type**: Tabular
+        * **Type**: Tabular
+    * Click on **Next**.
+    
     * **Data source**: From Web Files
+    * * Click on **Next**.
+    
     * **Web URL**:
         * **Web URL**: [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true)
         * **Skip data validation**: *do not select*
+    * Click on **Next**.
+     
     * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
@@ -81,9 +87,13 @@ The compute cluster will take some time to be created. You can move onto the nex
         * **Column headers**: Only first file has headers
         * **Skip rows**: None
         * **Dataset contains multi-line data**: *do not select*
+    * Click on **Next**.
+
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
+    * Click on **Next**.
+
     * **Review**
         * Select **Create**
 
@@ -95,21 +105,27 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 Follow the next steps to run a job that uses automated machine learning to train a regression model that predicts bicycle rentals.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), view the **Automated ML** page (under **Author**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Automated ML** page (under **Author**).
 
-1. Create an Automated ML job with the following settings:
+1. Click on **+ Automated ML job**. Create an Automated ML job with the following settings:
+
     - **Select data asset**:
         - **Dataset**: bike-rentals
+    - Click on **Next**
+    
     - **Configure job**:
         - **New experiment name**: mslearn-bike-rental
         - **Target column**: rentals (*this is the label that the model is trained to predict)*
         - **Select Azure ML compute cluster**: *the compute cluster that you created previously*.
+    - Click on **Next**.
+    
     - **Select task and settings**: 
         - **Task type**: Regression *(the model predicts a numeric value)* 
+    - Click on **Next**.
 
     ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/new-automated-ml-run-4.png)
 
-    Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings.
+    Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings. Click on **View additional configuration settings**.
 
     - **Additional configuration settings:**
         - **Primary metric**: Select **Normalized root mean squared error**
@@ -122,14 +138,19 @@ Follow the next steps to run a job that uses automated machine learning to train
             - **Training job time (hours)**: 0.5 — *ends the job after a maximum of 30 minutes.*
             - **Metric score threshold**: 0.085 — *if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*
         - **Concurrency**: *do not change*
-    - **Featurization settings:**
+    - Click on **Save**.
+
+
+    - Now click on ** View featurization settings:**
         - **Enable featurization**: Selected — *automatically preprocess the features before training.*
+    - Click on **Save**.
 
     Click **Next** to go to the next selection pane.
 
     - **Select the validation and test type**
         - **Validation type**: Auto
         - **Test data asset (preview)**: No test data asset required
+    - Click on **Finish**.
 
 1. When you finish submitting the automated machine learning job details, it starts automatically. Wait for the status to change from *Preparing* to *Running*.
 
@@ -167,11 +188,12 @@ Follow the next steps to run a job that uses automated machine learning to train
 
     ![Screenshot of the best model summary with a box around the algorithm name on the details tab.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-1. On the **Models** tab, select the **Deploy** button and use the **Deploy to web service** option to deploy the model with the following settings:
+1. On the **Models** tab, select the **Deploy** button and use the **web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
     - **Description**: Predict cycle rentals
     - **Compute type**: Azure Container Instance
     - **Enable authentication**: Selected
+Click on **Deploy**.
 
 1. Wait for the deployment to start - this may take a few seconds. Then, in the **Model summary** section, observe the **Deploy status** for the **predict-rentals** service, which should be **Running**. Wait for this status to change to **Succeeded**, which may take some time. You may need to select **Refresh** periodically.
 
@@ -221,17 +243,3 @@ Now you can test your deployed service.
 Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*. In this case, the *labels* are number of bicycle rentals.
 
 You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
-
-## Clean-up
-
-The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also stop the compute instance until you need it again.
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-rentals** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
-2. On the **Compute** page, on the **Compute Instances** tab, select your compute instance and then select **Stop**.
-
->[!NOTE]
-> Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
->
-> To delete your workspace:
-> 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), in the **Resource groups** page, open the resource group you specified when creating your Azure Machine Learning workspace.
-> 2. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**.
