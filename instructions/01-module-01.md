@@ -24,7 +24,8 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
 
 1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
 
-    >**Note**: On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+    >**Note**
+    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
 
 1. Click the **&#65291;Create a resource** button, search for *Anomaly Detector*, and create an **Anomaly Detector** resource with the following settings:
@@ -38,7 +39,8 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
 
 1. View the **Keys and Endpoint** page for your Anomaly Detector resource. 
    
-      >**Note:** You will need the endpoint and keys to connect from client applications.
+      >**Note** 
+      >You will need the endpoint and keys to connect from client applications.
 
 ## Run Cloud Shell
 
@@ -72,7 +74,8 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
     
-    >**Note:** To Paste the Code right click inside the cloud Shell and then Click on Paste.
+    >**Note** 
+    >To Paste the Code right click inside the cloud Shell and then Click on Paste.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
