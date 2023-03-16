@@ -48,13 +48,13 @@ To test the capabilities of the Anomaly Detector service, we'll use a simple com
 
 1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal.
 
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/anomaly-detector/powershell-portal-guide-1.png)
+    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/powershell-portal-guide-1.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
 1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
 
-    ![Create storage by clicking confirm.](media/anomaly-detector/powershell-portal-guide-2.png)
+    ![Create storage by clicking confirm.](media/powershell-portal-guide-2.png)
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
@@ -95,6 +95,8 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
+    
+    ![Picture1](media/Ai-900-mod1-img7.png)
 
     After pasting the key and endpoint values, the first two lines of code should look similar to this:
 
@@ -105,6 +107,11 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
 1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
 
+      ![Picture1](media/Ai-900-mod1-img8.png)
+      
+      >**Note** 
+      > If you are able to see this options you can use Shortcut Keys **ctrl + S** to save and **ctrl + Q** to close editor.
+      
     Remember, anomaly detection is an artificial intelligence technique used to determine whether values in a series are within expected parameters. The sample client application will use your Anomaly Detector service to analyze a file containing a series of date/times and numeric values. The application should return results indicating at each time point, whether the numeric value is within expected parameters.
 
 1. In the PowerShell pane, enter the following commands to run the code:
@@ -114,7 +121,9 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     .\detect-anomalies.ps1
     ```
 
-1. Review the results, noting that the final column in the results is **True** or **False** to indicate if the value recorded at each date/time is considered an anomaly or not. Consider how we could use this information in a real-life situation. What action could the application trigger if the values were of fridge temperature or blood pressure and anomalies were detected?  
+1. Review the results, noting that the final column in the results is **True** or **False** to indicate if the value recorded at each date/time is considered an anomaly or not. Consider how we could use this information in a real-life situation. What action could the application trigger if the values were of fridge temperature or blood pressure and anomalies were detected?
+     
+      ![Picture1](media/Ai900-mod1-img9.png)
 
 ## Learn more
 
