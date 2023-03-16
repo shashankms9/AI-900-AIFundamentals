@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore Cognitive Services'
----
-
 # Explore Cognitive Services
 
 > **Note**
@@ -21,7 +16,16 @@ To test the capabilities of the Anomaly Detection service, we'll use a simple co
 
 Let's start by creating an **Anomaly Detector** resource in your Azure subscription:
 
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
+1. In the lab virtual machine, Start the Microsoft Edge browser.
+
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username** provided in the **environment details page** odl_user_DID@cloudlabsai.com and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
+
+    >**Note**: On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
 
 1. Click the **&#65291;Create a resource** button, search for *Anomaly Detector*, and create an **Anomaly Detector** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
@@ -32,7 +36,9 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
 
 1. Review and create the resource. Wait for deployment to complete, and then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Anomaly Detector resource. You will need the endpoint and keys to connect from client applications.
+1. View the **Keys and Endpoint** page for your Anomaly Detector resource. 
+   
+      >**Note:** You will need the endpoint and keys to connect from client applications.
 
 ## Run Cloud Shell
 
@@ -65,9 +71,8 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
-
-    >**Tip**
-    > If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
+    
+    >**Note:** To Paste the Code right click inside the cloud Shell and then Click on Paste.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
@@ -111,15 +116,3 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 ## Learn more
 
 This simple app shows only some of the capabilities of the Anomaly Detector service. To learn more about what you can do with this service, see the [Anomaly Detector page](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
-
-## Clean-up
-
-It's a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money. 
-
-If you are continuing on to other AI Fundamentals modules you can keep your resources for use in other labs.
-
-If you have finished learning, you can delete the resource group or individual resources from your Azure subscription:
-
-1. In the [Azure portal](https://portal.azure.com/), in the **Resource groups** page, open the resource group you specified when creating your resource.
-
-2. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**. You can also choose to delete individual resources by selecting the resource(s), clicking on the three dots to see more options, and clicking **Delete**.
