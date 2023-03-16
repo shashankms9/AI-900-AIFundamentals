@@ -58,11 +58,11 @@ To test the capabilities of the Anomaly Detector service, we'll use a simple com
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/anomaly-detector/powershell-portal-guide-3.png)
+    ![How to find the left hand drop down menu to switch to PowerShell](media/powershell-portal-guide-3.png)
 
 1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
-    ![Wait for PowerShell to start.](media/anomaly-detector/powershell-prompt.png)
+    ![Wait for PowerShell to start.](media/powershell-prompt.png)
 
 ## Configure and run a client application
 
@@ -85,11 +85,11 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     Notice how this opens up an editor like the one in the image below: 
 
-    ![The code editor.](media/anomaly-detector/powershell-portal-guide-4.png)
+    ![The code editor.](media/powershell-portal-guide-4.png)
 
 1. In the **Files** pane on the left, expand **ai-900** and select **detect-anomalies.ps1**. This file contains some code that uses the Anomaly Detection service, as shown here:
 
-    ![The editor containing code to detect anomalies](media/anomaly-detector/detect-anomalies-code.png)
+    ![The editor containing code to detect anomalies](media/detect-anomalies-code.png)
 
 1. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Anomaly Detector resource. Copy these from the **Keys and Endpoints** page for your resource (which should still be in the top area of the browser) and paste them into the code editor, replacing the  **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
