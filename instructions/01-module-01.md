@@ -110,7 +110,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
       ![Picture1](media/Ai-900-mod1-img8.png)
       
       >**Note** 
-      > If you are able to see this options you can use Shortcut Keys **ctrl + S** to save and **ctrl + Q** to close editor.
+      > If you will be not able to found this options, you can use also Shortcut Keys **ctrl + S** to save and **ctrl + Q** to close editor.
       
     Remember, anomaly detection is an artificial intelligence technique used to determine whether values in a series are within expected parameters. The sample client application will use your Anomaly Detector service to analyze a file containing a series of date/times and numeric values. The application should return results indicating at each time point, whether the numeric value is within expected parameters.
 
