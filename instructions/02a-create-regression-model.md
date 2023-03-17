@@ -18,8 +18,8 @@ In this exercise, you will train a regression model that predicts the price of a
     > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Create or select a resource group*.
+    - **Subscription**: *Use exiting Azure subscription*.
+    - **Resource group**: *select exiting resource group*.
     - **Workspace name**: *Enter a unique name for your workspace*.
     - **Region**: *Select the closest geographical region*.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
