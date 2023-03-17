@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore regression with Azure Machine Learning Designer'
----
-
 # Explore regression with Azure Machine Learning Designer
 
 > **Note**
@@ -12,7 +7,15 @@ In this exercise, you will train a regression model that predicts the price of a
 
 ## Create an Azure Machine Learning workspace  
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
+
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username** provided in the **environment details page** odl_user_DID@cloudlabsai.com and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
+
+    >**Note**
+    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
@@ -29,9 +32,6 @@ In this exercise, you will train a regression model that predicts the price of a
 1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account).
 
 1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
-
-> **Note**
-> This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
 
 ## Create compute
 
@@ -59,7 +59,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 ## Create a pipeline in Designer 
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+** to create a new pipeline.
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
@@ -81,7 +81,7 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 1. Click on **Component**. Search for and place the **Automobile price data (Raw)** dataset onto the canvas.
 
-1. Right-click (Ctrl+click on a Mac) the **Automobile price data (Raw)** dataset on the canvas, and click on **Preview data**.
+1. click on the **Automobile price data (Raw)** dataset on the canvas, and click on **Use Data**.
 
 1. Review the *Dataset output* schema of the data, noting that you can see the distributions of the various columns as histograms.
 
@@ -405,18 +405,3 @@ Let's review what you have done. You cleaned and transformed a dataset of automo
 
 You also tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
 
-## Clean-up
-
-The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also stop the compute instance until you need it again.
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-auto-price** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
-
-1. On the **Compute** page, on the **Compute clusters** tab, select your compute cluster and then select **Delete**.
-
->**Note**
-> Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
->
-> To delete your workspace:
->
-> 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), in the **Resource groups** page, open the resource group you specified when creating your Azure Machine Learning workspace.
-> 1. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**.
