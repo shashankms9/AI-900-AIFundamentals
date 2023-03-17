@@ -35,7 +35,7 @@ lab:
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
-1. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
+1. On the **Compute** page, select the **Compute clusters** tab, Click on **+ New** and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
     - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
     - **Virtual machine tier**: Dedicated
     - **Virtual machine type**: CPU
@@ -47,7 +47,7 @@ lab:
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Clear
+    - **Enable SSH access**: leave as default
     - Select **Create**
 
 > **Note**
@@ -67,9 +67,9 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. In **Settings**, under **Draft Details**, change the draft name (**Pipeline-Created-on-*date***) to **Diabetes Training**.
 
-1. Select the close icon on the top right of the **Settings** pane to close the pane, then select **Save**.
+1. Select **Save**, then select close icon on the top right of the **Settings** pane to close the pane.
 
-    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/create-pipeline-help.png)
+    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/ai-900-settings.png)
 
 ## Create a dataset
 
@@ -79,11 +79,17 @@ To get started with Azure Machine Learning designer, first you must create a pip
     * **Data type**:
         * **Name**: diabetes-data
         * **Description**: Diabetes data
-        * **Dataset type**: Tabular
+        * **Type**: Tabular
+    * Click on **Next**.
+    
     * **Data source**: From Web Files
+    * Click on **Next**.
+    
     * **Web URL**:
         * **Web URL**: https://aka.ms/diabetes-data
         * **Skip data validation**: *do not select*
+    * Click on **Next**.
+    
     * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
@@ -91,9 +97,13 @@ To get started with Azure Machine Learning designer, first you must create a pip
         * **Column headers**: Only first file has headers
         * **Skip rows**: None
         * **Dataset contains multi-line data**: *do not select*
+    * Click on **Next**.
+    
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
+    * Click on **Next**.
+    
     * **Review**
         * Select **Create**
 
@@ -131,7 +141,7 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. Find the **Select Columns in Dataset** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
 
-1. Double click on the **Select Columns in Dataset** module to access a settings pane on the right. Select **Edit column**. Then in the **Select columns** window, select **By name** and **Add all** the columns. Then remove **PatientID** and click **Save**. 
+1. Double click on the **Select Columns in Dataset** module to access a settings pane on the right. Select **Edit column**. Then in the **Select columns** window, select **By name** and **Add all** the columns. Then remove **PatientID** and click **Save**, again click **Save**, Select the close icon on the top right of the Settings pane to close the pane. 
 
 1. Find the **Normalize Data** module and place it on the canvas, below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
 
@@ -146,7 +156,7 @@ Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsul
 ```
 ![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data.png)
 
-Click **Save** and close the selection box. 
+Click **Save**, then again Click on **Save** icon and close the selection box. 
 
 The data transformation is normalizing the numeric columns to put them on the same scale, which should help prevent columns with large values from dominating model training. You'd usually apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
 
@@ -161,6 +171,9 @@ To apply your data transformations, you need to run the pipeline as an experimen
     ![Screenshot of designer asset library with the completed job and job details button below.](media/create-classification-model/completed-job.png)
 
     Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**.
+
+>**Note**
+> if the the error occurs and stat that the data type is already in the collection, so submit the pipeline again and re-run it.
 
 ## View the transformed data
 
@@ -191,7 +204,7 @@ Follow the steps below, using the image above for reference as you add and confi
     >**Tip**
     > Use the search bar to quickly locate modules.
 
-1. Select the **Split Data** module, and configure its settings as follows:
+1. Double click on the **Split Data** module, and configure its settings as follows, click on **Save**, then select the close icon.:
     * **Splitting mode**: Split Rows
     * **Fraction of rows in the first output dataset**: 0.7
     * **Randomized split**: True
@@ -200,7 +213,7 @@ Follow the steps below, using the image above for reference as you add and confi
 
 1. In the **Asset library**, search for and place a **Train Model** module to the canvas, under the **Split Data** module. Then connect the *Results dataset1* (left) output of the **Split Data** module to the *Dataset* (right) input of the **Train Model** module.
 
-1. The model we're training will predict the **Diabetic** value, so select the **Train Model** module and modify its settings to set the **Label column** to **Diabetic**.
+1. The model we're training will predict the **Diabetic** value, so select the **Train Model** module and modify its settings to set the **Label column** to **Diabetic**, click on **Save**, then select the close icon..
 
     The **Diabetic** label the model will predict is a class (0 or 1), so we need to train the model using a *classification* algorithm. Specifically, there are two possible classes, so we need a *binary classification* algorithm.
 
@@ -391,19 +404,3 @@ After you've created and tested an inference pipeline for real-time inferencing,
     ![Screenshot of the Test pane.](media/create-classification-model/test-interface.png)
 
     You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
-
-## Clean-up
-
-The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage.
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-diabetes** endpoint. Then select **Delete** and confirm that you want to delete the endpoint.
-
-1. On the **Compute** page, on the **Compute clusters** tab, select your compute cluster and then select **Delete**.
-
->**Note**
-> Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
->
-> To delete your workspace:
->
-> 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), in the **Resource groups** page, open the resource group you specified when creating your Azure Machine Learning workspace.
-> 1. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**.
