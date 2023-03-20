@@ -10,7 +10,7 @@ In this exercise, you will train a regression model that predicts the price of a
 
 1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
 
-1. In the **Sign in** dialog box, copy and paste in the **Username** provided in the **environment details page** odl_user_DID@cloudlabsai.com and then select Next.
+1. In the **Sign in** dialog box, copy and paste in the **Username** odl_user_<inject key="DeploymentID" enableCopy="true"/>@cloudlabsai.com and then select Next.
 
 1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
 
@@ -18,20 +18,20 @@ In this exercise, you will train a regression model that predicts the price of a
     > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
-    - **Subscription**: *Use exiting Azure subscription*.
-    - **Resource group**: *select exiting resource group*.
-    - **Workspace name**: *Enter a unique name for your workspace*.
-    - **Region**: *Select the closest geographical region*.
-    - **Storage account**: *Note the default new storage account that will be created for your workspace*.
-    - **Key vault**: *Note the default new key vault that will be created for your workspace*.
-    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
-    - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
+    - **Subscription**: Use exiting Azure subscription.
+    - **Resource group**: Select **AI-900-Module-02a-<inject key="DeploymentID" enableCopy="false" />**..
+    - **Workspace name**: **Workspace-<inject key="DeploymentID" enableCopy="false" />.**
+    - **Region**: Use default region.
+    - **Storage account**: Note the default new storage account that will be created for your workspace.
+    - **Key vault**: Note the default new key vault that will be created for your workspace.
+    - **Application insights**: Note the default new application insights resource that will be created for your workspace.
+    - **Container registry**: None (one will be created automatically the first time you deploy a model to a container)
 
 1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes), and then go to the deployed resource.
 
 1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account).
 
-1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
+1. In Azure Machine Learning studio, you should see your newly created workspace **workspace-<inject key="DeploymentID" enableCopy="false" />**. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
 
 ## Create compute
 
@@ -45,7 +45,7 @@ In this exercise, you will train a regression model that predicts the price of a
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**: *enter a unique name*
+    - **Compute name**:
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
