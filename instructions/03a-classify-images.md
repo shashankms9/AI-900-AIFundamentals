@@ -104,7 +104,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
 
-    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and select **Create storage**. Then wait a minute or so for the storage to be created.
+    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group and enter a uniquename for the **Storage account** and **File share** , then click on **Create Stoarge**.
 
     When the cloud shell is ready, it should look similar to this:
     
