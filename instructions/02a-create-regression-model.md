@@ -69,7 +69,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 1. Select the *close* icon on the top right of the **Settings** pane to close the pane. 
 
-![Screenshot of the Machine Learning Studio Settings pane.](media/create-pipeline-help-2a.png)
+![Screenshot of the Machine Learning Studio Settings pane.](media/create-pipeline-help-2c.png)
 
 ## Add and explore a dataset
 
@@ -77,7 +77,7 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. There is a search bar to locate assets on the pane and two buttons, **Data** and **Component**.
 
-    ![Screenshot of location of designer asset library, search bar, and component icon.](media/designer-asset-library-components-2a.png)
+    ![Screenshot of location of designer asset library, search bar, and component icon.](media/designer-asset-library-components-2c.png)
 
 1. Click on **Component**. Search for and place the **Automobile price data (Raw)** dataset onto the canvas.
 
@@ -164,7 +164,7 @@ To apply your data transformations, you must run the pipeline.
 
 1. Wait for the run to finish, which might take 5 minutes or more.
 
-    ![Screenshot of designer asset library with the completed job and job details button below.](media/completed-job-2a.png)
+    ![Screenshot of designer asset library with the completed job and job details button below.](media/completed-job-2c.png)
 
     Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**. 
 
@@ -342,7 +342,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. In the new tab, select **Deploy**.
 
-    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/deploy-screenshot-2a.png)
+    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/deploy-2c.png)
 
 1. In the configuration screen, select **Deploy a new real-time endpoint**, using the following settings:
     -  **Name**: predict-auto-price
