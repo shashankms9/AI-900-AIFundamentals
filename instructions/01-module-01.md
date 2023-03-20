@@ -12,7 +12,7 @@ To test the capabilities of the Anomaly Detection service, we'll use a simple co
 > **Note**
 > The goal of this exercise is to get a general sense of how cognitive services are provisioned and used. Anomaly Detector is used as an example, but you are not expected to gain a comprehensive knowledge of anomaly detection in this exercise!
 
-## Create an *Anomaly Detector* resource
+## Create an Anomaly Detector resource
 
 Let's start by creating an **Anomaly Detector** resource in your Azure subscription:
 
@@ -52,9 +52,9 @@ To test the capabilities of the Anomaly Detector service, we'll use a simple com
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** **File share** , then click on **Create Storage**.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false" />** and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the **File share** , then click on **Create Storage**.
 
-    ![Create storage by clicking confirm.](media/cloudshellstorage.png)
+    ![Create storage by clicking confirm.](media/cloudshell-storage.png)
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
