@@ -243,7 +243,7 @@ One way to evaluate a regression model is to compare the predicted labels to the
 
 1. Wait for the experiment run to complete.
 
-    ![Screenshot of a complete experiment run.](media/completed-job-2a.png)
+    ![Screenshot of a complete experiment run.](media/completed-job-2c.png)
 
 1. When the experiment run has completed, select **Job detail**, which will open another tab. Find and right click on the **Evaluate Model** module. Select **Preview data** and then **Evaluation results**.
 
@@ -267,7 +267,7 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
-    ![Screenshot of location of create inference pipeline.](media/create-inference-pipeline-2a.png)
+    ![Screenshot of location of create inference pipeline.](media/create-inference-pipeline-2c.png)
 
 1. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Auto Price Training-real time inference** will be opened.
 
