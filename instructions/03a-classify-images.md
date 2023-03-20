@@ -50,7 +50,7 @@ To train an object detection model, you need to create a Custom Vision project b
     - **Classification Types**: Multiclass (Single tag per image)
     - **Domains**: General \[A2]
 
-   >**Note**: Under **Resource** dropdown if you don't find the resource that you created previously in the azure portal, kindly refresh the page. 
+   >**Note**: Under **Resource** dropdown if you don't find the resource that you created previously in the azure portal, kindly refresh the page and reperform the task. 
 
 1. Click **Add images**, and select all of the files in the **elephant** folder you extracted previously. Then upload the image files, specifying the tag *elephant*, like this:
 
