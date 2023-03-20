@@ -24,7 +24,7 @@ Create a **Cognitive Services** resource in your Azure subscription.
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
+    - **Resource group**: *AI-900-Module-03b-<inject key="DeploymentID" enableCopy="false"/>*
     - **Region**: East US
     - **Name**: *Enter a unique name*.
     - **Pricing tier**: Standard S0
