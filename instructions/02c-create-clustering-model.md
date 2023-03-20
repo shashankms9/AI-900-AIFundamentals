@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore clustering with Azure Machine Learning Designer'
----
-
 # Explore clustering with Azure Machine Learning Designer
 
 > **Note**
@@ -28,9 +23,6 @@ lab:
 
 1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
 
-> **Note**
-> This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
-
 ## Create compute
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
@@ -47,7 +39,7 @@ lab:
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Clear
+    - **Enable SSH access**: *do not select*
     - Select **Create**
 
 > **Note**
@@ -82,10 +74,13 @@ In Azure Machine Learning, data for model training and other operations is usual
         * **Name**: penguin-data
         * **Description**: Penguin data
         * **Dataset type**: Tabular
+    * **Select Next**
     * **Data source**: From Web Files
+    *  **Select Next**
     * **Web URL**:
         * **Web URL**: https://aka.ms/penguin-data
         * **Skip data validation**: *do not select*
+    * **Select Next**
     * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
@@ -93,9 +88,11 @@ In Azure Machine Learning, data for model training and other operations is usual
         * **Column headers**: Only first file has headers
         * **Skip rows**: None
         * **Dataset contains multi-line data**: *do not select*
+    * **Select Next**
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
+    * **Select Next**
     * **Review**
         * Select **Create**
 
@@ -117,6 +114,8 @@ Network](https://lternet.edu/).
     ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-clustering-model/designer-asset-library-data.png)
 
 1. Click on **Data**. Search for and place the **penguin-data** dataset onto the canvas.
+
+1. Click on **penguin-data** then click on **Use Data**
 
 1. Right-click (Ctrl+click on a Mac) the **penguin-data** dataset on the canvas, and click on **Preview data**.
 
@@ -368,6 +367,10 @@ Your inference pipeline assigns penguin observations to clusters based on their 
 
 1. To view the deployment status, expand the left pane by selecting the menu icon at the top left of the screen. View the **Endpoints** page (under **Assets**) and select **predict-penguin-clusters**. When the deployment has finished, the **Deployment state** will change to **Healthy**.
 
+  >**Note:** 
+  >It will take 15-20 mins
+ 
+
 ## Test the service
 
 1. On the **Endpoints** page, open the **predict-penguin-clusters** real-time endpoint, and select the **Test** tab.
@@ -400,19 +403,3 @@ Your inference pipeline assigns penguin observations to clusters based on their 
     ![Screenshot of the Test pane with sample test result.](media/create-clustering-model/test-interface.png)
 
 You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
-
-## Clean-up
-
-The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also stop the compute instance until you need it again.
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-penguin-clusters** endpoint. Then select **Delete** (&#128465;) and confirm that you want to delete the endpoint.
-
-1. On the **Compute** page, on the **Compute clusters** tab, select your compute cluster and then select **Delete**.
-
->**Note**
-> Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
->
-> To delete your workspace:
->
-> 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), in the **Resource groups** page, open the resource group you specified when creating your Azure Machine Learning workspace.
-> 1. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**.
