@@ -362,7 +362,7 @@ Your inference pipeline assigns penguin observations to clusters based on their 
 
 1. Select **Job detail** on the left hand pane. This will open up another tab.
 
-   ![Screenshot of job details next to the completed job.](media/completed-job-inference-2c.png)
+   ![Screenshot of job details next to the completed job.](media/completed-job-02c.png)
 
 1. In the new tab, select **Deploy**.
 
