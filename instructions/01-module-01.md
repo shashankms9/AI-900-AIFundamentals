@@ -20,7 +20,7 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
 
 1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
 
-1. In the **Sign in** dialog box, copy and paste in the **Username** provided in the **environment details page** odl_user_DID@cloudlabsai.com and then select Next.
+1. In the **Sign in** dialog box, copy and paste in the **Username** odl_user_<inject key="DeploymentID" enableCopy="false" />@cloudlabsai.com  provided in the **environment details page** odl_user_DID@cloudlabsai.com and then select Next.
 
 1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
 
@@ -28,14 +28,14 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
     > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
 
-1. Click the **&#65291;Create a resource** button, search for *Anomaly Detector*, and create an **Anomaly Detector** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select an existing resource group or create a new one*.
-    - **Region**: *Choose any available region*.
-    - **Name**: *Enter a unique name*.
+1. Click the **&#65291;Create a resource** button, search for Anomaly Detector, and create an **Anomaly Detector** resource with the following settings:
+    - **Subscription**: Use existing subscription.
+    - **Resource group**: Select **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Region**: Use default region.
+    - **Name**: enter **myanomalydetector-<inject key="DeploymentID" enableCopy="false" />**
     - **Pricing tier**: Free F0
 
-1. Review and create the resource. Wait for deployment to complete, and then go to the deployed resource.
+1. **Review and create the resource.** Wait for deployment to complete, and then go to the deployed resource.
 
 1. View the **Keys and Endpoint** page for your Anomaly Detector resource. 
    
