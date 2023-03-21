@@ -26,10 +26,10 @@ If you haven't already done so, create a **Language service** resource in your A
 
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings:
     - Select additional features: *Keep the default features and click Continue to create your resource*  
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: East US 2
-    - **Name**: *Enter a unique name*.
+    - **Subscription**: Use exsiting subscription*.
+    - **Resource group**: Select **AI-900-Module-04c-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Name**: enter **learnlanguage-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: S (1K Calls per minute)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice.**: Selected.
 
@@ -43,8 +43,8 @@ To implement natural language understanding with Conversational Language Underst
 
 1. If prompted to choose a Language resource, select the following settings:
     - **Azure directory**: The Azure directory containing your subscription.
-    - **Azure subscription**: Your Azure subscription.
-    - **Language resource**: The Language resource you created previously.
+    - **Azure subscription**: Select exsiting subscription.
+    - **Language resource**: **learnlanguage-<inject key="DeploymentID" enableCopy="false"/>**.
 
     >**Tip**
     >If you are ***not*** prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
@@ -56,10 +56,10 @@ To implement natural language understanding with Conversational Language Underst
 1. At the top of the portal, in the **Create new** menu, select **Conversational language understanding**.
 
 1. In the **Create a project** dialog box, on the **Enter basic information** page, enter the following details and click **Next**:
-    - **Name**: *Create a unique name*
+    - **Name**: enter **ai900project**
     - **Description**: Simple home automation
     - **Utterances primary language**: English
-    - **Enable multiple languages in project**: *Do not select*
+    - **Enable multiple languages in project**: Do not select
 
     ![Enter details for the project.](media/conversational-language-understanding/create-project.png)
 
@@ -70,30 +70,30 @@ To implement natural language understanding with Conversational Language Underst
 
 ### Create intents, utterances, and entities
 
-An *intent* is an action you want to perform - for example, you might want to switch on a light, or turn off a fan. In this case, you'll define two intents: one to switch on a device, and another to switch off a device. For each intent, you'll specify sample *utterances* that indicate the kind of language used to indicate the intent.
+An **intent** is an action you want to perform - for example, you might want to switch on a light, or turn off a fan. In this case, you'll define two intents: one to switch on a device, and another to switch off a device. For each intent, you'll specify sample *utterances* that indicate the kind of language used to indicate the intent.
 
 1. In the **Schema definition** pane, ensure that **Intents** is selected Then click **Add**, and add an intent with the name **switch_on** (in lower-case) and click **Add intent**.
 
     ![Click on add under Intents on the Build Schema pane.](media/conversational-language-understanding/build-schema.png)
     ![Add the switch_on intent then select Add intent.](media/conversational-language-understanding/add-intent.png)
 
-1. Select the **switch_on** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_on**. Next to the **switch_on** intent, type the utterance ***turn the light on*** and press **Enter** to submit this utterance to the list.
+1. Select the **switch_on** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_on**. Next to the **switch_on** intent, type the utterance **turn the light on** and press **Enter** to submit this utterance to the list.
 
     ![Add an utterance to the training set by typing in "turn the light on" under Utterance.](media/conversational-language-understanding/add-utterance-on.png)
 
 1. The language service needs at least five different utterance examples for each intent to sufficiently train the language model. Add five more utterance examples for the **switch_on** intent:  
-    - ***switch on the fan***
-    - ***put the fan on***
-    - ***put the light on***
-    - ***switch on the light***
-    - ***turn the fan on***
+    - **switch on the fan**
+    - **put the fan on**
+    - **put the light on**
+    - **switch on the light**
+    - **turn the fan on**
 
 1. On the **Labeling entities for training** pane on the right-hand side of the screen, select **Labels**, then select **Add entity**. Type **device** (in lower-case), select **List** and select **Add entity**.
 
     ![Add an entity by selecting Tags on the Tagging entities for training panel, then select Add entity.](media/conversational-language-understanding/add-entity.png) 
     ![Type in device under Entity name and select List, then select Add entity.](media/conversational-language-understanding/add-entity-device.png)
 
-1. In the ***turn the fan on*** utterance, highlight the word "fan". Then in the list that appears, in the *Search for an entity* box select **device**.
+1. In the **turn the fan on** utterance, highlight the word "fan". Then in the list that appears, in the *Search for an entity* box select **device**.
 
     ![Highlight the word fan in the utterance and select device.](media/conversational-language-understanding/switch-on-entity.png)
 
@@ -117,11 +117,11 @@ An *intent* is an action you want to perform - for example, you might want to sw
 1. Click on the **switch_off** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_off**. Next to the **switch_off** intent, add the utterance ***turn the light off***.
 
 1. Add five more utterance examples to the **switch_off** intent.
-    - ***switch off the fan***
-    - ***put the fan off***
-    - ***put the light off***
-    - ***turn off the light***
-    - ***switch the fan off***
+    - **switch off the fan**
+    - **put the fan off**
+    - **put the light off**
+    - **turn off the light**
+    - **switch the fan off**
 
 1. Label the words *light* or *fan* with the **device** entity. When you're finished, verify that you have the following utterances and make sure to select **Save changes**:  
 
@@ -141,7 +141,7 @@ Now you're ready to use the intents and entities you have defined to train the c
 1. On the left hand side of Language Studio, select **Training jobs**, then select **Start a training job**. Use the following settings: 
     - **Train a new model**: *Selected and choose a model name*
     - **Training mode**: Standard training (free)
-    - **Data Splitting**: *select Automatically split the testing set from the training data, keep default percentages*
+    - **Data Splitting**: select Automatically split the testing set from the training data, keep default percentages
     - Click **Train** at the bottom of the page.
 
 1. Wait for training to complete. 
@@ -153,8 +153,8 @@ To use your trained model in a client application, you must deploy it as an endp
 1. On the left-hand side of Language Studio, click **Deploying a model**.
 
 1. Select your model name and click **Add deployment**. Use these settings:
-    - **Create or select an existing deployment name**: *Select create a new deployment name. Add a unique name*.
-    - **Assign trained model to your deployment name**: *Select the name of the trained model*.
+    - **Create or select an existing deployment name**: Select create a new deployment name. Add a unique name.
+    - **Assign trained model to your deployment name**: Select the name of the trained model.
     - Click **Deploy**
 
     >**Tip**
@@ -191,7 +191,7 @@ Now let's try out your deployed model. To do so, we'll use a command-line applic
 
     ![Create storage by clicking confirm.](media/conversational-language-understanding/powershell-portal-guide-2.png)
 
-1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
+1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to **PowerShell**. If it is **Bash**, switch to *PowerShell* by using the drop-down menu.
 
     ![How to find the left hand drop down menu to switch to PowerShell](media/conversational-language-understanding/powershell-portal-guide-3.png) 
 
@@ -231,7 +231,7 @@ Now let's open and edit a pre-written script, which will run the client applicat
 
 1. Switch back to the browser tab containing **Language Studio**. Then in Language Studio, open the **Deploying a model** page and select your model. Then click the **Get prediction URL** button. The two pieces of information you need are in this dialog box:
     - The endpoint for your model - you can copy the endpoint from the **Prediction URL** box.
-    - The key for your model - the key is in the **Sample request** as the value for the **Ocp-Apim-Subscription-Key** parameter, and looks similar to ***0ab1c23de4f56gh7i8901234jkl567m8***.
+    - The key for your model - the key is in the **Sample request** as the value for the **Ocp-Apim-Subscription-Key** parameter, and looks similar to **0ab1c23de4f56gh7i8901234jkl567m8**.
 
 1. Copy the endpoint value, then switch back to the browser tab containing the Cloud Shell and paste it into the code editor, replacing **YOUR_ENDPOINT** (within the quotation marks). The repeat that process for the key, replacing **YOUR_KEY**.
 
