@@ -104,7 +104,7 @@ Now that you have a custom model, you can run a simple client application that u
 
     Use the video player below to hear the input audio the application will process:
 
-    <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWORN0" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
+     <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWORN0" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
 
 
     > **Note**
