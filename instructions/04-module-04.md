@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore text analytics'
----
-
 # Explore text analytics
 
 > **Note**
