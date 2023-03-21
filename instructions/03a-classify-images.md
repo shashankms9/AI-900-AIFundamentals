@@ -25,7 +25,7 @@ Create a **Cognitive Services** resource in your Azure subscription.
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/>*
     - **Region**: East US
-    - **Name**: *Enter a unique name*
+    - **Name**: *enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -104,7 +104,9 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
 
-    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group and enter a uniquename for the **Storage account** and **File share** , then click on **Create Storage**.
+    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the  **File share** , then click on **Create Storage**.
+    
+    ![Screenshot of the cloud shell in the Azure portal.](media/stoarge-up.png)
 
     When the cloud shell is ready, it should look similar to this:
     
