@@ -91,13 +91,13 @@ Now that you have a custom model, you can run a simple client application that u
     $endpoint="https..."
     ```
 
-1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**. Now that you've set up the key and endpoint, you can use your resource to analyze fields from a receipt. In this case, you'll use the Form Recognizer's built-in model to analyze a receipt for the fictional Northwind Traders retail company.
+1.  After making the changes to the variables in the code, press **CTRL+S** to save the file. Then press **CTRL+Q** to close the code editor. Now that you've set up the key and endpoint, you can use your resource to analyze fields from a receipt. In this case, you'll use the Form Recognizer's built-in model to analyze a receipt for the fictional Northwind Traders retail company.
 
     The sample client application will analyze the following image:
 
     ![This is an image of a receipt.](media/analyze-receipts/receipt.jpg)
 
-1. In the PowerShell pane, enter the following commands to run the code to read the text:
+    In the PowerShell pane, enter the following commands to run the code to read the text:
 
     ```PowerShell
     cd ai-900
