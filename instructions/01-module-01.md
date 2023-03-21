@@ -31,7 +31,7 @@ Let's start by creating an **Anomaly Detector** resource in your Azure subscript
 1. Click the **&#65291;Create a resource** button, search for Anomaly Detector, and create an **Anomaly Detector** resource with the following settings:
     - **Subscription**: Use existing subscription.
     - **Resource group**: Select **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Region**: Use default region.
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Name**: enter **myanomalydetector-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: Free F0
 
