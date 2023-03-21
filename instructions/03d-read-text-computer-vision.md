@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore optical character recognition​'
----
-
 # Explore optical character recognition
 
 > **Note**
@@ -30,7 +25,7 @@ If you haven't already done so, create a **Cognitive Services** resource in your
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Select or create a resource group with a unique name*.
     - **Region**: *Choose any available region*.
-    - **Name**: *Enter a unique name*.
+    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -48,9 +43,9 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-03d-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** For the **File share name**, then click on **Create Storage**.
 
-    ![Create storage by clicking confirm.](media/read-text-computer-vision/powershell-portal-guide-2.png)
+    ![Create storage by clicking confirm.](media/read-text-computer-vision/create-a-storage.png)
 
 1. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
