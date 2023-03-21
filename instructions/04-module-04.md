@@ -28,7 +28,7 @@ You can use the Language service by creating either a **Language** resource or a
 
 1. Select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: Use existing subscription.
-    - **Resource group**: Select **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Resource group**: Select **AI-900-Module-04-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Name**: enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
