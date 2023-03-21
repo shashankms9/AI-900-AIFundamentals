@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore form recognition​'
----
-
 # Explore form recognition
 
 > **Note**
@@ -26,9 +21,9 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
+    - **Resource group**: *AI-900-Module-03e-<inject key="DeploymentID" enableCopy="false"/>*.
     - **Region**: *Choose any available region*.
-    - **Name**: *Enter a unique name*.
+    - **Name**: *enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***.
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -46,9 +41,9 @@ To test the capabilities of the Form Recognizer service, we'll use a simple comm
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
-
-    ![Create storage by clicking confirm.](media/analyze-receipts/powershell-portal-guide-2.png)
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03e-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the  **File share** , then click on **Create Storage**.
+    
+    ![Screenshot of the cloud shell in the Azure portal.](media/stoarge-up.png)
 
 1. Make sure the the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
