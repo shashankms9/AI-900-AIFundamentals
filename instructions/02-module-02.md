@@ -12,7 +12,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *Create or select a resource group*.
-    - **Workspace name**: *Enter a unique name for your workspace*.
+    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="true"/>**
     - **Region**: *Select the closest geographical region*.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
     - **Key vault**: *Note the default new key vault that will be created for your workspace*.
