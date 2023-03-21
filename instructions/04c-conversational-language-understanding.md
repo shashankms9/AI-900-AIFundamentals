@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore language understanding'
----
-
 # Explore language understanding
 
 > **Note**
@@ -18,7 +13,16 @@ You can use the Conversational Language Understanding service by creating a **La
 
 If you haven't already done so, create a **Language service** resource in your Azure subscription.
 
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
+1. In the lab virtual machine, Start the Microsoft Edge browser.
+
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username** odl_user_<inject key="DeploymentID" enableCopy="true"/>@cloudlabsai.com and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
+
+  >**Note**
+  > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select  the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings:
     - Select additional features: *Keep the default features and click Continue to create your resource*  
