@@ -1,1 +1,16 @@
-
+[
+  {
+    "Name": "AI-900-AIFundamentals",
+    "Language": "English",
+    "Files": [
+	    {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-900-AIFundamentals/stage/instructions/0-GettingStarted.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-900-AIFundamentals/stage/instructions/03a-classify-images.md",
+        "Order": 2
+      }
+    ]
+  }
+]
