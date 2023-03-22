@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore knowledge mining'
----
-
 # Explore knowledge mining
 
 > **Note**
