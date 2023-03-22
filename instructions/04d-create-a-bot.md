@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore question answering'
----
-
 # Explore question answering
 
 > **Note**
@@ -21,19 +16,12 @@ The Language service's custom question answering feature enables you to quickly 
     - **Default features**: *Keep the default features*.
     - **Custom features**: *Select custom question answering*.
 
-    ![Creating a Language Service resource with custom question answering enabled.](media/create-a-bot/create-language-service-resource.png)
-
 1. On the **Create Language** page, specify the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select an existing resource group or create a new one*.
-    - **Name**: *A unique name for your Language resource*.
+    - **Resource group**: Select **AI-900-Module-02a-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Name**: enter learnlanguage-
     - **Pricing tier**: S (1K Calls per minute)
-    - **Azure search region**: *Any available location*.
-    - **Azure search pricing tier**: Free F (3 Indexes) - (*If this tier is not available, select Standard S (50 Indexes)*)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice**: *Selected*.
-
-    > **Note**
-    > If you have already provisioned a free-tier **Azure Cognitive Search** resources, your quota may not allow you to create another one. In which case, select a tier other than **Free F**.
 
 1. Click **Review and Create** and then click **Create**. Wait for the deployment of the Language service that will support your custom question answering knowledge base.
 
@@ -49,6 +37,18 @@ The Language service's custom question answering feature enables you to quickly 
     2. On the **Settings** page, view the **Resources** tab.
     3. Select the language resource you just created, and click **Switch resource**.
     4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
+
+1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
+
+1 If On the **Select the project you want to work with** page is empty then click on **Create new project**
+
+1. On **Connect to Azure search** page click on **Connect to Azure search.**
+
+1. On **Azure Search** page  select drop down of select Azure Search resources and click on **Add Azure Search resources** 
+
+1. On **Creat Azure Search** page enter **Azure Search Service Name** enter the laungae service you have created earlier you have created **Azure search region:** east us2. **Azure search pricing tier:** Free F (3 Indexes) - (If this tier is not available, select Standard S (50 Indexes)) and click on **Create**.
+
+4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
 
 1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
 
