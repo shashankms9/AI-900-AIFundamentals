@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore clustering with Azure Machine Learning Designer'
----
-
 # Explore clustering with Azure Machine Learning Designer
 
 > **Note**
@@ -10,26 +5,33 @@ lab:
 
 ## Create an Azure Machine Learning workspace  
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
+1. In the lab virtual machine, Start the Microsoft Edge browser.
 
-1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Create or select a resource group*.
-    - **Workspace name**: *Enter a unique name for your workspace*.
-    - **Region**: *Select the closest geographical region*.
-    - **Storage account**: *Note the default new storage account that will be created for your workspace*.
-    - **Key vault**: *Note the default new key vault that will be created for your workspace*.
-    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
-    - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username : odl_user_<inject key="DeploymentID" enableCopy="true" />@cloudlabsai.com** and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password** provided in the **environment details page** and then select **Sign in**.
+
+    >**Note**
+    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
+
+1. Select **+ Create a resource**, search for Machine Learning, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+    - **Subscription**: Use existing Azure subscription.
+    - **Resource group**: Select **AI-900-Module-02c-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Workspace name**: Give name **Workspace-<inject key="DeploymentID" enableCopy="false" />.**
+    - **Region**: Use default region.
+    - **Storage account**: Note the default new storage account that will be created for your workspace.
+    - **Key vault**: Note the default new key vault that will be created for your workspace.
+    - **Application insights**: Note the default new application insights resource that will be created for your workspace.
+    - **Container registry**: None (one will be created automatically the first time you deploy a model to a container)
 
 1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes), and then go to the deployed resource.
 
 1. Select **Launch studio** (or open a new browser tab and navigate to [https://ml.azure.com](https://ml.azure.com?azure-portal=true), and sign into Azure Machine Learning studio using your Microsoft account).
 
-1. In Azure Machine Learning studio, you should see your newly created workspace. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
-
-> **Note**
-> This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Microsoft Azure AI Fundamentals: Explore visual tools for machine learning](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, you may consider creating the workspace once and reusing it in other modules. Your Azure subscription will be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription, so we recommend you delete the Azure Machine Learning workspace when it is no longer required.
+1. In Azure Machine Learning studio, you should see your newly created workspace **workspace-<inject key="DeploymentID" enableCopy="false" />**. If that is not the case, select your Azure directory in the left-hand menu. Then from the new left-hand menu select **Workspaces**, where all the workspaces associated to your directory are listed, and select the one you created for this exercise.
 
 ## Create compute
 
@@ -47,7 +49,7 @@ lab:
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
-    - **Enable SSH access**: Clear
+    - **Enable SSH access**: *do not select*
     - Select **Create**
 
 > **Note**
@@ -69,7 +71,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Select the *close icon* on the top right of the **Settings** pane to close the pane, and then select **Save**.
 
-    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-clustering-model/create-pipeline-help.png)
+    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-pipeline-help-2c.png)
 
 ## Create a dataset
 
@@ -82,10 +84,13 @@ In Azure Machine Learning, data for model training and other operations is usual
         * **Name**: penguin-data
         * **Description**: Penguin data
         * **Dataset type**: Tabular
+    * **Select Next**
     * **Data source**: From Web Files
+    *  **Select Next**
     * **Web URL**:
         * **Web URL**: https://aka.ms/penguin-data
         * **Skip data validation**: *do not select*
+    * **Select Next**
     * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
@@ -93,9 +98,11 @@ In Azure Machine Learning, data for model training and other operations is usual
         * **Column headers**: Only first file has headers
         * **Skip rows**: None
         * **Dataset contains multi-line data**: *do not select*
+    * **Select Next**
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
+    * **Select Next**
     * **Review**
         * Select **Create**
 
@@ -114,15 +121,17 @@ Network](https://lternet.edu/).
 
 1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Component**.
 
-    ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-clustering-model/designer-asset-library-data.png)
+    ![Screenshot of location of designer asset library, search bar, and data icon.](media/designer-asset-library-data-2c.png)
 
 1. Click on **Data**. Search for and place the **penguin-data** dataset onto the canvas.
+
+1. Click on **penguin-data** then click on **Use Data**
 
 1. Right-click (Ctrl+click on a Mac) the **penguin-data** dataset on the canvas, and click on **Preview data**.
 
 1. Review the *Profile* schema of the data, noting that you can see the distributions of the various columns as histograms. Then select the **CulmenLength** column. The dataset should look similar to this:
 
-    ![A visualization of the penguin-data dataset, showing its columns and some sample data.](media/create-clustering-model/penguin-visualization.png)
+    ![A visualization of the penguin-data dataset, showing its columns and some sample data.](media/penguin-visualization-2c.png)
 
 1. Note the following characteristics of the dataset:
 
@@ -141,25 +150,25 @@ Network](https://lternet.edu/).
 
 1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
 
-    ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-clustering-model/designer-asset-library-components.png)
+    ![Screenshot of location of designer asset library, search bar, and components icon.](media/designer-asset-library-components-2c.png)
 
 1. To cluster the penguin observations, we're going to use only the measurements - we'll ignore the species column. So, search for a **Select Columns in Dataset** module and place it on the canvas, below the **penguin-data** module and connect the output at the bottom of the **penguin-data** module to the input at the top of the **Select Columns in Dataset** module, like this:
 
-    ![Screenshot of the penguin-data dataset connected to the Select Columns in Dataset module.](media/create-clustering-model/dataset-select-columns.png)
+    ![Screenshot of the penguin-data dataset connected to the Select Columns in Dataset module.](media/dataset-select-columns-2c.png)
 
 1. Double click on the **Select Columns in Dataset** module, and in the pane on the right, select **Edit column**. Then in the **Select columns** window, select **By name** and use the **+** links to select the column names **CulmenLength**, **CulmenDepth**, **FlipperLength**, and **BodyMass**; like this:
 
-    ![Screenshot of how to include the column names CulmenLength, CulmenDepth, FlipperLength, and BodyMass.](media/create-clustering-model/select-columns.png)
+    ![Screenshot of how to include the column names CulmenLength, CulmenDepth, FlipperLength, and BodyMass.](media/select-columns-2c.png)
 
 1. Close the **Select Columns in a Dataset** module settings to return to the designer canvas.
 
 1. In the **Asset library**, search for a **Clean Missing Data** module and place it onto the canvas, below the **Select columns in a dataset** module and connect them like this:
 
-    ![Screenshot of how to connect the Select Columns in Dataset module to the Clean Missing Data module.](media/create-clustering-model/clean-missing-data.png)
+    ![Screenshot of how to connect the Select Columns in Dataset module to the Clean Missing Data module.](media/clean-missing-data-2c.png)
 
 1. Double click the **Clean Missing Data** module, and in the settings pane on the right, click **Edit column**. Then in the **Columns to be cleaned** window, select **With rules** and include **All columns**; like this:
 
-    ![Screenshot of how to use the with rules option to select all columns.](media/create-clustering-model/normalize-columns.png)
+    ![Screenshot of how to use the with rules option to select all columns.](media/normalize-columns-2c.png)
 
 1. With the **Clean Missing Data** module still selected, in the settings pane, set the following configuration settings:
     - **Minimum missing value ratio**: 0.0
@@ -168,11 +177,11 @@ Network](https://lternet.edu/).
 
 1. In the **Asset library**, search for a **Normalize Data** module and place it to the canvas, below the **Clean Missing Data** module. Then connect the left-most output from the **Clean Missing Data** module to the input of the **Normalize Data** module.
 
-    ![Screenshot of the Clean Missing Data module connected to the Normalize Data module.](media/create-clustering-model/dataset-normalize.png)
+    ![Screenshot of the Clean Missing Data module connected to the Normalize Data module.](media/dataset-normalize-2c.png)
 
 1. Double click the **Normalize Data** module, and in the pane on the right, set the **Transformation method** to **MinMax** and select **Edit column**. Then in the **Columns to transform** window, select **With rules** and include **All columns**; like this:
 
-    ![Screenshot of how to select all columns.](media/create-clustering-model/normalize-columns.png)
+    ![Screenshot of how to select all columns.](media/normalize-columns-2c.png)
 
 1. Close the **Normalize Data** module settings to return to the designer canvas.
 
@@ -184,7 +193,7 @@ To apply your data transformations, you need to run the pipeline as an experimen
 
 1. Wait for the run to finish. This may take 5 minutes or more.
 
-    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-clustering-model/completed-job.png)
+    ![Screenshot of designer asset library with the completed job and job details button below.](media/completed-job-2c.png)
 
     Notice that the left hand panel is now on the **Submitted jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**.
 
@@ -192,7 +201,7 @@ To apply your data transformations, you need to run the pipeline as an experimen
 
 1. When the run has completed, the dataset is now prepared for model training. Click on **Job detail**. You will be taken to another tab which will show the modules like this:
 
-    ![Screenshot of the modules in a completed state with green bar on the left of each module.](media/create-clustering-model/normalize-complete.png)
+    ![Screenshot of the modules in a completed state with green bar on the left of each module.](media/normalize-complete-2a.png)
 
 1. In the new tab, right click on the **Normalize Data** module, select **Preview data**, then select **Transformed dataset** to view the results.
 
@@ -208,7 +217,7 @@ After you've used data transformations to prepare the data, you can use it to tr
 
 Work through the following steps to extend the **Train Penguin Clustering** pipeline as shown here:
 
-![Screenshot of the K-Means Clustering algorithm component and the Assign Data to Modules component.](media/create-clustering-model/k-means.png)
+![Screenshot of the K-Means Clustering algorithm component and the Assign Data to Modules component.](media/k-means-2c.png)
 
 Follow the steps below, using the image above for reference as you add and configure the required modules.
 
@@ -230,7 +239,7 @@ Follow the steps below, using the image above for reference as you add and confi
 
 1. The clustering model should assign clusters to the data items by using all of the features you selected from the original dataset. Double click the **Train Clustering Model** module and in the right hand pane, select **Edit column**. Use the **With rules** option to include all columns; like this:
 
-    ![Screenshot of how to include all columns in the column set.](media/create-clustering-model/cluster-features.png)
+    ![Screenshot of how to include all columns in the column set.](media/cluster-features-2c.png)
 
 1. The model we're training will use the features to group the data into clusters, so we need to train the model using a *clustering* algorithm. In the **Asset library**, search for and place a **K-Means Clustering** module to the canvas, to the left of the **penguin-data** dataset and above the **Train Clustering Model** module. Then connect its output to the **Untrained model** (left) input of the **Train Clustering Model** module.
 
@@ -254,7 +263,7 @@ Now you're ready to run the training pipeline and train the model.
 
 1. Ensure your pipeline looks like this:
 
-    ![Screenshot of a complete training pipeline starting with penguin data and ending with the assign data to clusters component.](media/create-clustering-model/k-means.png)
+    ![Screenshot of a complete training pipeline starting with penguin data and ending with the assign data to clusters component.](media/k-means-2c.png)
 
 1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-penguin-training** on your compute cluster.
 
@@ -278,7 +287,7 @@ Evaluating a clustering model is made difficult by the fact that there are no pr
 
 1. Ensure your pipeline looks like this:
 
-    ![Screenshot of how to add the Evaluate Model module to the Assign Data to Clusters module.](media/create-clustering-model/evaluate-cluster.png)
+    ![Screenshot of how to add the Evaluate Model module to the Assign Data to Clusters module.](media/evaluate-cluster-2c.png)
 
 1. Select **Submit**, and run the pipeline using the existing **mslearn-penguin-training** experiment.
 
@@ -302,7 +311,7 @@ After creating and running a pipeline to train the clustering model, you can cre
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the **...** icon on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
-    ![Screenshot of location of create inference pipeline.](media/create-clustering-model/create-inference-pipeline.png) 
+    ![Screenshot of location of create inference pipeline.](media/create-inference-pipeline-2c.png) 
 
 1. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Train Penguin Clustering-real time inference** will be opened.
 
@@ -310,7 +319,7 @@ After creating and running a pipeline to train the clustering model, you can cre
 
     You're going to make the following changes to the inference pipeline:
 
-    ![Screenshot changes made to the pipeline including which components to add and remove marked in red.](media/create-clustering-model/inference-changes.png)
+    ![Screenshot changes made to the pipeline including which components to add and remove marked in red.](media/inference-changes-2c.png)
 
     - Add a **web service input** component for new data to be submitted.
     - Replace the **penguin-data** dataset with an **Enter Data Manually** module that doesn't include the **Species** column.
@@ -336,7 +345,7 @@ After creating and running a pipeline to train the clustering model, you can cre
 
 1. Verify that your pipeline looks similar to the following image:
 
-    ![Screenshot of the complete inference pipeline for clustering.](media/create-clustering-model/inference-clusters.png)
+    ![Screenshot of the complete inference pipeline for clustering.](media/inference-clusters-2c.png)
 
 1. Submit the pipeline as a new experiment named **mslearn-penguin-inference** on your compute cluster. The experiment may take a while to run.
 
@@ -353,11 +362,11 @@ Your inference pipeline assigns penguin observations to clusters based on their 
 
 1. Select **Job detail** on the left hand pane. This will open up another tab.
 
-    ![Screenshot of job details next to the completed job. ](media/create-clustering-model/completed-job-inference.png)
+   ![Screenshot of job details next to the completed job](media/completed-job-2c.png)
 
 1. In the new tab, select **Deploy**.
 
-    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-clustering-model/deploy-screenshot.png)
+   ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/deploy-2c.png)
 
 1. Deploy a new real-time endpoint, using the following settings:
     -  **Name**: predict-penguin-clusters
@@ -368,11 +377,15 @@ Your inference pipeline assigns penguin observations to clusters based on their 
 
 1. To view the deployment status, expand the left pane by selecting the menu icon at the top left of the screen. View the **Endpoints** page (under **Assets**) and select **predict-penguin-clusters**. When the deployment has finished, the **Deployment state** will change to **Healthy**.
 
+  >**Note:** 
+  >It will take 15-20 mins
+ 
+
 ## Test the service
 
 1. On the **Endpoints** page, open the **predict-penguin-clusters** real-time endpoint, and select the **Test** tab.
 
-    ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-clustering-model/endpoints-screenshot.png)
+    ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/endpoints-screenshot-2c.png)
 
 1. We will use it to test our model with new data. Delete the current data under **Input data to test real-time endpoint**. Copy and paste the below data into the data section: 
 
@@ -397,22 +410,6 @@ Your inference pipeline assigns penguin observations to clusters based on their 
 
 1. Select **Test**. On the right hand of the screen, you should see the output **'Assignments'**. Notice how the assigned cluster is the one with the shortest distance to cluster center.
 
-    ![Screenshot of the Test pane with sample test result.](media/create-clustering-model/test-interface.png)
+    ![Screenshot of the Test pane with sample test result.](media/test-interface-2c.png)
 
 You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
-
-## Clean-up
-
-The web service you created is hosted in an *Azure Container Instance*. If you don't intend to experiment with it further, you should delete the endpoint to avoid accruing unnecessary Azure usage. You should also stop the compute instance until you need it again.
-
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), on the **Endpoints** tab, select the **predict-penguin-clusters** endpoint. Then select **Delete** (&#128465;) and confirm that you want to delete the endpoint.
-
-1. On the **Compute** page, on the **Compute clusters** tab, select your compute cluster and then select **Delete**.
-
->**Note**
-> Stopping your compute ensures your subscription won't be charged for compute resources. You will however be charged a small amount for data storage as long as the Azure Machine Learning workspace exists in your subscription. If you have finished exploring Azure Machine Learning, you can delete the Azure Machine Learning workspace and associated resources. However, if you plan to complete any other labs in this series, you will need to recreate it.
->
-> To delete your workspace:
->
-> 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), in the **Resource groups** page, open the resource group you specified when creating your Azure Machine Learning workspace.
-> 1. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**.

@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore Cognitive Services'
----
-
 # Explore Cognitive Services
 
 > **Note**
@@ -17,22 +12,35 @@ To test the capabilities of the Anomaly Detection service, we'll use a simple co
 > **Note**
 > The goal of this exercise is to get a general sense of how cognitive services are provisioned and used. Anomaly Detector is used as an example, but you are not expected to gain a comprehensive knowledge of anomaly detection in this exercise!
 
-## Create an *Anomaly Detector* resource
+## Create an Anomaly Detector resource
 
 Let's start by creating an **Anomaly Detector** resource in your Azure subscription:
 
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
+1. In the lab virtual machine, Start the Microsoft Edge browser.
 
-1. Click the **&#65291;Create a resource** button, search for *Anomaly Detector*, and create an **Anomaly Detector** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select an existing resource group or create a new one*.
-    - **Region**: *Choose any available region*.
-    - **Name**: *Enter a unique name*.
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username** odl_user_<inject key="DeploymentID" enableCopy="true"/>@cloudlabsai.com and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
+
+    >**Note**
+    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
+
+1. Click the **&#65291;Create a resource** button, search for Anomaly Detector, and create an **Anomaly Detector** resource with the following settings:
+    - **Subscription**: Use existing subscription.
+    - **Resource group**: Select **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Name**: enter **myanomalydetector-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: Free F0
 
-1. Review and create the resource. Wait for deployment to complete, and then go to the deployed resource.
+1. **Review and create the resource.** Wait for deployment to complete, and then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Anomaly Detector resource. You will need the endpoint and keys to connect from client applications.
+1. View the **Keys and Endpoint** page for your Anomaly Detector resource. 
+   
+      >**Note** 
+      >You will need the endpoint and keys to connect from client applications.
 
 ## Run Cloud Shell
 
@@ -40,21 +48,21 @@ To test the capabilities of the Anomaly Detector service, we'll use a simple com
 
 1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal.
 
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/anomaly-detector/powershell-portal-guide-1.png)
+    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/powershell-portal-guide-1.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account Name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the **File share Name** , then click on **Create Storage**.
 
-    ![Create storage by clicking confirm.](media/anomaly-detector/powershell-portal-guide-2.png)
+    ![Create storage by clicking confirm.](media/cloudshell-storage.png)
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/anomaly-detector/powershell-portal-guide-3.png)
+    ![How to find the left hand drop down menu to switch to PowerShell](media/powershell-portal-guide-3.png)
 
 1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
-    ![Wait for PowerShell to start.](media/anomaly-detector/powershell-prompt.png)
+    ![Wait for PowerShell to start.](media/powershell-prompt.png)
 
 ## Configure and run a client application
 
@@ -65,9 +73,9 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
-
-    >**Tip**
-    > If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
+    
+    >**Note** 
+    >To Paste the Code right click inside the cloud Shell and then Click on Paste.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
@@ -77,16 +85,18 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     Notice how this opens up an editor like the one in the image below: 
 
-    ![The code editor.](media/anomaly-detector/powershell-portal-guide-4.png)
+    ![The code editor.](media/powershell-portal-guide-4.png)
 
 1. In the **Files** pane on the left, expand **ai-900** and select **detect-anomalies.ps1**. This file contains some code that uses the Anomaly Detection service, as shown here:
 
-    ![The editor containing code to detect anomalies](media/anomaly-detector/detect-anomalies-code.png)
+    ![The editor containing code to detect anomalies](media/detect-anomalies-code.png)
 
 1. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Anomaly Detector resource. Copy these from the **Keys and Endpoints** page for your resource (which should still be in the top area of the browser) and paste them into the code editor, replacing the  **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
+    
+    ![Picture1](media/Ai-900-mod1-img7.png)
 
     After pasting the key and endpoint values, the first two lines of code should look similar to this:
 
@@ -97,6 +107,11 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
 1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
 
+      ![Picture1](media/Ai-900-mod1-img8.png)
+      
+      >**Note** 
+      > If you will be not able to found this options, you can use also Shortcut Keys **ctrl + S** to save and **ctrl + Q** to close editor.
+      
     Remember, anomaly detection is an artificial intelligence technique used to determine whether values in a series are within expected parameters. The sample client application will use your Anomaly Detector service to analyze a file containing a series of date/times and numeric values. The application should return results indicating at each time point, whether the numeric value is within expected parameters.
 
 1. In the PowerShell pane, enter the following commands to run the code:
@@ -106,20 +121,10 @@ Now that you have a Cloud Shell environment, you can run a simple application th
     .\detect-anomalies.ps1
     ```
 
-1. Review the results, noting that the final column in the results is **True** or **False** to indicate if the value recorded at each date/time is considered an anomaly or not. Consider how we could use this information in a real-life situation. What action could the application trigger if the values were of fridge temperature or blood pressure and anomalies were detected?  
+1. Review the results, noting that the final column in the results is **True** or **False** to indicate if the value recorded at each date/time is considered an anomaly or not. Consider how we could use this information in a real-life situation. What action could the application trigger if the values were of fridge temperature or blood pressure and anomalies were detected?
+     
+      ![Picture1](media/Ai900-mod1-img9.png)
 
 ## Learn more
 
 This simple app shows only some of the capabilities of the Anomaly Detector service. To learn more about what you can do with this service, see the [Anomaly Detector page](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
-
-## Clean-up
-
-It's a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money. 
-
-If you are continuing on to other AI Fundamentals modules you can keep your resources for use in other labs.
-
-If you have finished learning, you can delete the resource group or individual resources from your Azure subscription:
-
-1. In the [Azure portal](https://portal.azure.com/), in the **Resource groups** page, open the resource group you specified when creating your resource.
-
-2. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**. You can also choose to delete individual resources by selecting the resource(s), clicking on the three dots to see more options, and clicking **Delete**.
