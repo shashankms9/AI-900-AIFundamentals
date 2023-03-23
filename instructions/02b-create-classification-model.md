@@ -5,9 +5,15 @@
 
 ## Create an Azure Machine Learning workspace  
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
+1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
 
-1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
+    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+ 
+   >**Note**
+   > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
+1. In the Azure Portal, Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *AI-900-Module-02b-<inject key="DeploymentID" enableCopy="false"/>*.
     - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**.
@@ -31,7 +37,7 @@
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 1. On the **Compute** page, select the **Compute clusters** tab, Click on **+ New** and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Location**: *Select the same region where your workspace was created.
+    - **Location**: *Select the same region where your workspace was created*.
     - **Virtual machine tier**: Dedicated
     - **Virtual machine type**: CPU
     - **Virtual machine size**:
@@ -165,7 +171,7 @@ To apply your data transformations, you need to run the pipeline as an experimen
 
 1. Wait a few minutes for the run to finish.
 
-    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-classification-model/completed-job.png)
+    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-classification-model/completed-job1.png)
 
     Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**.
 
@@ -280,7 +286,7 @@ The performance of this model isn't all that great, partly because we performed 
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
-    ![Screenshot of location of create inference pipeline.](media/create-classification-model/create-inference-pipeline.png)
+    ![Screenshot of location of create inference pipeline.](media/create-classification-model/create-inference-pipeline2.png)
 
 1. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Diabetes Training-real time inference** will be opened.
 
@@ -352,11 +358,11 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. Select **Job detail** on the left hand pane. This will open up another window.
 
-    ![Screenshot of job details next to the completed job.](media/create-classification-model/completed-job-inference.png)
+    ![Screenshot of job details next to the completed job.](media/create-classification-model/completed-job-inference1.png)
 
 1. In the new window, select **Deploy**.
 
-    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-classification-model/deploy-screenshot.png)
+    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-classification-model/deploy-screenshot1.png)
 
 1. At the top right, select **Deploy**, and deploy a **new real-time endpoint**, using the following settings:
     -  **Name**: predict-diabetes
