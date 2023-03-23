@@ -12,7 +12,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *AI-900-Module-02-<inject key="DeploymentID" enableCopy="false"/>*.
-    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="true"/>**.
+    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Region**: *Select the same region where your resource group was created*.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
     - **Key vault**: *Note the default new key vault that will be created for your workspace*.
@@ -42,7 +42,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**:  Enter **ai900compute-<inject key="DeploymentID" enableCopy="true"/>**.
+    - **Compute name**:  Enter **ai900compute-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
