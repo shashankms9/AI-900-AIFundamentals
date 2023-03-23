@@ -10,9 +10,10 @@ In this exercise, you will train a regression model that predicts the price of a
 
 1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
 
-1. In the **Sign in** dialog box, copy and paste in the **Username** odl_user_<inject key="DeploymentID" enableCopy="true"/>@cloudlabsai.com and then select Next.
+1. In the **Sign in** dialog box, copy and paste in the **Username** <inject key="AzureAdUserEmail"></inject>
+ and then select Next.
 
-1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
+1. In the **Enter password** dialog box, copy and paste the **Password** <inject key="AzureAdUserPassword"></inject> and then select **Sign in**.
 
     >**Note**
     > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
