@@ -22,7 +22,7 @@ In this exercise, you will train a regression model that predicts the price of a
     - **Subscription**: Use exiting Azure subscription.
     - **Resource group**: Select **AI-900-Module-02a-<inject key="DeploymentID" enableCopy="false" />**..
     - **Workspace name**: **Workspace-<inject key="DeploymentID" enableCopy="false" />.**
-    - **Region**: Use default region.
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Storage account**: Note the default new storage account that will be created for your workspace.
     - **Key vault**: Note the default new key vault that will be created for your workspace.
     - **Application insights**: Note the default new application insights resource that will be created for your workspace.
@@ -46,7 +46,7 @@ In this exercise, you will train a regression model that predicts the price of a
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**:
+    - **Compute name**: **ai900vm**
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
@@ -60,7 +60,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 ## Create a pipeline in Designer 
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+** to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+ to create a new pipeline.**
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
@@ -86,9 +86,9 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 1. Review the *Dataset output* schema of the data, noting that you can see the distributions of the various columns as histograms.
 
-1. Scroll to the right of the dataset until you see the **Price** column, which is the label that your model predicts.
+1. Scroll to the right of the dataset until you see the **Automobile price data (Raw)** column, which is the label that your model predicts.
 
-1. Scroll back to the left and select the **normalized-losses** column header. Then review the statistics for this column. Note there are quite a few missing values in this column. Missing values  limit the column's usefulness for predicting the **price** label so you might want to exclude it from training.
+1. Right- Click on the **Automobile price data (raw**) under **Auto Price Training** and select **Preview data.** click on the **normalized-losses** column header. Then review the statistics for this column. Note there are quite a few missing values in this column. Missing values  limit the column's usefulness for predicting the **price** label so you might want to exclude it from training.
 
 1. Close the **Automobile price data (Raw) result visualization** window so that you can see the dataset on the canvas like this:
 
@@ -262,9 +262,9 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 ## Create and run an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the menu icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **mslearn-auto-training** pipeline. 
+1. In Azure Machine Learning studio, expand the left-hand pane by selecting the menu icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **Auto Price Training** pipeline. 
 
-    ![Screenshot of jobs on the left-hand menu. Select jobs and then select your experiment name.](media/jobs-tab-2a.png)
+    ![Screenshot of jobs on the left-hand menu. Select jobs and then select your experiment name.](media/jobstab-2a.png)
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
