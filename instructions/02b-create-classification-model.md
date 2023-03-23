@@ -151,9 +151,9 @@ Before you can train a model, you typically need to apply some pre-processing tr
     ```
     Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
     ```
-![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data1.png)
+    ![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data1.png)
 
-Click **Save**, then again Click on **Save** icon and close the selection box. 
+1. Click **Save**, then again Click on **Save** icon and close the selection box. 
 
 The data transformation is normalizing the numeric columns to put them on the same scale, which should help prevent columns with large values from dominating model training. You'd usually apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
 
@@ -317,17 +317,17 @@ The performance of this model isn't all that great, partly because we performed 
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module, replacing all of the default python script with the following code (which selects only the **PatientID**, **Scored Labels** and **Scored Probabilities** columns and renames them appropriately):
 
-    ```Python
-    import pandas as pd
+        ```Python
+        import pandas as pd
 
-    def azureml_main(dataframe1 = None, dataframe2 = None):
+        def azureml_main(dataframe1 = None, dataframe2 = None):
 
-        scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
-        scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
-                                    'Scored Probabilities':'Probability'},
-                            inplace=True)
-        return scored_results
-    ```
+            scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
+            scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                        'Scored Probabilities':'Probability'},
+                                inplace=True)
+            return scored_results
+        ```
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
 
