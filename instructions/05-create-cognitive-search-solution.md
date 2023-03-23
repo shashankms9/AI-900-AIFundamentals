@@ -43,7 +43,7 @@ The solution you'll create for Fourth Coffee requires the following resources in
 
     - **Subscription**:  Use existing subscription.
     - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Service name**: enter ai900-cognitive
+    - **Service name**: enter **ai900-cognitive**
     - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Pricing tier**: Basic
 
