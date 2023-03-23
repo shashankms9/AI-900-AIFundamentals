@@ -13,13 +13,13 @@ The Language service's custom question answering feature enables you to quickly 
 
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings, and then click **Continue to create your resource**:
     **Select Additional Features**
-    - **Default features**: *Keep the default features*.
-    - **Custom features**: *Select custom question answering*.
+    - **Default features**: Keep the default features.
+    - **Custom features**: Select custom question answering.
 
 1. On the **Create Language** page, specify the following settings:
-    - **Subscription**: *Your Azure subscription*.
+    - **Subscription**: Use existing subscription.
     - **Resource group**: Select **AI-900-Module-02a-<inject key="DeploymentID" enableCopy="false" />**.
-    - **Name**: enter learnlanguage-
+    - **Name**: enter **learnlanguage-<inject key="DeploymentID" enableCopy="false" />**
     - **Pricing tier**: S (1K Calls per minute)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice**: *Selected*.
 
@@ -29,7 +29,7 @@ The Language service's custom question answering feature enables you to quickly 
 
 1. If prompted to choose a Language resource, select the following settings:
     - **Azure directory**: The Azure directory containing your subscription.
-    - **Azure subscription**: Your Azure subscription.
+    - **Azure subscription**: Select existing subscription.
     - **Language resource**: The Language resource you created previously.
 
 1. If you are ***not*** prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
@@ -55,8 +55,8 @@ The Language service's custom question answering feature enables you to quickly 
 1. On the **Choose language setting for resource *your resource*** page, select **I want to select the language when I create a project in this resource** and click **Next**.
 
 1. On the **Enter basic information** page, enter the following details and click **Next**:
-    - **Language resource**: *choose your language resource*.  
-    - **Azure search resource**: *choose your Azure search resource*.
+    - **Language resource**: choose your language resource.  
+    - **Azure search resource**: choose your Azure search resource.
     - **Name**: MargiesTravel
     - **Description**: A simple knowledge base
     - **Source language**: English
@@ -93,7 +93,7 @@ Now that you have a knowledge base, you can test it.
 
 1. In the test pane, at the bottom enter the message *Hi*. The response **Hello** should be returned.
 
-1. In the test pane, at the bottom enter the message *I want to book a flight*. An appropriate response from the FAQ should be returned.
+1. In the test pane, at the bottom enter the message **I want to book a flight**. An appropriate response from the FAQ should be returned.
 
     > **Note**
     > The response includes a *short answer* as well as a more verbose *answer passage* - the answer passage shows the full text in the FAQ document for the closest matched question, while the short answer is intelligently extracted from the passage. You can control whether the short answer is from the response by using the **Display short answer** checkbox at the top of the test pane.
