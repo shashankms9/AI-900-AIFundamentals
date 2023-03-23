@@ -11,9 +11,9 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Create or select a resource group*.
+    - **Resource group**:  *AI-900-Module-02-<inject key="DeploymentID" enableCopy="false"/>*.
     - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="true"/>**
-    - **Region**: *Select the closest geographical region*.
+    - **Region**: *Select the same region where your resource group was created*.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
     - **Key vault**: *Note the default new key vault that will be created for your workspace*.
     - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
@@ -60,14 +60,14 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Data** page (under **Assets**). The Data page contains specific data files or tables that you plan to work with in Azure ML. You can create datasets from this page as well.
 
-1. On the **Data** page, under the **Data assets** tab, select **Create**. Then configure a data asset with the following settings:
+1. On the **Data** page, under the **Data assets** tab, select **+ Create**. Then configure a data asset with the following settings:
     * **Data type**:
         * **Name**: bike-rentals
         * **Description**: Bicycle rental data
         * **Type**: Tabular
     * Click on **Next**.
     
-    * **Data source**: From Web Files
+    * **Data source**: Select **From Web Files**
     * * Click on **Next**.
     
     * **Web URL**:
