@@ -9,9 +9,9 @@
 
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Create or select a resource group*.
-    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="true"/>**.
-    - **Region**: *Select the closest geographical region*.
+    - **Resource group**: *AI-900-Module-02b-<inject key="DeploymentID" enableCopy="false"/>*.
+    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**:  *Select the same region where your resource group was created*.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
     - **Key vault**: *Note the default new key vault that will be created for your workspace*.
     - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
@@ -54,7 +54,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 To get started with Azure Machine Learning designer, first you must create a pipeline and add the dataset you want to work with.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+** to create a new pipeline.
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
