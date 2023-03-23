@@ -64,7 +64,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Select **Save**, then select close icon on the top right of the **Settings** pane to close the pane.
 
-    ![Screenshot of the Machine Learning Studio Settings pane.](media/use-automated-machine-learning/ai-900-settings1.png)
+    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/ai-900-settings1.png)
 
 ## Create a dataset
 
@@ -114,6 +114,8 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Click on **Data**. Search for and place the **diabetes-data** dataset onto the canvas.
 
+     ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/data-canvas.png)
+
 1. Right-click (Ctrl+click on a Mac) the **diabetes-data** dataset on the canvas, and click on **Preview data**.
 
 1. Review the schema of the data in the *Profile* tab, noting that you can see the distributions of the various columns as histograms.
@@ -140,7 +142,7 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. Find the **Normalize Data** module and place it on the canvas, below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
 
-    ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize.png)
+    ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize2.png)
 
 1. Double-click the **Normalize Data** module to view its settings, noting that it requires you to specify the transformation method and the columns to be transformed. 
 
@@ -149,7 +151,7 @@ Before you can train a model, you typically need to apply some pre-processing tr
     ```
     Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
     ```
-![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data.png)
+![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data1.png)
 
 Click **Save**, then again Click on **Save** icon and close the selection box. 
 
@@ -188,7 +190,7 @@ It's common practice to train the model using a subset of the data, while holdin
 
 In this exercise, you're going to work through steps to extend the **Diabetes Training** pipeline as shown here:
 
-![Screenshot of how to split data, then train with logistic regression and score.](media/create-classification-model/train-score-pipeline.png)
+![Screenshot of how to split data, then train with logistic regression and score.](media/create-classification-model/train-score-pipeline1.png)
 
 Follow the steps below, using the image above for reference as you add and configure the required modules.
 
@@ -246,7 +248,7 @@ The validation data you held back and used to score the model includes the known
 
 1. Ensure your pipeline looks like this:
 
-    ![Screenshot of the Evaluate Model module added to Score Model module.](media/create-classification-model/evaluate-pipeline.png)
+    ![Screenshot of the Evaluate Model module added to Score Model module.](media/create-classification-model/evaluate-pipeline1.png)
 
 1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-diabetes-training**.
 
@@ -286,7 +288,7 @@ The performance of this model isn't all that great, partly because we performed 
 
     You're going to make the following changes to the inference pipeline:
 
-    ![Screenshot of an inference pipeline with changes indicated.](media/create-classification-model/inference-changes.png)
+    ![Screenshot of an inference pipeline with changes indicated.](media/create-classification-model/inference-changes1.png)
     
     - Add a **web service input** component for new data to be submitted.
     - Replace the **diabetes-data** dataset with an **Enter Data Manually** module that doesn't include the label column (**Diabetic**).
@@ -315,23 +317,23 @@ The performance of this model isn't all that great, partly because we performed 
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module, replacing all of the default python script with the following code (which selects only the **PatientID**, **Scored Labels** and **Scored Probabilities** columns and renames them appropriately):
 
-```Python
-import pandas as pd
+    ```Python
+    import pandas as pd
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
+    def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
-    scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
-                                'Scored Probabilities':'Probability'},
-                        inplace=True)
-    return scored_results
-```
+        scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
+        scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                    'Scored Probabilities':'Probability'},
+                            inplace=True)
+        return scored_results
+    ```
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
 
 1. Verify that your pipeline looks similar to the following image:
 
-    ![Screenshot of a complete inference pipeline.](media/create-classification-model/visual-inference.png)
+    ![Screenshot of a complete inference pipeline.](media/create-classification-model/visual-inference1.png)
 
 1. Run the pipeline as a new experiment named **mslearn-diabetes-inference** on your compute cluster. The experiment may take a while to run.
 
@@ -396,6 +398,6 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. Select **Test**. On the right hand of the screen, you should see the output **'DiabetesPrediction'**. The output is 1 if the patient is predicted to have diabetes, and 0 if the patient is predicted not to have diabetes.  
 
-    ![Screenshot of the Test pane.](media/create-classification-model/test-interface.png)
+    ![Screenshot of the Test pane.](media/create-classification-model/test-interface1.png)
 
     You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
