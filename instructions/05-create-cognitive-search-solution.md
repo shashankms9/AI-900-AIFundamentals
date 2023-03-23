@@ -39,11 +39,11 @@ The solution you'll create for Fourth Coffee requires the following resources in
     >**Note**
     > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
    
-1. Click the **+ Create a resource** button, search for *Azure Cognitive Search*, and create a **Azure Cognitive Search** resource with the following settings:
+1. Click the **+ Create a resource** button, search for **Azure Cognitive Search**, and create a **Azure Cognitive Search** resource with the following settings:
 
     - **Subscription**:  Use existing subscription.
     - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Service name**: enter **ai900-cognitive**
+    - **Service name**: enter **cognitivesearch-<inject key="DeploymentID" enableCopy="false"/>**
     - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Pricing tier**: Basic
 
@@ -56,10 +56,10 @@ The solution you'll create for Fourth Coffee requires the following resources in
 You'll need to provision a **Cognitive Services** resource that's in the same location as your Azure Cognitive Search resource. Your search solution will use this resource to enrich the data in the datastore with AI-generated insights.
 
 1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *The same resource group as your Azure Cognitive Search resource*.
-    - **Region**: *The same location as your Azure Cognitive Search resource*.
-    - **Name**: *A unique name*.
+    - **Subscription**: Use existing subscription..
+    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Name**: enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected
 
@@ -72,10 +72,10 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button.
 
 1. Search for *storage account*, and create a **Storage account** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *The same resource group as your Azure Cognitive Search and Cognitive Services resources*.
-    - **Storage account name**: *A unique name*.
-    - **Location**: *Choose any available location*.
+    - **Subscription**: Use existing subscription.
+    - **Resource group**:  Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Storage account name**: **ai900blob-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Location**: Select the same region where your resource group was created ( i.e. Easus2).
     - **Performance**: Standard
     - **Redundancy**: Locally redundant storage (LRS)
 
@@ -123,7 +123,7 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
     - **Parsing mode**: Default
     - **Connection string**: *Select **Choose an existing connection**. Select your storage account, select the **coffee-reviews** container, and then click **Select**.
     - **Managed identity authentication**: None
-    - **Container name**: *this setting is auto-populated after you choose an existing connection*.
+    - **Container name**: this setting is auto-populated after you choose an existing connection.
     - **Blob folder**: *Leave this blank*.
     - **Description**: Reviews for Fourth Coffee shops.
 
