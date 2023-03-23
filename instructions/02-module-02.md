@@ -117,7 +117,7 @@ Follow the next steps to run a job that uses automated machine learning to train
     - **Select task and settings**: 
         - **Task type**: Regression *(the model predicts a numeric value)* 
    
-    ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/ai-900-regression.png)
+            ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/ai-900-regression.png)
 
     Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings. Click on **View additional configuration settings**.
 
