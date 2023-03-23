@@ -119,7 +119,7 @@ Follow the next steps to run a job that uses automated machine learning to train
    
             ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/ai-900-regression.png)
 
-    Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings. Click on **View additional configuration settings**.
+    - Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings. Click on **View additional configuration settings**.
 
     - **Additional configuration settings:**
         - **Primary metric**: Select **Normalized root mean squared error**
@@ -164,7 +164,8 @@ Follow the next steps to run a job that uses automated machine learning to train
 
     ![Screenshot of how to locate view all other metrics on the Model tab.](media/use-automated-machine-learning/ai-900-overview-02.png)
 
-1. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
+1. Select the **Metrics** tab, use the arrows icon to expand the panel if it is not already expanded and select the **residuals** and **predicted_true** charts if they are not already selected. 
+
     ![Screenshot of the metrics tab with the residuals and predicted_true charts selected.](media/use-automated-machine-learning/ai-900-matrix1.png)
 
     Review the charts which show the performance of the model. The first chart shows the *residuals*, the differences between predicted and actual values, as a histogram, the second chart compares the predicted values against the true values.
@@ -234,7 +235,7 @@ Now you can test your deployed service.
 
 1. Review the test results, which include a predicted number of rentals based on the input features. The test pane took the input data and used the model you trained to return the predicted number of rentals.
 
-    ![Screenshot of an example of testing the model with sample data in the test tab.](media/use-automated-machine-learning/workaround-test.png)
+    ![Screenshot of an example of testing the model with sample data in the test tab.](media/use-automated-machine-learning/workaround-test1.png)
 
 Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*. In this case, the *labels* are number of bicycle rentals.
 
