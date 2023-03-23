@@ -167,7 +167,7 @@ The data transformation is normalizing the numeric columns to put them on the sa
 
 To apply your data transformations, you need to run the pipeline as an experiment.
 
-1. Select **Submit**, and run the pipeline as a new experiment named **mslearn-diabetes-training** on your compute cluster.
+1. Select **Submit**, under the Experiment name select **Create new** and in New experiment name field enter **mslearn-diabetes-training** on your compute cluster and click on **Submit**.
 
 1. Wait a few minutes for the run to finish.
 
