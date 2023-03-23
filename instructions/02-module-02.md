@@ -48,7 +48,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**:  Enter **ai900compute-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Compute name**: Enter **ai900compute-<inject key="DeploymentID" enableCopy="true"/>**
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
