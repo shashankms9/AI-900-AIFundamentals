@@ -85,7 +85,7 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 
 1. In the Azure Storage account you created, in the left-hand menu pane, select **Containers**.
 
-    ![Screenshot that shows the storage blob overview page.](media/create-cognitive-search-solution/storage-blob-1.png)
+    ![Screenshot that shows the storage blob overview page.](media/storage-blob-1-05.png)
 
 1. Select **+ Container**. A pane on your right-hand side opens.
 
