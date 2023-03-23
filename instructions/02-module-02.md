@@ -7,13 +7,19 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 
 ## Create an Azure Machine Learning workspace  
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
+1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
 
-1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
+    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+ 
+   >**Note**
+   > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
+1. In the Azure Portal, Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Create or select a resource group*.
-    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="true"/>**
-    - **Region**: *Select the closest geographical region*.
+    - **Resource group**: *AI-900-Module-02-<inject key="DeploymentID" enableCopy="false"/>*.
+    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**: *Select the same region where your resource group was created*.
     - **Storage account**: *Note the default new storage account that will be created for your workspace*.
     - **Key vault**: *Note the default new key vault that will be created for your workspace*.
     - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
@@ -100,7 +106,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 Follow the next steps to run a job that uses automated machine learning to train a regression model that predicts bicycle rentals.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Automated ML** page (under **Author**).
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Automated ML** page (under **Authoring**).
 
 1. Click on **+ Automated ML job**. Create an Automated ML job with the following settings:
 
@@ -116,31 +122,29 @@ Follow the next steps to run a job that uses automated machine learning to train
     
     - **Select task and settings**: 
         - **Task type**: Regression *(the model predicts a numeric value)* 
-    - Click on **Next**.
+   
+            ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/ai-900-regression.png)
 
-    ![Screenshot of a selection pane with boxes around the Regression task type and additional configuration settings.](media/use-automated-machine-learning/new-automated-ml-run-4.png)
-
-    Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings. Click on **View additional configuration settings**.
+    - Notice under task type there are settings *View additional configuration settings* and *View featurization settings*. Now configure these settings. Click on **View additional configuration settings**.
 
     - **Additional configuration settings:**
         - **Primary metric**: Select **Normalized root mean squared error**
         - **Explain best model**: Selected — *this option causes automated machine learning to calculate feature importance for the best model which makes it possible to determine the influence of each feature on the predicted label.*
         - **Use all supported models**: <u>Un</u>selected. *You'll restrict the job to try only a few specific algorithms.*
         - **Allowed models**: *Select only **RandomForest** and **LightGBM** — normally you'd want to try as many as possible, but each model added increases the time it takes to run the job.*
-
-        ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/allowed-models.png)
         - **Exit criterion**:
             - **Training job time (hours)**: 0.5 — *ends the job after a maximum of 30 minutes.*
             - **Metric score threshold**: 0.085 — *if a model achieves a normalized root mean squared error metric score of 0.085 or less, the job ends.*
         - **Concurrency**: *do not change*
     - Click on **Save**.
-
-
+  
+      ![Screenshot of additional configurations with a box around the allowed models.](media/use-automated-machine-learning/ai-900-add-cong01.png)
+      
     - Now click on ** View featurization settings:**
         - **Enable featurization**: Selected — *automatically preprocess the features before training.*
     - Click on **Save**.
 
-    Click **Next** to go to the next selection pane.
+    - Click **Next** to go to the next selection pane.
 
     - **Select the validation and test type**
         - **Validation type**: Auto
@@ -156,7 +160,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 ## Review the best model
 
 1. On the **Overview** tab of the automated machine learning job, note the best model summary.
-    ![Screenshot of the best model summary of the automated machine learning job with a box around the algorithm name.](media/use-automated-machine-learning/complete-run.png)
+    ![Screenshot of the best model summary of the automated machine learning job with a box around the algorithm name.](media/use-automated-machine-learning/ai-900-overview.png)
 
     >[!NOTE]
     > You may see a message under the status "Warning: User specified exit score reached...". This is an expected message. Please continue to the next step.  
@@ -164,16 +168,17 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 1. Next to the *Normalized root mean squared error* value, select **View all other metrics** to see values of other possible evaluation metrics for a regression model.
 
-    ![Screenshot of how to locate view all other metrics on the Model tab.](media/use-automated-machine-learning/review-run-1.png)
+    ![Screenshot of how to locate view all other metrics on the Model tab.](media/use-automated-machine-learning/ai-900-overview-02.png)
 
-1. Select the **Metrics** tab and select the **residuals** and **predicted_true** charts if they are not already selected. 
-    ![Screenshot of the metrics tab with the residuals and predicted_true charts selected.](media/use-automated-machine-learning/review-run-3.png)
+1. Select the **Metrics** tab, use the arrows icon to expand the panel if it is not already expanded and select the **residuals** and **predicted_true** charts if they are not already selected. 
+
+    ![Screenshot of the metrics tab with the residuals and predicted_true charts selected.](media/use-automated-machine-learning/ai-900-matrix1.png)
 
     Review the charts which show the performance of the model. The first chart shows the *residuals*, the differences between predicted and actual values, as a histogram, the second chart compares the predicted values against the true values.
 
 1. Select the **Explanations** tab. Select an Explanation ID and then select **Aggregate feature importance**. This chart shows how much each feature in the dataset influences the label prediction, like this:
 
-    ![Screenshot of the feature importance chart on the Explanations tab.](media/use-automated-machine-learning/feature-importance.png)
+    ![Screenshot of the feature importance chart on the Explanations tab.](media/use-automated-machine-learning/feature-importance1.png)
 
 ## Deploy a predictive service
 
@@ -181,7 +186,7 @@ Follow the next steps to run a job that uses automated machine learning to train
 
 1. On the **Overview** tab, select the algorithm name for the best model.
 
-    ![Screenshot of the best model summary with a box around the algorithm name on the details tab.](media/use-automated-machine-learning/deploy-detail-tab.png)
+    ![Screenshot of the best model summary with a box around the algorithm name on the details tab.](media/use-automated-machine-learning/ai-900-algorithm.png)
 
 1. On the **Models** tab, select the **Deploy** button and use the **web service** option to deploy the model with the following settings:
     - **Name**: predict-rentals
@@ -193,13 +198,16 @@ Click on **Deploy**.
 1. Wait for the deployment to start - this may take a few seconds. Then, in the **Model summary** section, observe the **Deploy status** for the **predict-rentals** service, which should be **Running**. Wait for this status to change to **Succeeded**, which may take some time. You may need to select **Refresh** periodically.
 
 1. In Azure Machine Learning studio, on the left hand menu, select **Endpoints**.
-    ![Screenshot of location of Endpoints on the left hand menu.](media/use-automated-machine-learning/find-endpoints.png)
+
+    ![Screenshot of location of Endpoints on the left hand menu.](media/use-automated-machine-learning/endpoints1.png)
 
 ## Test the deployed service
 
 Now you can test your deployed service.
 
 1. On the **Endpoints** page, open the **predict-rentals** real-time endpoint.
+
+    ![Screenshot of location of Endpoints on the left hand menu.](media/use-automated-machine-learning/endpoints-2.png)
 
 1. When the **predict-rentals** endpoint opens, view the **Test** tab.
 
@@ -233,7 +241,7 @@ Now you can test your deployed service.
 
 1. Review the test results, which include a predicted number of rentals based on the input features. The test pane took the input data and used the model you trained to return the predicted number of rentals.
 
-    ![Screenshot of an example of testing the model with sample data in the test tab.](media/use-automated-machine-learning/workaround-test.png)
+    ![Screenshot of an example of testing the model with sample data in the test tab.](media/use-automated-machine-learning/workaround-test1.png)
 
 Let's review what you have done. You used a dataset of historical bicycle rental data to train a model. The model predicts the number of bicycle rentals expected on a given day, based on seasonal and meteorological *features*. In this case, the *labels* are number of bicycle rentals.
 
