@@ -7,9 +7,7 @@ In this exercise, you will use a dataset of historical bicycle rental details to
 
 ## Create an Azure Machine Learning workspace  
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
-
-1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+1. In the Azure Portal, Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: *Your Azure subscription*.
     - **Resource group**: *AI-900-Module-02-<inject key="DeploymentID" enableCopy="false"/>*.
     - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**.
