@@ -64,7 +64,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Select **Save**, then select close icon on the top right of the **Settings** pane to close the pane.
 
-    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/ai-900-settings.png)
+    ![Screenshot of the Machine Learning Studio Settings pane.](media/use-automated-machine-learning/ai-900-settings1.png)
 
 ## Create a dataset
 
@@ -110,7 +110,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Then in the project, next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Component**.
 
-    ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/designer-asset-library-data.png)
+    ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/search-data.png)
 
 1. Click on **Data**. Search for and place the **diabetes-data** dataset onto the canvas.
 
@@ -132,7 +132,7 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
 
-    ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-classification-model/designer-asset-library-components.png)
+    ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-classification-model/search-component.png)
 
 1. Find the **Select Columns in Dataset** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
 
@@ -146,9 +146,9 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. Set the *Transformation method* to **MinMax** and the *Use 0 for constant columns when checked* to **True**. Edit the columns to transform with **Edit columns**. Select columns **With Rules** and copy and paste the following list under include column names:  
 
-```
-Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
-```
+    ```
+    Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
+    ```
 ![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data.png)
 
 Click **Save**, then again Click on **Save** icon and close the selection box. 
