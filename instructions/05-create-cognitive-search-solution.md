@@ -160,8 +160,9 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
 
     > **Note**
     > If a warning asking for a **Storage Account Connection String** appears.
-    >
-    > ![Screenshot that shows the Storage account connection screen warning with 'Choose an existing connection' selected.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
+    
+    
+    ![Screenshot that shows the Storage account connection screen warning with 'Choose an existing connection' selected.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
 
     > 1. Select **Choose an existing connection**. Choose the storage account you created earlier.
 
