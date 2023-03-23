@@ -26,16 +26,25 @@ The solution you'll create for Fourth Coffee requires the following resources in
 
 - A **Storage account** with blob containers, which will store raw documents and other collections of tables, objects, or files.
 
-### Create an *Azure Cognitive Search* resource
+### Create an **Azure Cognitive Search** resource
 
-1. Sign into the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
+1. In the lab virtual machine, Start the Microsoft Edge browser.
 
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username** <inject key="AzureUserName" enableCopy="true"/> and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password** <inject key="AzurePassword" enableCopy="true"/>  provided in the **environment details page** and then select **Sign in**.
+
+    >**Note**
+    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+   
 1. Click the **+ Create a resource** button, search for *Azure Cognitive Search*, and create a **Azure Cognitive Search** resource with the following settings:
 
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Service name**: *A unique name*.
-    - **Location**: *Choose any available region*.
+    - **Subscription**:  Use existing subscription.
+    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Service name**: enter ai900-cognitive
+    - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Pricing tier**: Basic
 
 1. Select **Review + create**, and after you see the response **Validation Success**, select **Create**.
