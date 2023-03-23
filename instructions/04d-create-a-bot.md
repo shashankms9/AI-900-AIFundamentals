@@ -115,8 +115,8 @@ The knowledge base provides a back-end service that client applications can use 
 1. In the Azure portal, create a Web App Bot. (You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action for that message.) Continue by updating the following settings:
 
     - **Project Details**
-        - **Subscription**: *Your Azure subscription*
-        - **Resource group**: *The resource group containing your Language resource*
+        - **Subscription**: Use existing subscription.
+        - **Resource group**: select  Select **AI-900-Module-04d-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Instance details**
         - **Resource group Location**: *The same location as your Language service*.
     - **Azure Bot**
