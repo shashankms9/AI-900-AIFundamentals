@@ -369,7 +369,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. On the **Endpoints** page, open the **predict-diabetes** real-time endpoint.
 
-    ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-classification-model/endpoints-screenshot.png)
+    ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-classification-model/test-endpoint.png)
 
 1. When the **predict-diabetes** endpoint opens, select the **Test** tab. We will use it to test our model with new data. Delete the current data under **Input data to test real-time endpoint**. Copy and paste the below data into the data section:  
 
