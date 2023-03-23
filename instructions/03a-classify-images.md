@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore image classification'
----
-
 # Explore image classification​
 
 The *Computer Vision* cognitive service provides useful pre-built models for working with images, but you'll often need to train your own model for computer vision. For example, suppose a wildlife conservation organization organization wants to track sightings of animals by using motion-sensitive cameras. The images captured by the cameras could then be used to verify the presence of particular species in a particular area and assist with conservation efforts for endangered species. To accomplish this, the organization would benefit from an *image classification* model that is trained to identify different species of animal in the captured photographs.
@@ -28,10 +23,10 @@ Create a **Cognitive Services** resource in your Azure subscription.
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: East US
-    - **Name**: *Enter a unique name*.
-    - **Pricing tier**: Standard S0
+    - **Resource group**: *AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/>*.
+    - **Region**: *Select the same region where your resource group was created*.
+    - **Name**: *enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***.
+    - **Pricing tier**: Standard S0.
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
@@ -55,6 +50,8 @@ To train an object detection model, you need to create a Custom Vision project b
     - **Classification Types**: Multiclass (Single tag per image)
     - **Domains**: General \[A2]
 
+   >**Note**: Under **Resource** dropdown if you don't find the resource that you created previously in the azure portal, kindly refresh the page and reperform the task. 
+
 1. Click **Add images**, and select all of the files in the **elephant** folder you extracted previously. Then upload the image files, specifying the tag *elephant*, like this:
 
     ![Screenshot of the Image upload interface.](media/create-image-classification-system/upload-elephants.png)
@@ -65,7 +62,7 @@ To train an object detection model, you need to create a Custom Vision project b
 
     ![Screenshot of tagged training images in the Custom Vision portal.](media/create-image-classification-system/animal-training-images.png)
 
-1. In the Custom Vision project, above the images, click **Train** to train a classification model using the tagged images. Select the **Quick Training** option, and then wait for the training iteration to complete.
+1. In the Custom Vision project, above the images, click **Train** to train a classification model using the tagged images. Select the **Quick Training** option and click on **Train** then wait for the training iteration to complete.
 
     > **Tip**: Training may take a few minutes. While you're waiting, check out [How snow leopard selfies and AI can help save the species from extinction](https://news.microsoft.com/transform/snow-leopard-selfies-ai-save-species/), which describes a real project that uses computer vision to track endangered animals in the wild.
 
@@ -107,7 +104,9 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
 
-    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and select **Create storage**. Then wait a minute or so for the storage to be created.
+    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the  **File share** , then click on **Create Storage**.
+    
+    ![Screenshot of the cloud shell in the Azure portal.](media/stoarge-up.png)
 
     When the cloud shell is ready, it should look similar to this:
     
