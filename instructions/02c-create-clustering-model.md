@@ -45,7 +45,7 @@
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**: *enter a unique name*.
+    - **Compute name**: **AI-900-compute-<inject key="DeploymentID" enableCopy="false" />**.
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
