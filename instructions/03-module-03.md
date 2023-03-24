@@ -23,7 +23,7 @@ If you haven't already done so, create a **Cognitive Services** resource in your
    >**Note**
    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
-1. In the Azure Portal, Select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+1. In the Azure Portal, select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *Select AI-900-Module-03-<inject key="DeploymentID" enableCopy="false"/>*
     - **Region**:  *Select the same region where your resource group was created*
