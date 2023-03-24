@@ -9,9 +9,12 @@
 
 1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
 
-1. In the **Sign in** dialog box, copy and paste in the **Username : odl_user_<inject key="DeploymentID" enableCopy="true" />@cloudlabsai.com** and then select Next.
+1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
 
-1. In the **Enter password** dialog box, copy and paste the **Password** provided in the **environment details page** and then select **Sign in**.
+    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
+    
+    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+
 
     >**Note**
     > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
@@ -19,8 +22,8 @@
 
 1. Select **+ Create a resource**, search for Machine Learning, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: Use existing Azure subscription.
-    - **Resource group**: Select **AI-900-Module-02c-<inject key="DeploymentID" enableCopy="false" />**.
-    - **Workspace name**: Give name **Workspace-<inject key="DeploymentID" enableCopy="false" />.**
+    - **Resource group**: Select **AI-900-Module-02c-<inject key="DeploymentID" enableCopy="false" />**
+    - **Workspace name**: Give name **AI-900-Workspace-<inject key="DeploymentID" enableCopy="false" />**
     - **Region**: Use default region.
     - **Storage account**: Note the default new storage account that will be created for your workspace.
     - **Key vault**: Note the default new key vault that will be created for your workspace.
@@ -38,14 +41,14 @@
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 2. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
+    - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Virtual machine tier**: Dedicated
     - **Virtual machine type**: CPU
     - **Virtual machine size**:
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
-    - Select **Next**
-    - **Compute name**: *enter a unique name*.
+    - Select **Next** (**If you have not able to see this option click on the  ...   at the top and right side of browser and zoom out till this option is visible**)
+    - **Compute name**: **ai900-vm-<inject key="DeploymentID" enableCopy="false" />**
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
@@ -65,7 +68,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
-1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML compute cluster**, select the compute cluster you created previously.
+1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML compute cluster**, select the compute cluster you created previously **ai900-vm-<inject key="DeploymentID" enableCopy="false" />**.
 
 1. In **Settings**, under **Draft Details**, change the draft name (**Pipeline-Created-on-*date***) to **Train Penguin Clustering**.
 
@@ -117,7 +120,7 @@ Network](https://lternet.edu/).
 
 ### Load data to canvas
 
-1. Return to your pipeline by selecting **Designer** on the left-hand menu. On the **Designer** page, select the **Train Penguin Clustering**.
+1. Return to your pipeline by selecting **Designer** on the left-hand menu. On the **Designer** page, select the **Train Penguin Clustering** which is under Pipelines drafts.
 
 1. Next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Component**.
 
@@ -131,7 +134,7 @@ Network](https://lternet.edu/).
 
 1. Review the *Profile* schema of the data, noting that you can see the distributions of the various columns as histograms. Then select the **CulmenLength** column. The dataset should look similar to this:
 
-    ![A visualization of the penguin-data dataset, showing its columns and some sample data.](media/penguin-visualization-2c.png)
+    ![A visualization of the penguin-data dataset, showing its columns and some sample data.](media/2c-penguin-visualization.png)
 
 1. Note the following characteristics of the dataset:
 
@@ -160,17 +163,17 @@ Network](https://lternet.edu/).
 
     ![Screenshot of how to include the column names CulmenLength, CulmenDepth, FlipperLength, and BodyMass.](media/select-columns-2c.png)
 
-1. Close the **Select Columns in a Dataset** module settings to return to the designer canvas.
+1. Save and Close the **Select Columns in a Dataset** module settings to return to the designer canvas .
 
 1. In the **Asset library**, search for a **Clean Missing Data** module and place it onto the canvas, below the **Select columns in a dataset** module and connect them like this:
 
     ![Screenshot of how to connect the Select Columns in Dataset module to the Clean Missing Data module.](media/clean-missing-data-2c.png)
 
-1. Double click the **Clean Missing Data** module, and in the settings pane on the right, click **Edit column**. Then in the **Columns to be cleaned** window, select **With rules** and include **All columns**; like this:
+1. Double click the **Clean Missing Data** module, and in the settings pane on the right, click **Edit column**. Then in the **Columns to be cleaned** window, select **With rules** and include **All columns**; like this click on **save** and close:
 
     ![Screenshot of how to use the with rules option to select all columns.](media/normalize-columns-2c.png)
 
-1. With the **Clean Missing Data** module still selected, in the settings pane, set the following configuration settings:
+1. With the **Clean Missing Data** module still selected, in the settings pane, set the following configuration settings and then close:
     - **Minimum missing value ratio**: 0.0
     - **Maximum missing value ratio**: 1.0
     - **Cleaning mode**: Remove entire row
@@ -183,13 +186,13 @@ Network](https://lternet.edu/).
 
     ![Screenshot of how to select all columns.](media/normalize-columns-2c.png)
 
-1. Close the **Normalize Data** module settings to return to the designer canvas.
+1. Save and Close the **Normalize Data** module settings to return to the designer canvas.
 
 ## Run the pipeline
 
 To apply your data transformations, you need to run the pipeline as an experiment.
 
-1. Select **Submit**, and run the pipeline as a **new experiment** named **mslearn-penguin-training** on your compute cluster.
+1. Select **Submit**, and run the pipeline as a new experiment click on **Create New** and named it as **mslearn-penguin-training** on your compute cluster. Click on **Submit**
 
 1. Wait for the run to finish. This may take 5 minutes or more.
 
@@ -203,7 +206,10 @@ To apply your data transformations, you need to run the pipeline as an experimen
 
     ![Screenshot of the modules in a completed state with green bar on the left of each module.](media/normalize-complete-2a.png)
 
-1. In the new tab, right click on the **Normalize Data** module, select **Preview data**, then select **Transformed dataset** to view the results.
+1. In the new tab, right click on the **Normalize Data** module, select **Preview data**, then select **Transformed dataset** to view the results, it will look similar to like this:
+  
+    ![Screenshot of the modules in a completed state with green bar on the left of each module.](media/2c-normalize-visualiztion.png)
+   
 
 1. View the data, noting that the **Species** column has been removed, there are no missing values, and the values for all four features have been normalized to a common scale.
 
@@ -321,7 +327,7 @@ After creating and running a pipeline to train the clustering model, you can cre
 
     ![Screenshot changes made to the pipeline including which components to add and remove marked in red.](media/inference-changes-2c.png)
 
-    - Add a **web service input** component for new data to be submitted.
+    - Add a **web service input** if its not there from the component under assets library drag and drop for new data to be submitted.
     - Replace the **penguin-data** dataset with an **Enter Data Manually** module that doesn't include the **Species** column.
     - Remove the **Select Columns in Dataset** module, which is now redundant.
     - Connect the **Web Service Input** and **Enter Data Manually** modules (which represent inputs for data to be clustered) to the first **Apply Transformation** module.
