@@ -64,6 +64,8 @@ To train an object detection model, you need to create a Custom Vision project b
 
 1. In the Custom Vision project, above the images, click **Train** to train a classification model using the tagged images. Select the **Quick Training** option and click on **Train** then wait for the training iteration to complete.
 
+    ![Screenshot of the Image to select train.](media/create-image-classification-system/train.png)
+
     > **Tip**: Training may take a few minutes. While you're waiting, check out [How snow leopard selfies and AI can help save the species from extinction](https://news.microsoft.com/transform/snow-leopard-selfies-ai-save-species/), which describes a real project that uses computer vision to track endangered animals in the wild.
 
 1. When the model iteration has been trained, review the *Precision*, *Recall*, and *AP* performance metrics - these measure the prediction accuracy of the classification model, and should all be high.
