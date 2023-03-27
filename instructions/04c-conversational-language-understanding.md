@@ -1,8 +1,5 @@
 # Explore language understanding
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
 Increasingly, we expect computers to be able to use AI in order to understand spoken or typed commands in natural language. For example, you might want to implement a home automation system that enables you to control devices in your home by using voice commands such as "switch on the light" or "put the fan on", and have an AI-powered device understand the command and take appropriate action.
 
 To test the capabilities of the Conversational Language Understanding service, we'll use a command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
@@ -11,21 +8,11 @@ To test the capabilities of the Conversational Language Understanding service, w
 
 You can use the Conversational Language Understanding service by creating a **Language service** resource.
 
-If you haven't already done so, create a **Language service** resource in your Azure subscription.
-
-1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
-
-    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
-    * Azure Password: <inject key="AzureAdUserPassword"></inject>, copy and paste the **Password**: <inject key="Password" enableCopy="false"/>** 
-
-  >**Note**
-  > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select  the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
-
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings:
     - Select additional features: *Keep the default features and click Continue to create your resource*  
     - **Subscription**: Use exsiting subscription*.
     - **Resource group**: Select **AI-900-Module-04c-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Region**: Select the same region where your resource group was created
+    - **Region**: Select the same region where your resource group was created.
     - **Name**: enter **learnlanguage-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: S (1K Calls per minute)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice.**: Selected.
