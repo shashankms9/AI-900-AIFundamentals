@@ -37,21 +37,21 @@ To test the text analytics capabilities of the Language service, we'll use a sim
 
 1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal.
 
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/analyze-text-language-service/powershell-portal-guide-1.png)
+    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/powershell-portal-guide-1.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-04-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account Name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the **File share Name** , then click on **Create Storage**.
 
-    ![Create storage by clicking confirm.](media/analyze-text-language-service/powershell-portal-guide-2.png)
+    ![Create storage by clicking confirm.](media/cloudshell-storage.png)
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/analyze-text-language-service/powershell-portal-guide-3.png)
+    ![How to find the left hand drop down menu to switch to PowerShell](media/powershell-portal-guide-3.png)
 
 1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
-    ![Wait for PowerShell to start.](media/analyze-text-language-service/powershell-prompt.png)
+    ![Wait for PowerShell to start.](media/powershell-prompt.png)
 
 ## Configure and run a client application
 
@@ -74,18 +74,18 @@ Now that you have a custom model, you can run a simple client application that u
 
     Notice how this opens up an editor like the one in the image below:
 
-    ![The code editor.](media/analyze-text-language-service/powershell-portal-guide-4.png)
+    ![The code editor.](media/powershell-portal-guide-4-04.png)
 
 1. In the **Files** pane on the left, expand **ai-900** and select **analyze-text.ps1**. This file contains some code that uses the Language service:
 
-    ![The editor containing code to use the Language service](media/analyze-text-language-service/analyze-text-code.png)
+    ![The editor containing code to use the Language service](media/analyze-text-code-04.png)
 
 1. Don't worry too much about the details of the code. In the Azure portal, navigate to your Cognitive Services resource. Then select the **Keys and Endpoints** page on the left hand pane. Copy the key and endpoint from the page and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
 
-    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/analyze-text-language-service/key-endpoint-support.png)
+    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/key-endpoint-support-04.png)
 
     After replacing the key and endpoint values, the first lines of code should look similar to this:
 
