@@ -13,27 +13,31 @@ The **Computer Vision** cognitive service provides support for OCR tasks, includ
 
 - A **Read** API that is optimized for larger documents. This API is used asynchronously, and can be used for both printed and handwritten text.
 
-## Create a *Cognitive Services* resource
+## Task-1: Create a *Cognitive Services* resource
 
 You can use the Computer Vision service by creating either a **Computer Vision** resource or a **Cognitive Services** resource.
 
 If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
 
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-
-1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*.
+1. In the Azure Portal, Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+    - **Subscription**: *Retain the Existing Subscription*.
+    - **Resource group**: Select **AI-900-Module-03d-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**: *Select the same region where your resource group got deployed.*.
     - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="true"/>**.
     - **Pricing tier**: Standard S0
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
-
-1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Select the checkbox.
+    
+    ![](media/read-text-computer-vision/lab3d-1.png)
+    
+    ![](media/read-text-computer-vision/lab3d-2.png)
+    
+    ![](media/read-text-computer-vision/lab3d-3.png)
+    
+1. Click on **Review + Create** and Click on **Create**, and wait for deployment to complete. Then go to the deployed resource.
 
 1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
-## Run Cloud Shell
+## Task-2: Run Cloud Shell
 
 To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
 
@@ -55,7 +59,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     ![Wait for PowerShell to start.](media/read-text-computer-vision/powershell-prompt.png) 
 
-## Configure and run a client application
+## Task-3: Configure and run a client application
 
 Now that you have a custom model, you can run a simple client application that uses the OCR service.
 
@@ -64,8 +68,6 @@ Now that you have a custom model, you can run a simple client application that u
     ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
-
-    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
