@@ -3,28 +3,13 @@
 > **Note**
 > To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
 
-## Create an Azure Machine Learning workspace  
-
-1. In the lab virtual machine, Start the Microsoft Edge browser.
-
-1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
-
-1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
-
-    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
-    
-    * Azure Password: <inject key="AzureAdUserPassword"></inject>
-
-
-    >**Note**
-    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
-
+## Create an Azure Machine Learning workspace in the azure portal.
 
 1. Select **+ Create a resource**, search for Machine Learning, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: Use existing Azure subscription.
     - **Resource group**: Select **AI-900-Module-02c-<inject key="DeploymentID" enableCopy="false" />**
     - **Workspace name**: Give name **AI-900-Workspace-<inject key="DeploymentID" enableCopy="false" />**
-    - **Region**: Use default region.
+    - **Region**: Select the same region where your resource group was created.
     - **Storage account**: Note the default new storage account that will be created for your workspace.
     - **Key vault**: Note the default new key vault that will be created for your workspace.
     - **Application insights**: Note the default new application insights resource that will be created for your workspace.
@@ -41,7 +26,7 @@
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 2. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Location**: Select the same region where your resource group was created.
     - **Virtual machine tier**: Dedicated
     - **Virtual machine type**: CPU
     - **Virtual machine size**:
@@ -70,7 +55,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. In **Settings**, you must specify a compute target on which to run the pipeline. Under **Select compute type**, select **Compute cluster**. Then under **Select Azure ML compute cluster**, select the compute cluster you created previously **ai900-vm-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. In **Settings**, under **Draft Details**, change the draft name (**Pipeline-Created-on-*date***) to **Train Penguin Clustering**.
+1. In **Settings**, under **Draft Details**, change the draft name (**Pipeline-Created-on-*date**) to **Train Penguin Clustering**.
 
 1. Select the *close icon* on the top right of the **Settings** pane to close the pane, and then select **Save**.
 
