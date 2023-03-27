@@ -16,16 +16,16 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*.
-    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="true"/>**.
+    - **Subscription**: *Use existing Azure subscription*.
+    - **Resource group**: **AI-900-Module-03c-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Region**: *Select the same region where your resource group was created ( i.e. Easus2)*.
+    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
-1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
+1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications thus, copy the same over to a notepad.
 
 ## Run Cloud Shell
 
@@ -37,7 +37,7 @@ To test the capabilities of the Face service, we'll use a simple command-line ap
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-03c-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** For the **File share name**, then click on **Create Storage**.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-03c-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account name**. Next, enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** For the **File share name**, then click on **Create Storage**.
 
     ![Create storage by clicking confirm.](media/create-face-solutions/create-a-storage.png)       
 
@@ -58,9 +58,6 @@ Now that you have a custom model, you can run a simple client application that u
     ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
-
-    > **Tip**
-    > If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
@@ -88,7 +85,7 @@ Now that you have a custom model, you can run a simple client application that u
     $endpoint="https..."
     ```
 
-1. At the top right of the editor pane, use the **...** button to open the menu and select **Save** to save your changes. Then open the menu again and select **Close Editor**.
+1. After making the changes to the variables in the code, press **CTRL+S** to save the file. Then press **CTRL+Q** to close the code editor..
 
     The sample client application will use your Face service to analyze the following image, taken by a camera in the Northwind Traders store:
 
