@@ -18,6 +18,7 @@ The Language service's custom question answering feature enables you to quickly 
 1. On the **Create Language** page, specify the following settings:
     - **Subscription**: *Use existing Azure subscription*.
     - **Resource group**: *AI-900-Module-03c-<inject key="DeploymentID" enableCopy="false" />*.
+    - **Region**: *Select the same region where your resource group was created*.
     - **Name**: **ai900language-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: S (1K Calls per minute)
     - **Azure search region**: *Any available location*.
