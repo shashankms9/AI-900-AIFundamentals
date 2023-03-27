@@ -1,8 +1,5 @@
 # Explore optical character recognition
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
 A common computer vision challenge is to detect and interpret text in an image. This kind of processing is often referred to as *optical character recognition* (OCR). Microsoft's Read API provides access to OCR capabilities. 
 
 To test the capabilities of the Read API, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
@@ -23,7 +20,7 @@ If you haven't already done so, create a **Cognitive Services** resource in your
     - **Subscription**: *Retain the Existing Subscription*.
     - **Resource group**: Select **AI-900-Module-03d-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Region**: *Select the same region where your resource group got deployed.*.
-    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="true"/>**.
+    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Select the checkbox.
     
