@@ -9,36 +9,34 @@ Artificial Intelligence (AI) can help simplify communication by translating text
 
 To test the capabilities of the Translator service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Task-1: Create a *Cognitive Services* resource
 
-You can use the Translator service by creating either a **Translator** resource or a **Cognitive Services** resource.
+You can use the Computer Vision service by creating either a **Translator** resource or a **Cognitive Services** resource.
 
 If you haven't already done so, create a **Cognitive Services** resource in your Azure subscription.
 
-1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
-
-1. Select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Region**: *Choose any available region*.
-    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="true"/>**
+1. In the Azure Portal, Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+    - **Subscription**: *Retain the Existing Subscription*.
+    - **Resource group**: Select **AI-900-Module-04b-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Region**: *Select the same region where your resource group got deployed.*.
+    - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
-
-1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
-
-1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the keys and location to connect from client applications.
-
-### Get the Key and Location for your Cognitive Services resource
-
-1. Wait for deployment to complete. Then go to your Cognitive Services resource, and on the **Overview** page, select the link to manage the keys for the service. You will need the keys and location to connect to your Cognitive Services resource from client applications.
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Select the checkbox.
+    
+    ![](media/read-text-computer-vision/lab3d-1.png)
+    
+    ![](media/read-text-computer-vision/lab3d-2.png)
+    
+    ![](media/read-text-computer-vision/lab3d-3.png)
+    
+1. Click on **Review + Create** and Click on **Create**, and wait for deployment to complete. Then go to the deployed resource.
 
 1. View the **Keys and Endpoint** page for your resource. You will need the **location/region** and **key** to connect from client applications.
 
 > **Note**
 > To use the Translator service you do not need to use the Cognitive Service endpoint. A global endpoint just for the Translator service is provided. 
 
-## Run Cloud Shell
+## Task-2: Run Cloud Shell
 
 To test the capabilities of the Translation service, we'll use a simple command-line application that runs in the Cloud Shell on Azure. 
 
@@ -70,9 +68,6 @@ Now that you have a custom model, you can run a simple client application that u
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
 
-    >**Tip**
-    >If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
-
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell: 
 
      ```PowerShell
@@ -88,6 +83,8 @@ Now that you have a custom model, you can run a simple client application that u
     ![The editor containing code to use the Translator service](media/translate-text-and-speech/translate-code.png)
 
 1. Don't worry too much about the details of the code, the important thing is that it needs the region/location and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_LOCATION** placeholder values respectively.
+
+    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/analyze-text-language-service/lab4b-1.png)
 
     After pasting the key and location values, the first lines of code should look similar to this:
 
@@ -106,10 +103,8 @@ Now that you have a custom model, you can run a simple client application that u
 
      <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWORN0" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
 
-
-    > **Note**
-    > A real application could accept the input from a microphone and send the response to a speaker, but in this simple example, we'll use pre-recorded input in an audio file.
-
+    > **Note**: A real application could accept the input from a microphone and send the response to a speaker, but in this simple example, we'll use pre-recorded input in an audio file.
+    
 1. In the Cloud Shell pane, enter the following command to run the code:
 
     ```PowerShell
