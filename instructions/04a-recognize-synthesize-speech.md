@@ -1,15 +1,12 @@
 # Explore speech
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
 To build software that can interpret audible speech and respond appropriately, you can use the **Speech** cognitive service, which provides a simple way to transcribe spoken language into text and vice-versa.
 
 For example, suppose you want to create a smart device that can respond verbally to spoken questions, such as "What time is it?" The response should be the local time.
 
 To test the capabilities of the Speech service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Create a **Cognitive Services** resource
 
 You can use the Speech service by creating either a **Speech** resource or a **Cognitive Services** resource.
 
@@ -19,9 +16,9 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *AI-900-Module-04a-<inject key="DeploymentID" enableCopy="false"/>*.
+    - **Resource group**: **AI-900-Module-04a-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Region**: *Select the same region where your resource group was created*.
-    - **Name**: *enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***.
+    - **Name**: enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0.
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -43,7 +40,7 @@ To test the capabilities of the Speech service, we'll use a simple command-line 
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-04a-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the  **File share** , then click on **Create Storage**.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-04a-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the  **File share** , then click on **Create Storage**.
     
     ![Screenshot of the cloud shell in the Azure portal.](media/stoarge-up.png)
    
@@ -65,7 +62,6 @@ Now that you have a custom model, you can run a simple client application that u
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
 
-    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 
@@ -92,6 +88,9 @@ Now that you have a custom model, you can run a simple client application that u
     $key = "1a2b3c4d5e6f7g8h9i0j...."
     $region="somelocation"
     ```
+    
+    >**Note:**
+    >Region should be written in small letters, for example : eastus2
 
 1. After making the changes to the variables in the code, press **CTRL+S** to save the file. Then press **CTRL+Q** to close the code editor.
 
