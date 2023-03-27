@@ -8,7 +8,7 @@ For example, suppose the fictional *Margie's Travel* organization encourages cus
 
 To test the capabilities of the Language service, we'll use a simple command-line application that runs in the Cloud Shell. The same principles and functionality apply in real-world solutions, such as web sites or phone apps.
 
-## Create a *Cognitive Services* resource
+## Task-1: Create a *Cognitive Services* resource
 
 You can use the Computer Vision service by creating either a **Language** resource or a **Cognitive Services** resource.
 
@@ -16,7 +16,7 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. In the Azure Portal, Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Retain the Existing Subscription*.
-    - **Resource group**: Select **AI-900-Module-03d-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Resource group**: Select **AI-900-Module-04-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Region**: *Select the same region where your resource group got deployed.*.
     - **Name**: Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
@@ -55,7 +55,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     ![Wait for PowerShell to start.](media/read-text-computer-vision/powershell-prompt.png) 
     
-## Configure and run a client application
+## Task-3: Configure and run a client application
 
 Now that you have a custom model, you can run a simple client application that uses the Language service.
 
