@@ -61,7 +61,7 @@ To implement natural language understanding with Conversational Language Underst
     - **Utterances primary language**: English
     - **Enable multiple languages in project**: Do not select
 
-    ![Enter details for the project.](media/conversational-language-understanding/create-project.png)
+    ![Enter details for the project.](media/create-project-4c.png)
 
     >**Tip**
     >Write down your *project name*, you will use it later.
@@ -74,12 +74,12 @@ An **intent** is an action you want to perform - for example, you might want to 
 
 1. In the **Schema definition** pane, ensure that **Intents** is selected Then click **Add**, and add an intent with the name **switch_on** (in lower-case) and click **Add intent**.
 
-    ![Click on add under Intents on the Build Schema pane.](media/conversational-language-understanding/build-schema.png)
-    ![Add the switch_on intent then select Add intent.](media/conversational-language-understanding/add-intent.png)
+    ![Click on add under Intents on the Build Schema pane.](media/build-schema-4c.png)
+    ![Add the switch_on intent then select Add intent.](media/add-intent-4c.png)
 
 1. Select the **switch_on** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_on**. Next to the **switch_on** intent, type the utterance **turn the light on** and press **Enter** to submit this utterance to the list.
 
-    ![Add an utterance to the training set by typing in "turn the light on" under Utterance.](media/conversational-language-understanding/add-utterance-on.png)
+    ![Add an utterance to the training set by typing in "turn the light on" under Utterance.](media/add-utterance-on-4c.png)
 
 1. The language service needs at least five different utterance examples for each intent to sufficiently train the language model. Add five more utterance examples for the **switch_on** intent:  
     - **switch on the fan**
@@ -90,12 +90,12 @@ An **intent** is an action you want to perform - for example, you might want to 
 
 1. On the **Labeling entities for training** pane on the right-hand side of the screen, select **Labels**, then select **Add entity**. Type **device** (in lower-case), select **List** and select **Add entity**.
 
-    ![Add an entity by selecting Tags on the Tagging entities for training panel, then select Add entity.](media/conversational-language-understanding/add-entity.png) 
-    ![Type in device under Entity name and select List, then select Add entity.](media/conversational-language-understanding/add-entity-device.png)
+    ![Add an entity by selecting Tags on the Tagging entities for training panel, then select Add entity.](media/add-entity-4c.png) 
+    ![Type in device under Entity name and select List, then select Add entity.](media/add-entity-device-4c.png)
 
 1. In the **turn the fan on** utterance, highlight the word "fan". Then in the list that appears, in the *Search for an entity* box select **device**.
 
-    ![Highlight the word fan in the utterance and select device.](media/conversational-language-understanding/switch-on-entity.png)
+    ![Highlight the word fan in the utterance and select device.](media/switch-on-entity-4c.png)
 
 1. Do the same for all the utterances. Label the rest of the *fan* or *light* utterances with the **device** entity. When you're finished, verify that you have the following utterances and make sure to select **Save changes**:
 
@@ -108,11 +108,11 @@ An **intent** is an action you want to perform - for example, you might want to 
     | switch_on   | Switch on the fan   | Device - *select fan* |
     | switch_on   | Turn the light on   | Device - *select light* |
 
-    ![Once you are done, select Save changes.](media/conversational-language-understanding/save-changes.png) 
+    ![Once you are done, select Save changes.](media/save-changes-4c.png) 
 
 1. In the pane on the left, click **Schema definition** and verify that your **switch_on** intent is listed. Then click **Add** and add a new intent with the name **switch_off** (in lower-case).
 
-    ![Return to the Build Schema screen and add a switch_off intent.](media/conversational-language-understanding/add-switch-off.png) 
+    ![Return to the Build Schema screen and add a switch_off intent.](media/add-switch-of-4c.png) 
 
 1. Click on the **switch_off** intent. It will take you to the **Data labeling** page. In the **Intent** drop down, select **switch_off**. Next to the **switch_off** intent, add the utterance ***turn the light off***.
 
@@ -166,7 +166,7 @@ To use your trained model in a client application, you must deploy it as an endp
 
     *switch the light on*
 
-    ![Test your model by selecting your deployed model, then entering text and selecting Run the test.](media/conversational-language-understanding/test-model.png) 
+    ![Test your model by selecting your deployed model, then entering text and selecting Run the test.](media/test-model-4c.png) 
 
     Review the result that is returned, noting that it includes the predicted intent (which should be **switch_on**) and the predicted entity (**device**) with confidence scores that indicates the probability the model calculated for the predicted intent and entity. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
@@ -183,21 +183,21 @@ Now let's try out your deployed model. To do so, we'll use a command-line applic
 
 1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. Clicking the button opens a Cloud Shell pane at the bottom of the portal.
 
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/conversational-language-understanding/powershell-portal-guide-1.png)
+    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/powershell-portal-guide-4c.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is specified and select **Create storage**. Then wait a minute or so for the storage to be created. 
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-04c-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account Name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the **File share Name** , then click on **Create Storage**.
 
-    ![Create storage by clicking confirm.](media/conversational-language-understanding/powershell-portal-guide-2.png)
-
+    ![Create storage by clicking confirm.](media/cloudshell-storage.png)
+    
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to **PowerShell**. If it is **Bash**, switch to *PowerShell* by using the drop-down menu.
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/conversational-language-understanding/powershell-portal-guide-3.png) 
+    ![How to find the left hand drop down menu to switch to PowerShell](media/powershell-portal-guide-bash-4c.png) 
 
 1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
-    ![Wait for PowerShell to start.](media/conversational-language-understanding/powershell-prompt.png) 
+    ![Wait for PowerShell to start.](media/powershell-prompt-4c.png) 
 
 ## Configure and run a client application
 
@@ -221,11 +221,11 @@ Now let's open and edit a pre-written script, which will run the client applicat
 
     Notice how the script opens up an editor like the one in the image below: 
 
-    ![The code editor.](media/conversational-language-understanding/powershell-portal-guide-4.png)
+    ![The code editor.](media/powershell-portal-guide4c.png)
 
 1. In the **Files** pane on the left, select the **understand.ps1** file in the **ai-900** folder. This file contains some code that uses your Conversational Language Understanding model. 
 
-    ![The code for the language understanding lab with box around credentials you need to modify and save before running the program.](media/conversational-language-understanding/understand-code.png)
+    ![The code for the language understanding lab with box around credentials you need to modify and save before running the program.](media/understand-code-4c.png)
 
     Don't worry too much about the details of the code. The important thing is that you'll use the instructions below to modify the file to specify the language model you trained. 
 
