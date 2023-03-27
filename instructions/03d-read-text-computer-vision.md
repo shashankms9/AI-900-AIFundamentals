@@ -85,6 +85,8 @@ Now that you have a custom model, you can run a simple client application that u
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
 
+    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/analyze-text-language-service/key-endpoint-support.png)
+
     After pasting the key and endpoint values, the first two lines of code should look similar to this:
 
     ```PowerShell
