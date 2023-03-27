@@ -85,7 +85,7 @@ Now that you have a Cloud Shell environment, you can run a simple application th
 
     Notice how this opens up an editor like the one in the image below: 
 
-    ![The code editor.](media/powershell-portal-guide-4.png)
+    ![The code editor.](media/powershell-portal-guide4c.png)
 
 1. In the **Files** pane on the left, expand **ai-900** and select **detect-anomalies.ps1**. This file contains some code that uses the Anomaly Detection service, as shown here:
 
