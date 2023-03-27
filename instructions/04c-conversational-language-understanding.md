@@ -28,7 +28,7 @@ If you haven't already done so, create a **Language service** resource in your A
     - Select additional features: *Keep the default features and click Continue to create your resource*  
     - **Subscription**: Use exsiting subscription*.
     - **Resource group**: Select **AI-900-Module-04c-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Region**: Select the same region where your resource group was created
     - **Name**: enter **learnlanguage-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: S (1K Calls per minute)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice.**: Selected.
