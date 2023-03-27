@@ -33,7 +33,7 @@ To test the capabilities of the Face service, we'll use a simple command-line ap
 
 1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal. 
 
-    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/create-face-solutions/powershell-portal-guide-1.png)
+    ![Start Cloud Shell by clicking on the icon to the right of the top search box](media/create-face-solutions/ai900_03c-1.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
@@ -43,11 +43,11 @@ To test the capabilities of the Face service, we'll use a simple command-line ap
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
-    ![How to find the left hand drop down menu to switch to PowerShell](media/create-face-solutions/powershell-portal-guide-3.png) 
+    ![How to find the left hand drop down menu to switch to PowerShell](media/create-face-solutions/ai900_03c-3.png) 
 
 1. Wait for PowerShell to start. You should see the following screen in the Azure portal:  
 
-    ![Wait for PowerShell to start.](media/create-face-solutions/powershell-prompt.png)
+    ![Wait for PowerShell to start.](media/create-face-solutions/ai900_03c-4.png)
 
 ## Configure and run a client application
 
@@ -67,11 +67,11 @@ Now that you have a custom model, you can run a simple client application that u
 
     Notice how this opens up an editor like the one in the image below: 
 
-    ![The code editor.](media/create-face-solutions/powershell-portal-guide-4.png) 
+    ![The code editor.](media/create-face-solutions/ai900_03c-5.png) 
 
 1. In the **Files** pane on the left, expand **ai-900** and select **find-faces.ps1**. This file contains some code that uses the Face service to detect and analyze faces in an image, as shown here:
 
-    ![The editor containing code to detect faces in an image](media/create-face-solutions/find-faces-code.png)
+    ![The editor containing code to detect faces in an image](media/create-face-solutions/ai900_03c-6.png)
 
 1. Don't worry too much about the details of the code, the important thing is that it needs the endpoint URL and either of the keys for your Cognitive Services resource. Copy these from the **Keys and Endpoints** page for your resource from the Azure portal and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
@@ -89,7 +89,7 @@ Now that you have a custom model, you can run a simple client application that u
 
     The sample client application will use your Face service to analyze the following image, taken by a camera in the Northwind Traders store:
 
-    ![An image of a parent using a cellphone camera to take a picture of a child in in a store](media/create-face-solutions/store-camera-1.jpg)
+    ![An image of a parent using a cellphone camera to take a picture of a child in in a store](media/create-face-solutions/ai900_03c-7.jpg)
 
 1. In the PowerShell pane, enter the following commands to run the code:
 
@@ -100,14 +100,14 @@ Now that you have a custom model, you can run a simple client application that u
 
 1. Review the returned information, which includes the location of the face in the image. The location of a face is indicated by the top-left coordinates, and the width and height of a *bounding box*, as shown here:
 
-    ![An image of a person with their face outlined](media/create-face-solutions/store-camera-1-face.jpg)
+    ![An image of a person with their face outlined](media/create-face-solutions/ai900_03c-8.jpg)
 
     >**Note**
     >Face service capabilities that return personally identifiable features are restricted. See https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/ for details.
 
 1. Now let's try another image:
 
-    ![An image of person with a shopping basket](media/create-face-solutions/store-camera-2.jpg)
+    ![An image of person with a shopping basket](media/create-face-solutions/ai900_03c-9.jpg)
 
     To analyze the second image, enter the following command:
 
@@ -119,7 +119,7 @@ Now that you have a custom model, you can run a simple client application that u
 
 1. Let's try one more:
 
-    ![An image of person with a shopping cart](media/create-face-solutions/store-camera-3.jpg)
+    ![An image of person with a shopping cart](media/create-face-solutions/ai900_03c-10.jpg)
 
     To analyze the third image, enter the following command:
 
