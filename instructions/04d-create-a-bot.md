@@ -13,7 +13,7 @@ The Language service's custom question answering feature enables you to quickly 
     - **Default features**: *Keep the default features*.
     - **Custom features**: *Select custom question answering*.
 
-    ![Creating a Language Service resource with custom question answering enabled.](media/create-a-bot/create-language-service-resource.png)
+    ![Creating a Language Service resource with custom question answering enabled.](media/create-a-bot/ai900_4d-01.png)
 
 1. On the **Create Language** page, specify the following settings:
     - **Subscription**: *Use existing Azure subscription*.
@@ -28,6 +28,8 @@ The Language service's custom question answering feature enables you to quickly 
     > **Note**
     > If you have already provisioned a free-tier **Azure Cognitive Search** resources, your quota may not allow you to create another one. In which case, select a tier other than **Free F**.
 
+   ![](media/create-a-bot/ai900_4d-02.png)
+
 1. Click **Review and Create** and then click **Create**. Wait for the deployment of the Language service that will support your custom question answering knowledge base.
 
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
@@ -37,6 +39,8 @@ The Language service's custom question answering feature enables you to quickly 
     - **Azure subscription**: The default Azure subscription.
     - **Resource type**: *Language*.
     - **Resource name**: The Language resource you created previously.
+
+   ![](media/create-a-bot/ai900_4d-03.png)
 
 1. If you are ***not*** prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
     1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
@@ -71,11 +75,15 @@ Your knowledge base is based on the details in the FAQ document and some pre-def
 
 1. Click **Edit knowledge base** on the left hand panel. Then click **+** to add a new question answer pair.
 
+   ![](media/create-a-bot/ai900_4d-04.png)
+
 1. In the **Add a new question answer pair** page, set the **Source** to *Editorial*.
 
 1. Within the **Question** box, type `Hello`.
 
 1. In the **Answer** box, type `Hello`.
+
+   ![](media/create-a-bot/ai900_4d-05.png)
 
 1. Click **Submit**. Then at the top of the page click **Save changes**. You may need to change the size of your window to see the button.
 
