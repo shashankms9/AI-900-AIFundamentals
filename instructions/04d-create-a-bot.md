@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore question answering'
----
-
 # Explore question answering
 
 > **Note**
