@@ -24,9 +24,9 @@ Create a **Cognitive Services** resource in your Azure subscription.
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
     - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *AI-900-Module-03b-<inject key="DeploymentID" enableCopy="false"/>*
-    - **Region**: East US
-    - **Name**: *Enter a unique name*.
+    - **Resource group**:Select **AI-900-Module-03b-<inject key="DeploymentID" enableCopy="false"/>**
+    - **Region**: Select the same region where your resource group was created.
+    - **Name**: Enter **AI-900-cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -43,7 +43,7 @@ To train an object detection model, you need to create a Custom Vision project b
 1. Create a new project with the following settings:
     - **Name**: Traffic Safety
     - **Description**: Object detection for road safety.
-    - **Resource**: *The resource you created previously*
+    - **Resource**: **AI-900-cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Project Types**: Object Detection
     - **Domains**: General \[A1]
    >**Note**: Under **Resource** dropdown if you don't find the resource that you created previously in the azure portal, kindly refresh the page and reperform the task.
@@ -111,7 +111,7 @@ Now you're ready to publish your trained model and use it from a client applicat
 
 1. Click **&#128504; Publish** to publish the trained model with the following settings:
     - **Model name**: traffic-safety
-    - **Prediction resource**: *The resource you created previously*.
+    - **Prediction resource**: **AI-900-cognitive-<inject key="DeploymentID" enableCopy="false"/>**..
 
 1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model.
 
@@ -127,11 +127,11 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
 
-    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group and enter a uniquename for the **Storage account** and **File share** , then click on **Create Storage**
+ 1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account Name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the **File share Name** , then click on **Create Storage**.
 
     When the cloud shell is ready, it should look similar to this:
     
-    ![Screenshot of the cloud shell in the Azure portal.](media/create-object-detection-solution/cloud-shell.png)
+     ![Create storage by clicking confirm.](media/cloudshell-storage.png)
 
     > **Tip**: Ensure that the type of shell indicated on the top left of the Cloud Shell pane is *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
