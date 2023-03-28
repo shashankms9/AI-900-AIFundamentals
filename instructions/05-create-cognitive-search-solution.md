@@ -26,11 +26,21 @@ The solution you'll create for Fourth Coffee requires the following resources in
 
 - A **Storage account** with blob containers, which will store raw documents and other collections of tables, objects, or files.
 
-### Create an *Azure Cognitive Search* resource
+### Create an **Azure Cognitive Search** resource
 
-1. Sign into the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
+1. In the lab virtual machine, Start the Microsoft Edge browser.
 
-1. Click the **+ Create a resource** button, search for *Azure Cognitive Search*, and create a **Azure Cognitive Search** resource with the following settings:
+1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
+
+1. In the **Sign in** dialog box, copy and paste in the **Username** <inject key="AzureUserName" enableCopy="true"/> and then select Next.
+
+1. In the **Enter password** dialog box, copy and paste the **Password** <inject key="AzurePassword" enableCopy="true"/>  provided in the **environment details page** and then select **Sign in**.
+
+    >**Note**
+    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+   
+1. Click the **+ Create a resource** button, search for **Azure Cognitive Search**, and create a **Azure Cognitive Search** resource with the following settings:
+
 
     - **Subscription**: Use exiting Azure subscription.
     - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false" />**..
@@ -63,10 +73,10 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button.
 
 1. Search for *storage account*, and create a **Storage account** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *The same resource group as your Azure Cognitive Search and Cognitive Services resources*.
-    - **Storage account name**: *A unique name*.
-    - **Location**: *Choose any available location*.
+    - **Subscription**: Use existing subscription.
+    - **Resource group**:  Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Storage account name**: **ai900blob-<inject key="DeploymentID" enableCopy="false"/>**.
+    - **Location**: Select the same region where your resource group was created.
     - **Performance**: Standard
     - **Redundancy**: Locally redundant storage (LRS)
 
@@ -76,7 +86,7 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 
 1. In the Azure Storage account you created, in the left-hand menu pane, select **Containers**.
 
-    ![Screenshot that shows the storage blob overview page.](media/create-cognitive-search-solution/storage-blob-1.png)
+    ![Screenshot that shows the storage blob overview page.](media/storage-blob-1-05.png)
 
 1. Select **+ Container**. A pane on your right-hand side opens.
 
@@ -89,13 +99,13 @@ You'll need to provision a **Cognitive Services** resource that's in the same lo
 
 1. In the Azure portal, select your *coffee-reviews* container. In the container, select **Upload**.
 
-    ![Screenshot that shows the storage container.](media/create-cognitive-search-solution/storage-blob-3.png)
+    ![Screenshot that shows the storage container.](media/storage-blob-3-05.png)
 
 1. In the **Upload blob** pane, select **Select a file**.
 
 1. In the Explorer window, select **all** the files in the *reviews* folder, select **Open**, and then select **Upload**.
 
-    ![Screenshot that shows the files uploaded to the Azure container.](media/create-cognitive-search-solution/6a-azure-container-upload-files.png)
+    ![Screenshot that shows the files uploaded to the Azure container.](media/6a-azure-container-upload-files-05.png)
 
 1. After the upload is complete, you can close the **Upload blob** pane. Your documents are now in your *coffee-reviews* storage container.
 
@@ -105,7 +115,7 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
 
 1. In the Azure portal, browse to your Azure Cognitive Search resource. On the **Overview** page, select **Import data**.
 
-    ![Screenshot that shows the import data wizard.](media/create-cognitive-search-solution/azure-search-wizard-1.png)
+    ![Screenshot that shows the import data wizard.](media/azure-search-wizard-1-05.png)
 
 1. On the **Connect to your data** page, in the **Data Source** list, select **Azure Blob Storage**. Complete the data store details with the following values:
     - **Data Source**: Azure Blob Storage
@@ -114,7 +124,7 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
     - **Parsing mode**: Default
     - **Connection string**: *Select **Choose an existing connection**. Select your storage account, select the **coffee-reviews** container, and then click **Select**.
     - **Managed identity authentication**: None
-    - **Container name**: *this setting is auto-populated after you choose an existing connection*.
+    - **Container name**: this setting is auto-populated after you choose an existing connection.
     - **Blob folder**: *Leave this blank*.
     - **Description**: Reviews for Fourth Coffee shops.
 
@@ -151,8 +161,9 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
 
     > **Note**
     > If a warning asking for a **Storage Account Connection String** appears.
-    >
-    > ![Screenshot that shows the Storage account connection screen warning with 'Choose an existing connection' selected.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
+    
+    
+    ![Screenshot that shows the Storage account connection screen warning with 'Choose an existing connection' selected.](media/6a-azure-cognitive-search-enrichments-warning-05.png)
 
     > 1. Select **Choose an existing connection**. Choose the storage account you created earlier.
 
@@ -168,7 +179,7 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
 
 1. Review the index fields' default settings. Select **filterable** for all the fields that are already selected by default.
 
-    ![Screenshot that shows the customize index pane with the index name entered and 'Filterable' selected for a default index field.](media/create-cognitive-search-solution/6a-azure-cognitive-search-customize-index.png)
+    ![Screenshot that shows the customize index pane with the index name entered and 'Filterable' selected for a default index field.](media/6a-azure-cognitive-search-customize-index-05.png)
 
 1. Select **Next: Create an indexer**.
 
@@ -187,7 +198,7 @@ Once you have the documents in storage, you can use Azure Cognitive Search to ex
 
 1. Select the indexer name to see more details.
 
-    ![Screenshot that shows the coffee-indexer Indexer successfully created.](media/create-cognitive-search-solution/6a-search-indexer-success.png)
+    ![Screenshot that shows the coffee-indexer Indexer successfully created.](media/6a-search-indexer-success-05.png)
 
 ## Query the index
 
@@ -195,11 +206,11 @@ Use the Search explorer to write and test queries. Search explorer is a tool bui
 
 1. In your Search service's *Overview* page, select **Search explorer** at the top of the screen.
 
-   ![Screenshot of how to find Search explorer.](media/create-cognitive-search-solution/5-exercise-screenshot-7.png)
+   ![Screenshot of how to find Search explorer.](media/5-exercise-screenshot-7-05.png)
 
 1. Notice how the index selected is the *coffee-index* you created.
 
-    ![Screenshot of the Search explorer.](media/create-cognitive-search-solution/search-explorer-query.png)
+    ![Screenshot of the Search explorer.](media/search-explorer-query-05.png)
 
     In the **Query string** field, enter `search=*&$count=true`, and then select **Search**. The search query returns all the documents in the search index, including a count of all the documents in the **@odata.count** field. The search index should return a JSON document containing your search results.
 
@@ -231,11 +242,11 @@ Let's see the power of the knowledge store in action. When you ran the *Import d
 
 1. Select **Edit** to see the JSON produced for one of the documents from your Azure data store.
 
-    ![Screenshot of how to find the edit button.](media/create-cognitive-search-solution/knowledge-store-blob-2.png)
+    ![Screenshot of how to find the edit button.](media/knowledge-store-blob-2-05.png)
 
 1. Select the storage blob breadcrumb at the top left of the screen to return to the Storage account *Containers*.
 
-    ![Screenshot of the storage blob breadcrumb.](media/create-cognitive-search-solution/knowledge-store-blob-4.png)
+    ![Screenshot of the storage blob breadcrumb.](media/knowledge-store-blob-4-05.png)
 
 1. In the *Containers*, select the container *coffee-skillset-image-projection*. Select any of the items.
 
@@ -243,7 +254,7 @@ Let's see the power of the knowledge store in action. When you ran the *Import d
 
 1. Select any of the *.jpg* files. Select **Edit** to see the image stored from the document. Notice how all the images from the documents are stored in this manner.
 
-    ![Screenshot of the saved image.](media/create-cognitive-search-solution/knowledge-store-blob-3.png)
+    ![Screenshot of the saved image.](media/knowledge-store-blob-3-05.png)
 
 1. Select the storage blob breadcrumb at the top left of the screen to return to the Storage account *Containers*.
 

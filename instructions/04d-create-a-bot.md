@@ -9,7 +9,7 @@ The Language service's custom question answering feature enables you to quickly 
 1. Open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings, and then click **Continue to create your resource**:
-    **Select Additional Features**
+    - **Select Additional Features**
     - **Default features**: *Keep the default features*.
     - **Custom features**: *Select custom question answering*.
 
@@ -21,9 +21,8 @@ The Language service's custom question answering feature enables you to quickly 
     - **Region**: *Select the same region where your resource group was created*.
     - **Name**: **ai900language-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: S (1K Calls per minute)
-    - **Azure search region**: *Any available location*.
-    - **Azure search pricing tier**: Free F (3 Indexes) - (*If this tier is not available, select Standard S (50 Indexes)*)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice**: *Selected*.
+
 
     > **Note**
     > If you have already provisioned a free-tier **Azure Cognitive Search** resources, your quota may not allow you to create another one. In which case, select a tier other than **Free F**.
@@ -33,6 +32,7 @@ The Language service's custom question answering feature enables you to quickly 
 1. Click **Review and Create** and then click **Create**. Wait for the deployment of the Language service that will support your custom question answering knowledge base.
 
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
+
 
 1. If prompted to select an Azure resource, ensure the following settings and click on **Done**:
     - **Azure directory**: The Azure directory containing the pre alloted subscription.
@@ -50,11 +50,23 @@ The Language service's custom question answering feature enables you to quickly 
 
 1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
 
+1 If On the **Select the project you want to work with** page is empty then click on **Create new project**
+
+1. On **Connect to Azure search** page click on **Connect to Azure search.**
+
+1. On **Azure Search** page  select drop down of select Azure Search resources and click on **Add Azure Search resources** 
+
+1. On **Creat Azure Search** page enter **Azure Search Service Name** enter the laungae service you have created earlier you have created **Azure search region:** east us2. **Azure search pricing tier:** Free F (3 Indexes) - (If this tier is not available, select Standard S (50 Indexes)) and click on **Create**.
+
+4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
+
+1. At the top of the Language Studio portal, in the **Create new** menu, select **Custom question answering**.
+
 1. On the **Choose language setting for resource *your resource*** page, select **I want to select the language when I create a project in this resource** and click **Next**.
 
 1. On the **Enter basic information** page, enter the following details and click **Next**:
-    - **Language resource**: *choose your language resource*.  
-    - **Azure search resource**: *choose your Azure search resource*.
+    - **Language resource**: choose your language resource.  
+    - **Azure search resource**: choose your Azure search resource.
     - **Name**: MargiesTravel
     - **Description**: A simple knowledge base
     - **Source language**: English
@@ -95,7 +107,7 @@ Now that you have a knowledge base, you can test it.
 
 1. In the test pane, at the bottom enter the message *Hello*. The response **Hello** should be returned.
 
-1. In the test pane, at the bottom enter the message *I want to book a flight*. An appropriate response from the FAQ should be returned.
+1. In the test pane, at the bottom enter the message **I want to book a flight**. An appropriate response from the FAQ should be returned.
 
     > **Note**
     > The response includes a *short answer* as well as a more verbose *answer passage* - the answer passage shows the full text in the FAQ document for the closest matched question, while the short answer is intelligently extracted from the passage. You can control whether the short answer is from the response by using the **Display short answer** checkbox at the top of the test pane.
@@ -117,8 +129,8 @@ The knowledge base provides a back-end service that client applications can use 
 1. In the Azure portal, create a Web App Bot. (You may see a warning message to check that the source of the template is trustworthy. You do not need to take any action for that message.) Continue by updating the following settings:
 
     - **Project Details**
-        - **Subscription**: *Your Azure subscription*
-        - **Resource group**: *The resource group containing your Language resource*
+        - **Subscription**: Use existing subscription.
+        - **Resource group**: select  Select **AI-900-Module-04d-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Instance details**
         - **Resource group Location**: *The same location as your Language service*.
     - **Azure Bot**

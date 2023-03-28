@@ -23,10 +23,10 @@ Create a **Cognitive Services** resource in your Azure subscription.
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *AI-900-Module-03b-<inject key="DeploymentID" enableCopy="false"/>*
-    - **Region**: East US
-    - **Name**: *Enter a unique name*.
+    - **Subscription**: Use existing subscription.
+    - **Resource group**:Select **AI-900-Module-03b-<inject key="DeploymentID" enableCopy="false"/>**
+    - **Region**: Select the same region where your resource group was created.
+    - **Name**: Enter **AI-900-cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -43,7 +43,7 @@ To train an object detection model, you need to create a Custom Vision project b
 1. Create a new project with the following settings:
     - **Name**: Traffic Safety
     - **Description**: Object detection for road safety.
-    - **Resource**: *The resource you created previously*
+    - **Resource**: **AI-900-cognitive-<inject key="DeploymentID" enableCopy="false"/>**.
     - **Project Types**: Object Detection
     - **Domains**: General \[A1]
    >**Note**: Under **Resource** dropdown if you don't find the resource that you created previously in the azure portal, kindly refresh the page and reperform the task.
@@ -57,7 +57,7 @@ To train an object detection model, you need to upload images that contain the c
 
 1. In the Custom Vision portal, in your **Traffic Safety** object detection project, select **Add images** and upload all of the images in the extracted folder.
 
-    ![Screenshot of the Image Upload dialog box in Custom Vision Studio.](media/create-object-detection-solution/upload-images.png)
+    ![Screenshot of the Image Upload dialog box in Custom Vision Studio.](media/upload-images-3b.png)
 
 1. After the images have been uploaded, select the first one to open it.
 
@@ -65,7 +65,7 @@ To train an object detection model, you need to upload images that contain the c
 
     When the object is tightly selected within the rectangular region, enter the appropriate tag for the object (*Cyclist* or *Pedestrian*) and use the **Tag region** (**+**) button to add the tag to the project.
 
-    ![Screenshot of an image with a tagged region in the Image Detaol dialog box.](media/create-object-detection-solution/tag-image.png)
+    ![Screenshot of an image with a tagged region in the Image Detaol dialog box.](media/tag-image-3b.png)
 
 1. Use the **Next** (**(>)** link on the right to go to the next image, and tag its objects. Then just keep working through the entire image collection, tagging each cyclist and pedestrian.
 
@@ -75,11 +75,11 @@ To train an object detection model, you need to upload images that contain the c
     - After a tag has been entered once, you can select it from the list when tagging new objects.
     - You can go back and forward through the images to adjust tags.
 
-    ![Screenshot of an image with a tagged region in the Image Detaol dialog box.](media/create-object-detection-solution/multiple-objects.png)
+    ![Screenshot of an image with a tagged region in the Image Detaol dialog box.](media/multiple-objects-3b.png)
 
 1. When you have finished tagging the last image, close the **Image Detail** editor and on the **Training Images** page, under **Tags**, select **Tagged** to see all of your tagged images:
 
-    ![Screenshot of tagged images in a project.](media/create-object-detection-solution/tagged-images.png)
+    ![Screenshot of tagged images in a project.](media/tagged-images-3b.png)
 
 ## Train and test a model
 
@@ -93,7 +93,7 @@ Now that you've tagged the images in your project, you're ready to train a model
 
 3. Adjust the **Probability Threshold** on the left, increasing it from 50% to 90% and observe the affect on the performance metrics. This setting determines the probability value that each tag evaluation must meet or exceed to be counted as a prediction.
 
-    ![Screenshot of performance metrics for a trained model.](media/create-object-detection-solution/performance-metrics.png)
+    ![Screenshot of performance metrics for a trained model.](media/performance-metrics-3b.png)
 
 4. At the top right of the page, click **Quick Test**, and then in the **Image URL** box, enter `https://aka.ms/pedestrian-cyclist` and view the results.
 
@@ -101,7 +101,7 @@ Now that you've tagged the images in your project, you're ready to train a model
 
     The predicted objects may not all be correct - after all, cyclists and pedestrians share many common features. The predictions that the model is most confident about have the highest probability values. Use the **Threshold Value** slider to eliminate objects with a low probability. You should be able to find a point at which only correct predictions are included (probably at around 85-90%).
 
-    ![Screenshot of performance metrics for a trained model.](media/create-object-detection-solution/test-detection.png)
+    ![Screenshot of performance metrics for a trained model.](media/test-detection-3b.png)
 
 5. Then close the **Quick Test** window.
 
@@ -111,11 +111,11 @@ Now you're ready to publish your trained model and use it from a client applicat
 
 1. Click **&#128504; Publish** to publish the trained model with the following settings:
     - **Model name**: traffic-safety
-    - **Prediction resource**: *The resource you created previously*.
+    - **Prediction resource**: **AI-900-cognitive-<inject key="DeploymentID" enableCopy="false"/>**..
 
 1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model.
 
-    ![Screenshot of the prediction URL.](media/create-object-detection-solution/prediction-url.png)
+    ![Screenshot of the prediction URL.](media/prediction-url-3b.png)
 
 Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task.
 
@@ -127,11 +127,11 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
 
-    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group and enter a uniquename for the **Storage account** and **File share** , then click on **Create Storage**
+ 1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group **AI-900-Module-01-<inject key="DeploymentID" enableCopy="false"/>** and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account Name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the **File share Name** , then click on **Create Storage**.
 
     When the cloud shell is ready, it should look similar to this:
     
-    ![Screenshot of the cloud shell in the Azure portal.](media/create-object-detection-solution/cloud-shell.png)
+     ![Create storage by clicking confirm.](media/cloudshell-storage.png)
 
     > **Tip**: Ensure that the type of shell indicated on the top left of the Cloud Shell pane is *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
@@ -153,7 +153,7 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     Notice how this opens an editor like the one in the image below:
 
-     ![Screenshot of the code editor in the cloud shell.](media/create-object-detection-solution/code-editor.png)
+     ![Screenshot of the code editor in the cloud shell.](media/code-editor-3b.png)
 
      > **Tip**: You can use the separator bar between the cloud shell command line and the code editor to resize the panes.
 

@@ -19,6 +19,7 @@ You can use the Custom Vision service by creating either a **Custom Vision** res
 
 Create a **Cognitive Services** resource in your Azure subscription.
 
+
 1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
 
     * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 

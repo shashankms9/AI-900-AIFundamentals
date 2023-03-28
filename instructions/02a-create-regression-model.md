@@ -1,27 +1,14 @@
 # Explore regression with Azure Machine Learning Designer
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
 In this exercise, you will train a regression model that predicts the price of an automobile based on its characteristics.
 
 ## Create an Azure Machine Learning workspace  
 
-
-1. In the Edge browser, navigate to the Azure portal at https://portal.azure.com.
-
-1. In the **Sign in** dialog box, copy and paste in the **Username** odl_user_<inject key="DeploymentID" enableCopy="true"/>@cloudlabsai.com and then select Next.
-
-1. In the **Enter password** dialog box, copy and paste the **Password**  provided in the **environment details page** and then select **Sign in**.
-
-    >**Note**
-    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
-
 1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
     - **Subscription**: Use exiting Azure subscription.
     - **Resource group**: Select **AI-900-Module-02a-<inject key="DeploymentID" enableCopy="false" />**..
-    - **Workspace name**: **Workspace-<inject key="DeploymentID" enableCopy="false" />.**
-    - **Region**: Use default region.
+    - **Workspace name**: **AI-900-Workspace-<inject key="DeploymentID" enableCopy="false" />.**
+    - **Region**: Select the same region where your resource group was created.
     - **Storage account**: Note the default new storage account that will be created for your workspace.
     - **Key vault**: Note the default new key vault that will be created for your workspace.
     - **Application insights**: Note the default new application insights resource that will be created for your workspace.
@@ -38,13 +25,14 @@ In this exercise, you will train a regression model that predicts the price of a
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 1. On the **Compute** page, select the **Compute clusters** tab, and add a new compute cluster with the following settings to train a machine learning model:
-    - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
+    - **Location**: Select the same region where your resource group was created.
     - **Virtual machine tier**: Dedicated
     - **Virtual machine type**: CPU
     - **Virtual machine size**:
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
+
     - **Compute name**: Enter **ai900compute-<inject key="DeploymentID" enableCopy="true"/>**
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
@@ -59,7 +47,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 ## Create a pipeline in Designer 
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+** to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+ to create a new pipeline.**
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
@@ -83,11 +71,11 @@ Azure Machine Learning includes a sample dataset that you can use for your regre
 
 1. click on the **Automobile price data (Raw)** dataset on the canvas, and click on **Use Data**.
 
-1. Review the *Dataset output* schema of the data, noting that you can see the distributions of the various columns as histograms.
+1. Review the **Dataset output** schema of the data, noting that you can see the distributions of the various columns as histograms.
 
-1. Scroll to the right of the dataset until you see the **Price** column, which is the label that your model predicts.
+1. Scroll to the right of the dataset until you see the **Automobile price data (Raw)** column, which is the label that your model predicts.
 
-1. Scroll back to the left and select the **normalized-losses** column header. Then review the statistics for this column. Note there are quite a few missing values in this column. Missing values  limit the column's usefulness for predicting the **price** label so you might want to exclude it from training.
+1. Right- Click on the **Automobile price data (raw**) under **Auto Price Training** and select **Preview data.** click on the **normalized-losses** column header. Then review the statistics for this column. Note there are quite a few missing values in this column. Missing values  limit the column's usefulness for predicting the **price** label so you might want to exclude it from training.
 
 1. Close the **Automobile price data (Raw) result visualization** window so that you can see the dataset on the canvas like this:
 
@@ -261,9 +249,9 @@ When you've identified a model with evaluation metrics that meet your needs, you
 
 ## Create and run an inference pipeline
 
-1. In Azure Machine Learning studio, expand the left-hand pane by selecting the menu icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **mslearn-auto-training** pipeline. 
+1. In Azure Machine Learning studio, expand the left-hand pane by selecting the menu icon at the top left of the screen. Click on **Jobs** (under **Assets**) to view all of the jobs you have run. Select the experiment **mslearn-auto-training**, then select the **Auto Price Training** pipeline. 
 
-    ![Screenshot of jobs on the left-hand menu. Select jobs and then select your experiment name.](media/jobs-tab-2a.png)
+    ![Screenshot of jobs on the left-hand menu. Select jobs and then select your experiment name.](media/jobstab-2a.png)
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 

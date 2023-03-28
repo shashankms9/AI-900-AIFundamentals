@@ -32,7 +32,6 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 
 1. View the **Keys and Endpoint** page for your Cognitive Services resource. You will need the endpoint and keys to connect from client applications.
 
-
 ## Task-2: Run Cloud Shell
 
 To test the capabilities of the Custom Vision service, we'll use a simple command-line application that runs in the Cloud Shell on Azure.
@@ -73,18 +72,18 @@ Now that you have a custom model, you can run a simple client application that u
 
     Notice how this opens up an editor like the one in the image below:
 
-    ![The code editor.](media/analyze-text-language-service/powershell-portal-guide-4.png)
+    ![The code editor.](media/powershell-portal-guide-4-04.png)
 
 1. In the **Files** pane on the left, expand **ai-900** and select **analyze-text.ps1**. This file contains some code that uses the Language service:
 
-    ![The editor containing code to use the Language service](media/analyze-text-language-service/analyze-text-code.png)
+    ![The editor containing code to use the Language service](media/analyze-text-code-04.png)
 
 1. Don't worry too much about the details of the code. In the Azure portal, navigate to your Cognitive Services resource. Then select the **Keys and Endpoints** page on the left hand pane. Copy the key and endpoint from the page and paste them into the code editor, replacing the **YOUR_KEY** and **YOUR_ENDPOINT** placeholder values respectively.
 
     > **Tip**
     > You may need to use the separator bar to adjust the screen area as you work with the **Keys and Endpoint** and **Editor** panes.
 
-    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/analyze-text-language-service/key-endpoint-support.png)
+    ![Find the key and endpoint tab in your Cognitive Services resource's left hand pane.](media/key-endpoint-support-04.png)
 
     After replacing the key and endpoint values, the first lines of code should look similar to this:
 
