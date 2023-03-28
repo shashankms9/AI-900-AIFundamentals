@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Explore knowledge mining'
----
-
 # Explore knowledge mining
 
 > **Note**
@@ -37,10 +32,10 @@ The solution you'll create for Fourth Coffee requires the following resources in
 
 1. Click the **+ Create a resource** button, search for *Azure Cognitive Search*, and create a **Azure Cognitive Search** resource with the following settings:
 
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Select or create a resource group with a unique name*.
-    - **Service name**: *A unique name*.
-    - **Location**: *Choose any available region*.
+    - **Subscription**: Use exiting Azure subscription.
+    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false" />**..
+    - **Service name**: **ai900cognitivesearch**
+    - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Pricing tier**: Basic
 
 1. Select **Review + create**, and after you see the response **Validation Success**, select **Create**.
@@ -52,10 +47,10 @@ The solution you'll create for Fourth Coffee requires the following resources in
 You'll need to provision a **Cognitive Services** resource that's in the same location as your Azure Cognitive Search resource. Your search solution will use this resource to enrich the data in the datastore with AI-generated insights.
 
 1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *The same resource group as your Azure Cognitive Search resource*.
-    - **Region**: *The same location as your Azure Cognitive Search resource*.
-    - **Name**: *A unique name*.
+    - **Subscription**: Use exiting Azure subscription.
+    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false" />**..
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Name**: .
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected
 
