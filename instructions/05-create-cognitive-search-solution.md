@@ -41,10 +41,11 @@ The solution you'll create for Fourth Coffee requires the following resources in
    
 1. Click the **+ Create a resource** button, search for **Azure Cognitive Search**, and create a **Azure Cognitive Search** resource with the following settings:
 
-    - **Subscription**:  Use existing subscription.
-    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Service name**: enter **cognitivesearch-<inject key="DeploymentID" enableCopy="false"/>**
-    - **Location**: Select the same region where your resource group was created.
+
+    - **Subscription**: Use exiting Azure subscription.
+    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false" />**..
+    - **Service name**: **ai900cognitivesearch**
+    - **Location**: Select the same region where your resource group was created ( i.e. Easus2)
     - **Pricing tier**: Basic
 
 1. Select **Review + create**, and after you see the response **Validation Success**, select **Create**.
@@ -55,11 +56,11 @@ The solution you'll create for Fourth Coffee requires the following resources in
 
 You'll need to provision a **Cognitive Services** resource that's in the same location as your Azure Cognitive Search resource. Your search solution will use this resource to enrich the data in the datastore with AI-generated insights.
 
-1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button, search for **Cognitive Services**, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: Use existing subscription..
-    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Region**: Select the same region where your resource group was created. (same location where azure cognitive search is deployed.)
-    - **Name**: enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>**
+1. Return to the home page of the Azure portal, and then select the **+ Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+    - **Subscription**: Use exiting Azure subscription.
+    - **Resource group**: Select **AI-900-Module-05-<inject key="DeploymentID" enableCopy="false" />**..
+    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
+    - **Name**: .
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected
 

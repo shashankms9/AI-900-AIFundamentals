@@ -1,8 +1,5 @@
 # Explore form recognition
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
 In the artificial intelligence (AI) field of computer vision, optical character recognition (OCR) is commonly used to read printed or handwritten documents. Often, the text is simply extracted from the documents into a format that can be used for further processing or analysis.
 
 A more advanced OCR scenario is the extraction of information from forms, such as purchase orders or invoices, with a semantic understanding of what the fields in the form represent. The **Form Recognizer** service is specifically designed for this kind of AI problem.
@@ -20,10 +17,10 @@ If you haven't already done so, create a **Cognitive Services** resource in your
 1. In another browser tab, open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
 1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: *Your Azure subscription*.
+    - **Subscription**: *Use existing Azure subscription*.
     - **Resource group**: *AI-900-Module-03e-<inject key="DeploymentID" enableCopy="false"/>*.
     - **Region**: *Select the same region where your resource group was created*.
-    - **Name**: *enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***.
+    - **Name**: *enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***
     - **Pricing tier**: Standard S0
     - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
 
@@ -41,7 +38,7 @@ To test the capabilities of the Form Recognizer service, we'll use a simple comm
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03e-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the  **File share** , then click on **Create Storage**.
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03e-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the  **File share** , then click on **Create Storage**.
     
     ![Screenshot of the cloud shell in the Azure portal.](media/stoarge-up.png)
 
@@ -62,8 +59,6 @@ Now that you have a custom model, you can run a simple client application that u
     ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
-
-    >**Tip** If you already used this command in another lab to clone the *ai-900* repository, you can skip this step.
 
 1. The files are downloaded to a folder named **ai-900**. Now we want to see all of the files in your Cloud Shell storage and work with them. Type the following command into the shell:
 

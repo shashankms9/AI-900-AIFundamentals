@@ -32,6 +32,7 @@
     - **Virtual machine size**:
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
+
     - Select **Next** (**If you have not able to see this option click on the  ...   at the top and right side of browser and zoom out till this option is visible**)
     - **Compute name**: **ai900-vm-<inject key="DeploymentID" enableCopy="false" />**
     - **Minimum number of nodes**: 0

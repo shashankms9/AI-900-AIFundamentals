@@ -1,8 +1,5 @@
 # Explore question answering
 
-> **Note**
-> To complete this lab, you will need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative access.
-
 For customer support scenarios, it's common to create a bot that can interpret and answer frequently asked questions through a website chat window, email, or voice interface. Underlying the bot interface is a knowledge base of questions and appropriate answers that the bot can search for suitable responses.
 
 ## Create a custom question answering knowledge base
@@ -12,25 +9,38 @@ The Language service's custom question answering feature enables you to quickly 
 1. Open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
 1. Click the **&#65291;Create a resource** button, search for *Language service*, and create a **Language service** resource with the following settings, and then click **Continue to create your resource**:
-    **Select Additional Features**
-    - **Default features**: Keep the default features.
-    - **Custom features**: Select custom question answering.
+    - **Select Additional Features**
+    - **Default features**: *Keep the default features*.
+    - **Custom features**: *Select custom question answering*.
+
+    ![Creating a Language Service resource with custom question answering enabled.](media/create-a-bot/ai900_4d-01.png)
 
 1. On the **Create Language** page, specify the following settings:
-    - **Subscription**: Use existing subscription.
-    - **Resource group**: Select **AI-900-Module-02a-<inject key="DeploymentID" enableCopy="false" />**.
-    - **Name**: enter **learnlanguage-<inject key="DeploymentID" enableCopy="false" />**
+    - **Subscription**: *Use existing Azure subscription*.
+    - **Resource group**: *AI-900-Module-03c-<inject key="DeploymentID" enableCopy="false" />*.
+    - **Region**: *Select the same region where your resource group was created*.
+    - **Name**: **ai900language-<inject key="DeploymentID" enableCopy="false"/>**
     - **Pricing tier**: S (1K Calls per minute)
     - **By checking this box I certify that I have reviewed and acknowledge the terms in the Responsible AI Notice**: *Selected*.
+
+
+    > **Note**
+    > If you have already provisioned a free-tier **Azure Cognitive Search** resources, your quota may not allow you to create another one. In which case, select a tier other than **Free F**.
+
+   ![](media/create-a-bot/ai900_4d-02.png)
 
 1. Click **Review and Create** and then click **Create**. Wait for the deployment of the Language service that will support your custom question answering knowledge base.
 
 1. In a new browser tab, open the Language Studio portal at [https://language.azure.com](https://language.azure.com?azure-portal=true) and sign in using the Microsoft account associated with your Azure subscription.
 
-1. If prompted to choose a Language resource, select the following settings:
-    - **Azure directory**: The Azure directory containing your subscription.
-    - **Azure subscription**: Select existing subscription.
-    - **Language resource**: The Language resource you created previously.
+
+1. If prompted to select an Azure resource, ensure the following settings and click on **Done**:
+    - **Azure directory**: The Azure directory containing the pre alloted subscription.
+    - **Azure subscription**: The default Azure subscription.
+    - **Resource type**: *Language*.
+    - **Resource name**: The Language resource you created previously.
+
+   ![](media/create-a-bot/ai900_4d-03.png)
 
 1. If you are ***not*** prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
     1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
@@ -75,13 +85,17 @@ The Language service's custom question answering feature enables you to quickly 
 
 Your knowledge base is based on the details in the FAQ document and some pre-defined responses. You can add custom question-and-answer pairs to supplement these.
 
-1. Click **Edit knowledge base** on the left hand panel. Then click **+ Add question pair**.
+1. Click **Edit knowledge base** on the left hand panel. Then click **+** to add a new question answer pair.
 
-1. In the **Questions** box, type `Hello`, then click **Submit changes**.
+   ![](media/create-a-bot/ai900_4d-04.png)
 
-1. Click **+ Add alternate phrase** and type `Hi`, then click **Submit changes**.
+1. In the **Add a new question answer pair** page, set the **Source** to *Editorial*.
 
-1. In the **Answer and prompts** box, type `Hello`. Keep the **Source**: Editorial.
+1. Within the **Question** box, type `Hello`.
+
+1. In the **Answer** box, type `Hello`.
+
+   ![](media/create-a-bot/ai900_4d-05.png)
 
 1. Click **Submit**. Then at the top of the page click **Save changes**. You may need to change the size of your window to see the button.
 
@@ -91,7 +105,7 @@ Now that you have a knowledge base, you can test it.
 
 1. At the top of the page, click **Test** to test your knowledge base.
 
-1. In the test pane, at the bottom enter the message *Hi*. The response **Hello** should be returned.
+1. In the test pane, at the bottom enter the message *Hello*. The response **Hello** should be returned.
 
 1. In the test pane, at the bottom enter the message **I want to book a flight**. An appropriate response from the FAQ should be returned.
 

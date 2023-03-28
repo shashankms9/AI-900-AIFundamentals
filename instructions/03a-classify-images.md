@@ -19,15 +19,22 @@ You can use the Custom Vision service by creating either a **Custom Vision** res
 
 Create a **Cognitive Services** resource in your Azure subscription.
 
-1. Open the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Microsoft account.
 
-1. Click the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
-    - **Subscription**: Use existing subscription.
-    - **Resource group**: Select **AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Region**: Select the same region where your resource group was created ( i.e. Easus2)
-    - **Name**: enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***.
-    - **Pricing tier**: Standard S0.
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected.
+1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
+
+    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
+    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+ 
+   >**Note**
+   > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
+1. In the Azure Portal, select the **&#65291;Create a resource** button, search for *Cognitive Services*, and create a **Cognitive Services** resource with the following settings:
+    - **Subscription**: *Your Azure subscription*
+    - **Resource group**: *Select AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/>*
+    - **Region**: *Select the same region where your resource group was created*
+    - **Name**: *Enter **ai900cognitive-<inject key="DeploymentID" enableCopy="false"/>***
+    - **Pricing tier**: Standard S0
+    - **By checking this box I acknowledge that I have read and understood all the terms below**: Selected
 
 1. Review and create the resource, and wait for deployment to complete. Then go to the deployed resource.
 
@@ -54,15 +61,19 @@ To train an object detection model, you need to create a Custom Vision project b
 
 1. Click **Add images**, and select all of the files in the **elephant** folder you extracted previously. Then upload the image files, specifying the tag *elephant*, like this:
 
-    ![Screenshot of the Image upload interface.](media/create-image-classification-system/upload-elephants.png)
+    ![Screenshot of the Image upload interface.](media/create-image-classification-system/upload-elephants(1).png)
 
-1. Use the **Add images** ([+]) button to upload the images in the **giraffe** folder with the tag *giraffe*, and the images in the **lion** folder with the tag *lion*.
+1. Use the **Add images** ([+]) button to upload, and select all the image from the **giraffe** folder, then upload image with the tag *giraffe*. Select all the images from the **lion** folder, then upload iamge with the tag *lion*.
 
 1. Explore the images you have uploaded in the Custom Vision project - there should be 17 images of each class, like this:
 
-    ![Screenshot of tagged training images in the Custom Vision portal.](media/create-image-classification-system/animal-training-images.png)
+    ![Screenshot of tagged training images in the Custom Vision portal.](media/create-image-classification-system/animal-training-images1.png)
 
 1. In the Custom Vision project, above the images, click **Train** to train a classification model using the tagged images. Select the **Quick Training** option and click on **Train** then wait for the training iteration to complete.
+
+    ![Screenshot of the Image to select train.](media/create-image-classification-system/train.png)
+    
+    ![Screenshot of the Image to select train.](media/create-image-classification-system/train2.png)
 
     > **Tip**: Training may take a few minutes. While you're waiting, check out [How snow leopard selfies and AI can help save the species from extinction](https://news.microsoft.com/transform/snow-leopard-selfies-ai-save-species/), which describes a real project that uses computer vision to track endangered animals in the wild.
 
@@ -78,7 +89,7 @@ Before publishing this iteration of the model for applications to use, you shoul
 
 1. View the predictions returned by your model - the probability score for *giraffe* should be the highest, like this:
 
-    ![Screenshot of the Quick Test interface.](media/create-image-classification-system/quick-test.png)
+    ![Screenshot of the Quick Test interface.](media/create-image-classification-system/quick-test1.png)
 
 1. Close the **Quick Test** window.
 
@@ -92,7 +103,7 @@ Now you're ready to publish your trained model and use it from a client applicat
 
 1. After publishing, click the *Prediction URL* (&#127760;) icon to see information required to use the published model.
 
-    ![Screenshot of the prediction URL.](media/create-image-classification-system/prediction-url.png)
+    ![Screenshot of the prediction URL.](media/create-image-classification-system/prediction-url1.png)
 
 Later, you will need the appropriate URL and Prediction-Key values to get a prediction from an Image URL, so keep this dialog box open and carry on to the next task.
 
@@ -102,15 +113,17 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
 1. Switch back to the browser tab containing the Azure portal, and select the **Cloud shell** (**[>_]**)  button at the top of the page to the right of the search box. This opens a cloud shell pane at the bottom of the portal.
 
-    The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
+    ![Screenshot of the cloud shell in the Azure portal.](media/create-image-classification-system/powershell-portal-guide-01.png)
 
-    If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the  **File share** , then click on **Create Storage**.
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). If so, select **PowerShell**.
+
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Please make sure you have selected your resource group AI-900-Module-03a-<inject key="DeploymentID" enableCopy="false"/> and enter **blob<inject key="DeploymentID" enableCopy="false"/>** for the **Storage account** and enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/>** for the  **File share** , then click on **Create Storage**.
     
     ![Screenshot of the cloud shell in the Azure portal.](media/stoarge-up.png)
 
     When the cloud shell is ready, it should look similar to this:
     
-    ![Screenshot of the cloud shell in the Azure portal.](media/create-image-classification-system/cloud-shell.png)
+    ![Screenshot of the cloud shell in the Azure portal.](media/create-image-classification-system/cloud-shell1.png)
 
     > **Tip**: Ensure that the type of shell indicated on the top left of the Cloud Shell pane is *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
 
@@ -132,13 +145,13 @@ To test the capabilities of the Custom Vision service, we'll use a simple comman
 
     Notice how this opens an editor like the one in the image below:
 
-     ![Screenshot of the code editor in the cloud shell.](media/create-image-classification-system/code-editor.png)
+     ![Screenshot of the code editor in the cloud shell.](media/create-image-classification-system/code-editor1.png)
 
      > **Tip**: You can use the separator bar between the cloud shell command line and the code editor to resize the panes.
 
 4. Don't worry too much about the details of the code. The important thing is that it starts with some code to specify the prediction URL and key for your Custom Vision model. You'll need to update these so that the rest of the code uses your model.
 
-    Get the *prediction URL* and *prediction key* from the dialog box you left open in the browser tab for your Custom Vision project. You need the versions to be used *if you have an image URL*.
+    Get the *prediction URL* and *prediction key* from the dialog box you left open in the browser tab for your **Custom Vision project**. You need the versions to be used *if you have an image URL*.
 
     Use these values to replace the **YOUR_PREDICTION_URL** and **YOUR_PREDICTION_KEY** place holders in the code file.
 

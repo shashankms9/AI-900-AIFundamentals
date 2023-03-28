@@ -5,16 +5,22 @@
 
 ## Create an Azure Machine Learning workspace  
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true) using your Microsoft credentials.
+1. If you are not logged in already, click on Azure portal shortcut of Microsoft Edge browser that is available on the desktop and log in with below Azure credentials.
 
-1. Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Create or select a resource group*.
-    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="true"/>**.
-    - **Region**: *Select the closest geographical region*.
-    - **Storage account**: *Note the default new storage account that will be created for your workspace*.
-    - **Key vault**: *Note the default new key vault that will be created for your workspace*.
-    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
+    * Azure Username/Email: <inject key="AzureAdUserEmail"></inject> 
+    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+ 
+   >**Note**
+   > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
+
+1. In the Azure Portal, select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+    - **Subscription**: *Your Azure subscription*
+    - **Resource group**: *select AI-900-Module-02b-<inject key="DeploymentID" enableCopy="false"/>*
+    - **Workspace name**: *Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>***
+    - **Region**:  *Select the same region where your resource group was created*
+    - **Storage account**: *Note the default new storage account that will be created for your workspace*
+    - **Key vault**: *Note the default new key vault that will be created for your workspace*
+    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*
     - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
 
 1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes), and then go to the deployed resource.
@@ -31,14 +37,14 @@
 1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), select the **&#8801;** icon (a menu icon that looks like a stack of three lines) at the top left to view the various pages in the interface (you may need to maximize the size of your screen). You can use these pages in the left hand pane to manage the resources in your workspace. Select the **Compute** page (under **Manage**).
 
 1. On the **Compute** page, select the **Compute clusters** tab, Click on **+ New** and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
-    - **Location**: *Select the same as your workspace. If that location is not listed, choose the one closest to you*.
+    - **Location**: *Select the same region where your workspace was created*.
     - **Virtual machine tier**: Dedicated
     - **Virtual machine type**: CPU
     - **Virtual machine size**:
         - Choose **Select from all options**
         - Search for and select **Standard_DS11_v2**
     - Select **Next**
-    - **Compute name**: Enter **ai900-<inject key="DeploymentID" enableCopy="true"/>**.
+    - **Compute name**: Enter **ai900compute-<inject key="DeploymentID" enableCopy="true"/>**.
     - **Minimum number of nodes**: 0
     - **Maximum number of nodes**: 2
     - **Idle seconds before scale down**: 120
@@ -54,7 +60,7 @@ The compute cluster will take some time to be created. You can move onto the nex
 
 To get started with Azure Machine Learning designer, first you must create a pipeline and add the dataset you want to work with.
 
-1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Author**), and select **+** to create a new pipeline.
+1. In [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), expand the left pane by selecting the menu icon at the top left of the screen. View the **Designer** page (under **Authoring**), and select **+** to create a new pipeline.
 
 1. At the top right-hand side of the screen, select **Settings**. If the **Settings** pane is not visible, select the wheel icon next to the pipeline name at the top.
 
@@ -64,7 +70,7 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Select **Save**, then select close icon on the top right of the **Settings** pane to close the pane.
 
-    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/ai-900-settings.png)
+    ![Screenshot of the Machine Learning Studio Settings pane.](media/create-classification-model/ai-900-settings1.png)
 
 ## Create a dataset
 
@@ -110,9 +116,11 @@ To get started with Azure Machine Learning designer, first you must create a pip
 
 1. Then in the project, next to the pipeline name on the left, select the arrows icon to expand the panel if it is not already expanded. The panel should open by default to the **Asset library** pane, indicated by the books icon at the top of the panel. Note that there is a search bar to locate assets. Notice two buttons, **Data** and **Component**.
 
-    ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/designer-asset-library-data.png)
+    ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/search-data.png)
 
 1. Click on **Data**. Search for and place the **diabetes-data** dataset onto the canvas.
+
+     ![Screenshot of location of designer asset library, search bar, and data icon.](media/create-classification-model/data-canvas.png)
 
 1. Right-click (Ctrl+click on a Mac) the **diabetes-data** dataset on the canvas, and click on **Preview data**.
 
@@ -132,7 +140,7 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. In the **Asset library** pane on the left, click on **Component**, which contain a wide range of modules you can use for data transformation and model training. You can also use the search bar to quickly locate modules.
 
-    ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-classification-model/designer-asset-library-components.png)
+    ![Screenshot of location of designer asset library, search bar, and components icon.](media/create-classification-model/search-component.png)
 
 1. Find the **Select Columns in Dataset** module and place it on the canvas, below the **diabetes-data** dataset. Then connect the output from the bottom of the **diabetes-data** dataset to the input at the top of the **Select Columns in Dataset** module.
 
@@ -140,18 +148,18 @@ Before you can train a model, you typically need to apply some pre-processing tr
 
 1. Find the **Normalize Data** module and place it on the canvas, below the **Select Columns in Dataset** module. Then connect the output from the bottom of the **Select Columns in Dataset** module to the input at the top of the **Normalize Data** module, like this:
 
-    ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize.png)
+    ![Screenshot of a pipeline with the dataset connected to select columns and Normalize Data module.](media/create-classification-model/dataset-normalize2.png)
 
 1. Double-click the **Normalize Data** module to view its settings, noting that it requires you to specify the transformation method and the columns to be transformed. 
 
 1. Set the *Transformation method* to **MinMax** and the *Use 0 for constant columns when checked* to **True**. Edit the columns to transform with **Edit columns**. Select columns **With Rules** and copy and paste the following list under include column names:  
 
-```
-Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
-```
-![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data.png)
+    ```
+    Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
+    ```
+    ![Screenshot of the columns selected for normalization.](media/create-classification-model/normalize-data1.png)
 
-Click **Save**, then again Click on **Save** icon and close the selection box. 
+1. Click **Save**, then again Click on **Save** icon and close the selection box. 
 
 The data transformation is normalizing the numeric columns to put them on the same scale, which should help prevent columns with large values from dominating model training. You'd usually apply a whole bunch of pre-processing transformations like this to prepare your data for training, but we'll keep things simple in this exercise.
 
@@ -159,11 +167,11 @@ The data transformation is normalizing the numeric columns to put them on the sa
 
 To apply your data transformations, you need to run the pipeline as an experiment.
 
-1. Select **Submit**, and run the pipeline as a new experiment named **mslearn-diabetes-training** on your compute cluster.
+1. Select **Submit**, under the Experiment name select **Create new** and in New experiment name field enter **mslearn-diabetes-training** on your compute cluster and click on **Submit**.
 
 1. Wait a few minutes for the run to finish.
 
-    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-classification-model/completed-job.png)
+    ![Screenshot of designer asset library with the completed job and job details button below.](media/create-classification-model/completed-job1.png)
 
     Notice that the left hand panel is now on the **Submitted Jobs** pane. You will know when the run is complete because the status of the job will change to **Completed**.
 
@@ -188,7 +196,7 @@ It's common practice to train the model using a subset of the data, while holdin
 
 In this exercise, you're going to work through steps to extend the **Diabetes Training** pipeline as shown here:
 
-![Screenshot of how to split data, then train with logistic regression and score.](media/create-classification-model/train-score-pipeline.png)
+![Screenshot of how to split data, then train with logistic regression and score.](media/create-classification-model/train-score-pipeline1.png)
 
 Follow the steps below, using the image above for reference as you add and configure the required modules.
 
@@ -246,7 +254,7 @@ The validation data you held back and used to score the model includes the known
 
 1. Ensure your pipeline looks like this:
 
-    ![Screenshot of the Evaluate Model module added to Score Model module.](media/create-classification-model/evaluate-pipeline.png)
+    ![Screenshot of the Evaluate Model module added to Score Model module.](media/create-classification-model/evaluate-pipeline1.png)
 
 1. Select **Submit**, and run the pipeline using the existing experiment named **mslearn-diabetes-training**.
 
@@ -278,7 +286,7 @@ The performance of this model isn't all that great, partly because we performed 
 
 1. Locate the menu above the canvas and click on **Create inference pipeline**. You may need to expand your screen to full and click on the three dots icon **...** on the top right hand corner of the screen in order to find **Create inference pipeline** in the menu.  
 
-    ![Screenshot of location of create inference pipeline.](media/create-classification-model/create-inference-pipeline.png)
+    ![Screenshot of location of create inference pipeline.](media/create-classification-model/create-inference-pipeline2.png)
 
 1. In the **Create inference pipeline** drop-down list, click **Real-time inference pipeline**. After a few seconds, a new version of your pipeline named **Diabetes Training-real time inference** will be opened.
 
@@ -286,7 +294,7 @@ The performance of this model isn't all that great, partly because we performed 
 
     You're going to make the following changes to the inference pipeline:
 
-    ![Screenshot of an inference pipeline with changes indicated.](media/create-classification-model/inference-changes.png)
+    ![Screenshot of an inference pipeline with changes indicated.](media/create-classification-model/inference-changes1.png)
     
     - Add a **web service input** component for new data to be submitted.
     - Replace the **diabetes-data** dataset with an **Enter Data Manually** module that doesn't include the label column (**Diabetic**).
@@ -315,23 +323,23 @@ The performance of this model isn't all that great, partly because we performed 
     - Delete the connection between the **Score Model** module and the **Web Service Output**.
     - Add an **Execute Python Script** module, replacing all of the default python script with the following code (which selects only the **PatientID**, **Scored Labels** and **Scored Probabilities** columns and renames them appropriately):
 
-```Python
-import pandas as pd
+        ```Python
+        import pandas as pd
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
+        def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
-    scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
-                                'Scored Probabilities':'Probability'},
-                        inplace=True)
-    return scored_results
-```
+            scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
+            scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                        'Scored Probabilities':'Probability'},
+                                inplace=True)
+            return scored_results
+        ```
 
 1. Connect the output from the **Score Model** module to the **Dataset1** (left-most) input of the **Execute Python Script**, and connect the output of the **Execute Python Script** module to the **Web Service Output**.
 
 1. Verify that your pipeline looks similar to the following image:
 
-    ![Screenshot of a complete inference pipeline.](media/create-classification-model/visual-inference.png)
+    ![Screenshot of a complete inference pipeline.](media/create-classification-model/visual-inference1.png)
 
 1. Run the pipeline as a new experiment named **mslearn-diabetes-inference** on your compute cluster. The experiment may take a while to run.
 
@@ -350,11 +358,11 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. Select **Job detail** on the left hand pane. This will open up another window.
 
-    ![Screenshot of job details next to the completed job.](media/create-classification-model/completed-job-inference.png)
+    ![Screenshot of job details next to the completed job.](media/create-classification-model/completed-job-inference1.png)
 
 1. In the new window, select **Deploy**.
 
-    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-classification-model/deploy-screenshot.png)
+    ![Screenshot of the deploy button for your Predict Auto Price inference pipeline.](media/create-classification-model/deploy-screenshot1.png)
 
 1. At the top right, select **Deploy**, and deploy a **new real-time endpoint**, using the following settings:
     -  **Name**: predict-diabetes
@@ -367,7 +375,7 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. On the **Endpoints** page, open the **predict-diabetes** real-time endpoint.
 
-    ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-classification-model/endpoints-screenshot.png)
+    ![Screenshot of the location of the Endpoints option on the left-hand pane.](media/create-classification-model/test-endpoint.png)
 
 1. When the **predict-diabetes** endpoint opens, select the **Test** tab. We will use it to test our model with new data. Delete the current data under **Input data to test real-time endpoint**. Copy and paste the below data into the data section:  
 
@@ -396,6 +404,6 @@ After you've created and tested an inference pipeline for real-time inferencing,
 
 1. Select **Test**. On the right hand of the screen, you should see the output **'DiabetesPrediction'**. The output is 1 if the patient is predicted to have diabetes, and 0 if the patient is predicted not to have diabetes.  
 
-    ![Screenshot of the Test pane.](media/create-classification-model/test-interface.png)
+    ![Screenshot of the Test pane.](media/create-classification-model/test-interface1.png)
 
     You have just tested a service that is ready to be connected to a client application using the credentials in the **Consume** tab. We will end the lab here. You are welcome to continue to experiment with the service you just deployed.
