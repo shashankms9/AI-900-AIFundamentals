@@ -15,15 +15,15 @@ In this exercise, you will use a dataset of historical bicycle rental details to
    >**Note**
    > On the Welcome to Microsoft Edge page, select  **Start without your data**  and on the help for importing Google browsing data page, select 		      the **Continue without this data** button. Then, proceed to select  **Confirm and start browsing**  on the next page.
 
-1. In the Azure Portal, Select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *AI-900-Module-02-<inject key="DeploymentID" enableCopy="false"/>*.
-    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Region**: *Select the same region where your resource group was created*.
-    - **Storage account**: *Note the default new storage account that will be created for your workspace*.
-    - **Key vault**: *Note the default new key vault that will be created for your workspace*.
-    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*.
-    - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*).
+1. In the Azure Portal, select **+ Create a resource**, search for *Machine Learning*, and create a new **Azure Machine Learning** resource with an *Azure Machine Learning* plan. Use the following settings:
+    - **Subscription**: *Your Azure subscription*
+    - **Resource group**: *Select AI-900-Module-02-<inject key="DeploymentID" enableCopy="false"/>*
+    - **Workspace name**: Enter **ai900workspace-<inject key="DeploymentID" enableCopy="false"/>**
+    - **Region**: *Select the same region where your resource group was created*
+    - **Storage account**: *Note the default new storage account that will be created for your workspace*
+    - **Key vault**: *Note the default new key vault that will be created for your workspace*
+    - **Application insights**: *Note the default new application insights resource that will be created for your workspace*
+    - **Container registry**: None (*one will be created automatically the first time you deploy a model to a container*)
 
 1. Select **Review + create**, then select **Create**. Wait for your workspace to be created (it can take a few minutes), and then go to the deployed resource.
 
