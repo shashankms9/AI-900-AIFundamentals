@@ -73,13 +73,13 @@ In Azure Machine Learning, data for model training and other operations is usual
         * **Name**: penguin-data
         * **Description**: Penguin data
         * **Dataset type**: Tabular
-    * **Select Next**
+    * Select: **Next**
     * **Data source**: From Web Files
-    *  **Select Next**
+    *  Select: **Next**
     * **Web URL**:
         * **Web URL**: https://aka.ms/penguin-data
         * **Skip data validation**: *do not select*
-    * **Select Next**
+    * Select: **Next**
     * **Settings**:
         * **File format**: Delimited
         * **Delimiter**: Comma
@@ -87,11 +87,11 @@ In Azure Machine Learning, data for model training and other operations is usual
         * **Column headers**: Only first file has headers
         * **Skip rows**: None
         * **Dataset contains multi-line data**: *do not select*
-    * **Select Next**
+    * Select: **Next**
     * **Schema**:
         * Include all columns other than **Path**
         * Review the automatically detected types
-    * **Select Next**
+    * Select: **Next**
     * **Review**
         * Select **Create**
 
